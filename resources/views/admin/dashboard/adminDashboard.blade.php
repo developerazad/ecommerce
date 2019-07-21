@@ -1,7 +1,7 @@
 @extends('admin.dashboard.master')
 
 @section('content')
-    <div class="">
+    <div class="main-content">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>

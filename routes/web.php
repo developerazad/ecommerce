@@ -12,5 +12,11 @@
 */
 
 
-Route::get('/', 'HomeController@index');
+
+Route::get('/', 'FontendController@index');
 Route::get('/admin', 'AdminController@index');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
