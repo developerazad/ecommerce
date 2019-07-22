@@ -12,8 +12,10 @@
 */
 
 
-
+// General User
 Route::get('/', 'FontendController@index');
+
+// admin
 Route::get('/admin', 'AdminController@index');
 
 
