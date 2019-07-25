@@ -224,7 +224,7 @@
                             <img src="{{ URL::TO('assets/admin/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
+                                Azharul Islalm - Web Developer
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>

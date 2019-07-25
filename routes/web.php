@@ -12,13 +12,18 @@
 */
 
 
-// General User
-Route::get('/', 'FontendController@index');
-
-// admin
-Route::get('/admin', 'AdminController@index');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// General User
+Route::get('/', 'FontendController@index');
+
+// admin
+Route::get('/admin', 'AdminController@index');
+Route::resource('categories', 'CategoryController');
+
+
+
