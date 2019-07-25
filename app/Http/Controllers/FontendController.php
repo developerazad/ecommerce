@@ -15,6 +15,7 @@ class FontendController extends Controller
     public function index()
     {
         return view('fontend');
+        //return view('welcome');
     }
 
     /**

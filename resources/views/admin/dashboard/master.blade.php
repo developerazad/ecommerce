@@ -11,6 +11,7 @@
 
     <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
                     Dashboard
@@ -21,7 +22,9 @@
                     <li class="active">Dashboard</li>
                 </ol>
             </section>
+
             @yield('content')
+
         </div>
     <!-- /.content-wrapper -->
     @include('admin.inc.mainFooter')

@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.productManagement.categories.index');
+        $categories = Category::all(); //$this->pr($categories);
+        return view('admin.productManagement.categories.index',compact('categories'));
     }
 
     /**
@@ -82,4 +83,6 @@ class CategoryController extends Controller
     {
         //
     }
+
+
 }

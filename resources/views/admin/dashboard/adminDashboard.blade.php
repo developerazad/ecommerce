@@ -2,8 +2,6 @@
 
 @section('content')
     <div class="main-content">
-        <!-- Content Header (Page header) -->
-
 
         <!-- Main content -->
         <section class="content">
