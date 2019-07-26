@@ -43,7 +43,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return 123;
+        $category = new Category();
+        $category->category_name = $request->input('category_name');
+        $category->category_desc = $request->input('category_desc');
+        $category->active_fg     = $request->input('active_fg');
+        $category->created_by    = auth()->user()->id;
+        $category->save();
+        return redirect('categories')->with('success','Category has been added');
     }
 
     /**

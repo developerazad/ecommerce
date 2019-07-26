@@ -3,11 +3,11 @@
     <div class="box-body">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Enter Category Name">
+            <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Enter Category Name" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-control" id="category_desc" placeholder="Enter Category Description">
+            <input type="text" class="form-control" name="category_desc" id="category_desc" placeholder="Enter Category Description">
         </div>
         <div class="form-group">
             <label for="status">Active Status</label>

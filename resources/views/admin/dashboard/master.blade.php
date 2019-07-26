@@ -31,8 +31,10 @@
                             data-target="#myModal">Add New</button>
                 </ol>
                 @endif
+
             </section>
             <br>
+            @include('admin.inc.messages')
             @include('admin.global.modal')
             @yield('content')
 
@@ -45,5 +47,13 @@
 <!-- ./wrapper -->
 
 @include('admin.inc.footerScript')
+
+<!--fed out message-->
+<script>
+    setTimeout(function () {
+        $('.alert').hide();
+    },2000);
+
+</script>
 </body>
 </html>

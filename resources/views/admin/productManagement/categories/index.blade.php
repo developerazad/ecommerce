@@ -25,7 +25,7 @@
                             <tbody>
                             @foreach($categories as $key => $row)
                                 <tr>
-                                    <td>{{ $key++ }}</td>
+                                    <td>{{ ++$key }}</td>
                                     <td>{{ $row->category_name }}</td>
                                     <td>{{ $row->category_desc }}</td>
                                     <td>
