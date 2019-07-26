@@ -93,5 +93,10 @@ $(function () {
         }
         thisClass.addClass(modalSize);
 
-    }
+    };
+
+    // delete row
+    $(document).on('click', '.deleteRow', function () {
+        confirm('Are you sure want to delete ?');
+    })
 </script>

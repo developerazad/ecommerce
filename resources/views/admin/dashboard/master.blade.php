@@ -14,10 +14,10 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 @if(isset($header))
-                <h1>
+                <h3>
                     {{ $header['title'] }}
                     <small>{{ $header['pageTitle'] }}</small>
-                </h1>
+                </h3>
                 @endif
                 @if(isset($header['createUrl']))
                 <ol class="breadcrumb">
@@ -33,7 +33,7 @@
                 @endif
 
             </section>
-            <br>
+
             @include('admin.inc.messages')
             @include('admin.global.modal')
             @yield('content')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -71,7 +72,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        $editData = Category::find($category->category_id);
+        return view('admin.productManagement.categories.edit',compact('editData'));
     }
 
     /**
@@ -83,7 +85,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+
+        $category = Category::find($category->category_id);
+        $category->category_name = $request->input('category_name');
+        $category->category_desc = $request->input('category_desc');
+        $category->active_fg     = $request->input('active_fg');
+        $category->updated_by    = auth()->user()->id;
+        $category->save();
+        return redirect('categories')->with('success','Category has been updated');
     }
 
     /**
