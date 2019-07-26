@@ -14,8 +14,15 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $header =[
+            'title'     => 'Product Management',
+            'pageTitle' => 'Category',
+            'createUrl' => 'categories/create',
+            'modalSize' => 'modal-md',
+            'modalTitle' => 'Create New Category',
+        ];
         $categories = Category::all(); //$this->pr($categories);
-        return view('admin.productManagement.categories.index',compact('categories'));
+        return view('admin.productManagement.categories.index',compact('categories','header'));
     }
 
     /**
@@ -25,7 +32,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.productManagement.categories.create');
     }
 
     /**
@@ -36,7 +43,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 123;
     }
 
     /**

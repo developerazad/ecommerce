@@ -1,5 +1,6 @@
 <!-- jQuery 3 -->
 <script src="{{ asset('assets/admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('assets/admin/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -35,6 +36,7 @@
 <script src="{{ asset('assets/admin/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
+
 <!-- datatable -->
 <script src="{{ asset('assets/admin/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('assets/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
@@ -50,4 +52,46 @@ $(function () {
     'autoWidth'   : false
     })
     })
+</script>
+{{--add modal body by ajax--}}
+<script>
+    $(document).on('click','#addSomething', function () {
+        var actionUrl  = $(this).attr('data-action');
+        var modalTitle = $(this).attr('data-title');
+        $('.modal-title').text(modalTitle);
+        var modalSize  = $(this).attr('data-modal');
+        removeModalSize(modalSize);
+
+        $.ajax({
+            type:'GET',
+            url:actionUrl,
+            success:function (data) {
+                $('.modal-body').html(data);
+            }
+
+        });
+
+    })
+
+    // add user defined modal
+    function removeModalSize(modalSize) {
+        var thisClass = $('.modal-dialog');
+        if (thisClass.hasClass('modal-xs')){
+            thisClass.removeClass('modal-xs');
+        }
+        if(thisClass.hasClass('modal-sm')){
+            thisClass.removeClass('modal-sm');
+        }
+        if(thisClass.hasClass('modal-md')){
+            thisClass.removeClass('modal-md');
+        }
+        if(thisClass.hasClass('modal-lg')){
+            thisClass.removeClass('modal-lg');
+        }
+        if(thisClass.hasClass('modal-xl')){
+            thisClass.removeClass('modal-xl');
+        }
+        thisClass.addClass(modalSize);
+
+    }
 </script>

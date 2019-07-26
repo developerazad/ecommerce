@@ -13,16 +13,27 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
+                @if(isset($header))
                 <h1>
-                    Dashboard
-                    <small>Control panel</small>
+                    {{ $header['title'] }}
+                    <small>{{ $header['pageTitle'] }}</small>
                 </h1>
+                @endif
+                @if(isset($header['createUrl']))
                 <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
+                    <button type="button"
+                            id="addSomething"
+                            class="btn btn-primary btn-sm"
+                            data-toggle="modal"
+                            data-action="{{ url($header['createUrl']) }}"
+                            data-modal="{{ $header['modalSize'] }}"
+                            data-title="{{ $header['modalTitle'] }}"
+                            data-target="#myModal">Add New</button>
                 </ol>
+                @endif
             </section>
-
+            <br>
+            @include('admin.global.modal')
             @yield('content')
 
         </div>
