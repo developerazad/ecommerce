@@ -96,7 +96,19 @@ $(function () {
     };
 
     // delete row
+
     $(document).on('click', '.deleteRow', function () {
-        confirm('Are you sure want to delete ?');
+        var url = $(this).attr('data-action');
+        var del = confirm('Are you sure want to delete ?');
+
+        if(del){
+            $.ajax({
+                type: 'GET',
+                url: url,
+                success:function(data) {
+                    location.reload();
+                }
+            });
+        }
     })
 </script>

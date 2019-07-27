@@ -14,8 +14,9 @@ class FontendController extends Controller
      */
     public function index()
     {
-        return view('fontend');
-        //return view('welcome');
+        $categories = Fontend::getAllCategories();
+        //$this->pr($categories);
+        return view('fontend', compact('categories'));
     }
 
     /**

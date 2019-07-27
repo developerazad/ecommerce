@@ -24,6 +24,7 @@ Route::get('/', 'FontendController@index');
 // admin
 Route::get('/admin', 'AdminController@index');
 Route::resource('categories', 'CategoryController');
+Route::get('delete_category/{id}', 'CategoryController@destroy');
 
 
 

@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $category->active_fg     = $request->input('active_fg');
         $category->created_by    = auth()->user()->id;
         $category->save();
-        return redirect('categories')->with('success','Category has been added');
+        return redirect('categories')->with('success','Category has been added successfully');
     }
 
     /**
@@ -92,7 +92,7 @@ class CategoryController extends Controller
         $category->active_fg     = $request->input('active_fg');
         $category->updated_by    = auth()->user()->id;
         $category->save();
-        return redirect('categories')->with('success','Category has been updated');
+        return redirect('categories')->with('success','Category has been updated successfully');
     }
 
     /**
@@ -101,9 +101,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category,$id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('categories')->with('success','Category has been deleted successfully');
     }
 
 
