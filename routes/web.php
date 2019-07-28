@@ -30,6 +30,7 @@ Route::get('delete_category/{id}', 'CategoryController@destroy');
 
 // manufacture
 Route::resource('manufactures','ManufactureController');
+Route::get('delete_manufacture/{id}','ManufactureController@destroy');
 
 
 

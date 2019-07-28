@@ -1,14 +1,14 @@
-<form action="{{ url('categories/'.$editData->category_id) }}" method="post">
+<form action="{{ url('manufactures/'.$editData->manufactures_id) }}" method="post">
     @method('PUT')
-    {{ csrf_field() }}
+    @csrf
     <div class="box-body">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="category_name" value="{{ $editData->category_name }}" id="category_name" placeholder="Enter Category Name" required>
+            <input type="text" class="form-control" name="manufactures_name" value="{{ $editData->manufactures_name }}" placeholder="Enter Brand Name" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-control" name="category_desc" value="{{ $editData->category_desc }}" id="category_desc" placeholder="Enter Category Description">
+            <input type="text" class="form-control" name="manufactures_desc" value="{{ $editData->manufactures_desc }}" placeholder="Enter Brand Description">
         </div>
         <div class="form-group">
             <label for="status">Active Status</label>

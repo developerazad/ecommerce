@@ -73,7 +73,9 @@ class ManufactureController extends Controller
      */
     public function edit($id)
     {
-        //
+        //return $id;
+        $editData = Manufacture::find($id);//$this->pr($editData);
+        return view('admin.productManagement.brands.edit', compact('editData'));
     }
 
     /**
@@ -85,7 +87,13 @@ class ManufactureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manufacture = Manufacture::find($id);
+        $manufacture->manufactures_name = $request->input('manufactures_name');
+        $manufacture->manufactures_desc = $request->input('manufactures_desc');
+        $manufacture->active_fg     = $request->input('active_fg');
+        $manufacture->updated_by    = auth()->user()->id;
+        $manufacture->save();
+        return redirect('manufactures')->with('success','Brand has been updated successfully');
     }
 
     /**
@@ -96,6 +104,9 @@ class ManufactureController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manufacture = Manufacture::find($id);
+        $manufacture->delete();
+        return redirect('manufactures')->with('success','Brand has been deleted successfully');
     }
+
 }
