@@ -21,10 +21,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 // General User
 Route::get('/', 'FontendController@index');
 
-// admin
+// =================== admin ===========================
 Route::get('/admin', 'AdminController@index');
+
+// category
 Route::resource('categories', 'CategoryController');
 Route::get('delete_category/{id}', 'CategoryController@destroy');
+
+// manufacture
+Route::resource('manufactures','ManufactureController');
+
 
 
 
