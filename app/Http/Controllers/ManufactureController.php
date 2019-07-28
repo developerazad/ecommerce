@@ -16,7 +16,7 @@ class ManufactureController extends Controller
     public function index()
     {
         $header =[
-            'title'     => 'Product Management',
+            'title'     => 'Setup',
             'pageTitle' => 'Brand',
             'createUrl' => 'manufactures/create',
             'modalSize' => 'modal-md',

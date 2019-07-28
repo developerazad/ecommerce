@@ -26,12 +26,15 @@ Route::get('/admin', 'AdminController@index');
 
 // category
 Route::resource('categories', 'CategoryController');
-Route::get('delete_category/{id}', 'CategoryController@destroy');
+Route::get('delete-category/{id}', 'CategoryController@destroy');
 
 // manufacture
 Route::resource('manufactures','ManufactureController');
-Route::get('delete_manufacture/{id}','ManufactureController@destroy');
+Route::get('delete-manufacture/{id}','ManufactureController@destroy');
 
+// product
+Route::resource('products','ProductController');
+Route::get('delete-product/{id}','ProductController@destroy');
 
 
 

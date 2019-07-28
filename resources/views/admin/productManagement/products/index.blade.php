@@ -16,18 +16,18 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Category Name</th>
+                                    <th>Name</th>
                                     <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $key => $row)
+                            @foreach($products as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->category_name }}</td>
-                                    <td>{{ $row->category_desc }}</td>
+                                    <td>{{ $row->product_name }}</td>
+                                    <td>{{ $row->product_desc }}</td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -36,15 +36,15 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('categories/'.$row->category_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->category_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('delete-category/'.$row->category_id) }}" >Delete</button>
+                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('products/'.$row->product_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->product_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('delete-product/'.$row->product_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                             <tr>
                                 <th>Sl</th>
-                                <th>Category Name</th>
+                                <th>Name</th>
                                 <th>Description</th>
                                 <th>Status</th>
                                 <th>Action</th>

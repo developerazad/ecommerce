@@ -35,7 +35,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-cog"></i>
-                    <span>Product Management</span>
+                    <span>Setup</span>
                     <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -43,6 +43,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('categories') }}"><i class="fa fa-circle-o"></i> Category</a></li>
                     <li><a href="{{ url('manufactures') }}"><i class="fa fa-circle-o"></i> Brand</a></li>
+                    <li><a href="{{ url('products') }}"><i class="fa fa-circle-o"></i> Product</a></li>
                 </ul>
             </li>
 

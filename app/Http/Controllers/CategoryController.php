@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $header =[
-            'title'     => 'Product Management',
+            'title'     => 'Setup',
             'pageTitle' => 'Category',
             'createUrl' => 'categories/create',
             'modalSize' => 'modal-md',
