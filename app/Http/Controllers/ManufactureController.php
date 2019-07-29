@@ -16,10 +16,10 @@ class ManufactureController extends Controller
     public function index()
     {
         $header =[
-            'title'     => 'Setup',
-            'pageTitle' => 'Brand',
-            'createUrl' => 'manufactures/create',
-            'modalSize' => 'modal-md',
+            'title'      => 'Setup',
+            'pageTitle'  => 'Brand',
+            'createUrl'  => 'manufactures/create',
+            'modalSize'  => 'modal-md',
             'modalTitle' => 'Create New Brand',
         ];
         $brands = Manufacture::all();

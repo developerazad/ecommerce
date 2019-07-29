@@ -52,7 +52,7 @@
 <script>
     setTimeout(function () {
         $('.alert').hide();
-    },2000);
+    },5000);
 
 </script>
 </body>
