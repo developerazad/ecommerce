@@ -22,7 +22,7 @@ class ProductController extends Controller
             'modalTitle' => 'Create New Product',
         ];
         $products = Product::all();
-        return view('admin.productManagement.products.index', compact('products','header'));
+        return view('admin.setup.products.index', compact('products','header'));
     }
 
     /**

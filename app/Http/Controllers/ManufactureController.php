@@ -24,7 +24,7 @@ class ManufactureController extends Controller
         ];
         $brands = Manufacture::all();
         //$this->pr($brands);
-        return view('admin.productManagement.brands.index', compact('brands','header'));
+        return view('admin.setup.brands.index', compact('brands','header'));
     }
 
     /**
@@ -34,7 +34,7 @@ class ManufactureController extends Controller
      */
     public function create()
     {
-        return view('admin.productManagement.brands.create');
+        return view('admin.setup.brands.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class ManufactureController extends Controller
     {
         //return $id;
         $editData = Manufacture::find($id);//$this->pr($editData);
-        return view('admin.productManagement.brands.edit', compact('editData'));
+        return view('admin.setup.brands.edit', compact('editData'));
     }
 
     /**

@@ -17,7 +17,10 @@
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
-                                    <th>Description</th>
+                                    <th>Photo</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -27,7 +30,10 @@
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $row->product_name }}</td>
-                                    <td>{{ $row->product_desc }}</td>
+                                    <td>{{ $row->product_photo }}</td>
+                                    <td>{{ $row->category_id }}</td>
+                                    <td>{{ $row->manufactures_id }}</td>
+                                    <td>{{ $row->product_price }}</td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -42,13 +48,16 @@
                                 </tr>
                             @endforeach
                             </tbody>
-                            <tr>
-                                <th>Sl</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
                         </table>
                     </div>
                     <!-- /.box-body -->
