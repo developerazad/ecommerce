@@ -21,9 +21,10 @@ class ProductController extends Controller
             'pageTitle' => 'Product',
             'createUrl' => 'products/create',
             'modalSize' => 'modal-lg',
-            'modalTitle' => 'Create New Product',
+            'modalTitle' => 'Add new Product',
         ];
-        $products = Product::all();
+        $products = Product::allProductList();
+        //$this->pr($products);
         return view('admin.setup.products.index', compact('products','header'));
     }
 
@@ -34,10 +35,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products = Category::all();
+        $categories = Category::all();
         $manufactures = Manufacture::all();
         //$this->pr($products);
-        return view('admin.setup.products.create', compact('products','manufactures'));
+        return view('admin.setup.products.create', compact(' categories','manufactures'));
     }
 
     /**
@@ -69,7 +70,6 @@ class ProductController extends Controller
         $product->product_color = $request->input('product_color');
         $product->active_fg     = $request->input('active_fg');
         $product->product_desc  = $request->input('product_desc');
-        $product->product_name  = $request->input('product_name');
         $product->created_by    = auth()->user()->id;
         $product->save();
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $id)
+    public function show(Product $product)
     {
         //
     }
@@ -93,9 +93,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $id)
+    public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $manufactures = Manufacture::all();
+        $editData = Product::editProduct($id); //$this->pr($editData);
+        return view('admin.setup.products.edit', compact('categories','manufactures','editData'));
     }
 
     /**
@@ -105,9 +108,34 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $id)
+    public function update(Request $request, $id)
     {
-        //
+        if(!empty($request->file('photo'))) {
+            $fileWithExt = $request->file('photo')->getClientOriginalName();
+            $filename    = pathinfo($fileWithExt, PATHINFO_FILENAME);
+            $extension   = $request->file('photo')->getClientOriginalExtension();
+            $fileToStore = $filename . '_' . time() . '.' . $extension;
+            $destination = base_path() . '/public/uploads/products';
+            $request->file('photo')->move($destination, $fileToStore);
+        }
+        $data = array(
+            'product_name'  => $request->input('product_name'),
+            //'product_photo' => $fileToStore,
+            'category_id'   => $request->input('category_id'),
+            'manufactures_id' => $request->input('manufactures_id'),
+            'product_price' => $request->input('product_price'),
+            'product_size'  => $request->input('product_size'),
+            'product_color' => $request->input('product_color'),
+            'active_fg'     => $request->input('active_fg'),
+            'product_desc'  => $request->input('product_desc'),
+            'updated_by'    => auth()->user()->id,
+        );
+        $this->pr($data);
+//        $updateData = Product::updateProduct($data,$id);
+//        if($updateData){
+//            return redirect('products')->with('success','Product has been updated successfully');
+//        }
+
     }
 
     /**
@@ -116,7 +144,7 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $id)
+    public function destroy(Product $product)
     {
         //
     }

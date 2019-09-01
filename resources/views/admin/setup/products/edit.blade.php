@@ -1,11 +1,12 @@
-<form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ url('products/'.$editData->product_id) }}" method="post" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
     <div class="box-body">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name">
+                    <input type="text" class="form-control" name="product_name" value="{{ $editData->product_name }}" placeholder="Enter Product Name">
                 </div>
             </div>
             <div class="col-md-6">
@@ -22,7 +23,7 @@
                     <select name="category_id" class="form-control">
                         <option value="">-Select-</option>
                         @foreach($categories as $row)
-                            <option value="{{ $row->category_id }}">{{ $row->category_name }}</option>
+                            <option value="{{ $row->category_id }}" @if($editData->category_id==$row->category_id) selected @endif>{{ $row->category_name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -33,7 +34,7 @@
                     <select name="manufactures_id" class="form-control">
                         <option value="">-Select-</option>
                         @foreach($manufactures as $row)
-                            <option value="{{ $row->manufactures_id }}">{{ $row->manufactures_name }}</option>
+                            <option value="{{ $row->manufactures_id }}" @if($editData->manufactures_id==$row->manufactures_id) selected @endif>{{ $row->manufactures_name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -42,14 +43,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Price(TK)</label>
-                    <input type="number" min="1" class="form-control" name="product_price" placeholder="Enter Product Price">
+                    <label for="name">Price(Tk)</label>
+                    <input type="number" min="1" class="form-control" name="product_price" value="{{ $editData->product_price }}" placeholder="Enter Product Price">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Size</label>
-                    <input type="text" class="form-control" name="product_size" placeholder="Enter Product Size">
+                    <input type="text" class="form-control" name="product_size" value="{{ $editData->product_size }}" placeholder="Enter Product Size">
                 </div>
             </div>
         </div> <!-- /.row -->
@@ -57,15 +58,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Available Color</label>
-                    <input type="text" class="form-control" name="product_color" placeholder="Enter Product Color">
+                    <input type="text" class="form-control" name="product_color" value="{{ $editData->product_color }}" placeholder="Enter Product Color">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Active Status</label>
                     <select name="active_fg" class="form-control">
-                        <option value="1" selected>Active</option>
-                        <option value="0" >Inactive</option>
+                        <option value="1" @if($editData->active_fg==1) selected @endif >Active</option>
+                        <option value="0" @if($editData->active_fg==0) selected @endif >Inactive</option>
                     </select>
                 </div>
             </div>
@@ -74,7 +75,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="name">Description</label>
-                    <textarea name="product_desc" id="" class="form-control" placeholder="Enter Product Description"></textarea>
+                    <textarea name="product_desc" row="5" class="form-control" placeholder="Enter Product Description">{{ $editData->product_desc }}</textarea>
                 </div>
             </div>
         </div> <!-- /.row -->
