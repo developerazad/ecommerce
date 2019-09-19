@@ -1,4 +1,4 @@
-@extends('admin.dashboard.master')
+@extends('admin.layouts.master')
 
 @section('content')
     <!-- Main content -->
@@ -16,18 +16,26 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Brand Name</th>
-                                    <th>Description</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $key => $row)
+                            @foreach($products as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
+                                    <td>{{ $row->product_name }}</td>
+                                    <td>
+                                        <a href="{{ asset('uploads/products/'.$row->product_photo) }}" target="_blank"><img src="{{ asset('uploads/products/'.$row->product_photo) }}" alt="Product image" width="40px" height="40px"></a>
+                                    </td>
+                                    <td>{{ $row->category_name }}</td>
                                     <td>{{ $row->manufactures_name }}</td>
-                                    <td>{{ $row->manufactures_desc }}</td>
+                                    <td>{{ $row->product_price }}/- </td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -36,19 +44,22 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('manufactures/'.$row->manufactures_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->manufactures_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('delete-manufacture/'.$row->manufactures_id) }}" >Delete</button>
+                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('products/'.$row->product_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->product_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('delete-product/'.$row->product_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
-                            <tr>
-                                <th>Sl</th>
-                                <th>Brand Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
                         </table>
                     </div>
                     <!-- /.box-body -->

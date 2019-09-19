@@ -23,7 +23,7 @@ class CategoryController extends Controller
             'modalTitle' => 'Create New Category',
         ];
         $categories = Category::all(); //$this->pr($categories);
-        return view('admin.setup.categories.index',compact('categories','header'));
+        return view('admin.layouts.setup.categories.index',compact('categories','header'));
     }
 
     /**
@@ -33,7 +33,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.setup.categories.create');
+        return view('admin.layouts.setup.categories.create');
     }
 
     /**
@@ -73,7 +73,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $editData = Category::find($category->category_id);
-        return view('admin.setup.categories.edit',compact('editData'));
+        return view('admin.layouts.setup.categories.edit',compact('editData'));
     }
 
     /**

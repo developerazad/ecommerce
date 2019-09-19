@@ -35,12 +35,14 @@
             </section>
 
             @include('admin.inc.messages')
-            @include('admin.global.modal')
+            @include('admin.layouts.global.modal')
             @yield('content')
+
+            @include('admin.inc.mainFooter')
 
         </div>
     <!-- /.content-wrapper -->
-    @include('admin.inc.mainFooter')
+
 
 
 </div>

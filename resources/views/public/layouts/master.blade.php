@@ -26,23 +26,23 @@
 
 <body>
 <header id="header"><!--header-->
-    @include('inc.headerTop')
+    @include('public.inc.headerTop')
 
-    @include('inc.headerMiddle')
+    @include('public.inc.headerMiddle')
 
-    @include('inc.headerBottom')
+    @include('public.inc.headerBottom')
 </header><!--/header-->
 
-@include('inc.slider')
+@include('public.inc.slider')
 
 <section>
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    @include('inc.category')
-                    @include('inc.brand')
-                    @include('inc.priceRange')
+                    @include('public.inc.category')
+                    @include('public.inc.brand')
+                    @include('public.inc.priceRange')
                 </div>
             </div>
 
@@ -56,9 +56,9 @@
 </section>
 
 <footer id="footer"><!--Footer-->
-    @include('inc.footerTop')
-    @include('inc.footerWidget')
-    @include('inc.footerBottom')
+    @include('public.inc.footerTop')
+    @include('public.inc.footerWidget')
+    @include('public.inc.footerBottom')
 </footer><!--/Footer-->
 
 

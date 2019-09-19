@@ -18,8 +18,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// General User
-Route::get('/', 'FontendController@index');
 
 // =================== admin ===========================
 Route::get('/admin', 'AdminController@index');
@@ -36,5 +34,7 @@ Route::get('delete-manufacture/{id}','ManufactureController@destroy');
 Route::resource('products','ProductController');
 Route::get('delete-product/{id}','ProductController@destroy');
 
+// =================== public ==========================
+Route::get('/', 'FontendController@index');
 
 

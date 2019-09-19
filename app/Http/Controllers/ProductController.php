@@ -25,7 +25,7 @@ class ProductController extends Controller
         ];
         $products = Product::allProductList();
         //$this->pr($products);
-        return view('admin.setup.products.index', compact('products','header'));
+        return view('admin.layouts.setup.products.index', compact('products','header'));
     }
 
     /**
@@ -35,10 +35,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::categories();
         $manufactures = Manufacture::all();
-        //$this->pr($products);
-        return view('admin.setup.products.create', compact(' categories','manufactures'));
+        return view('admin.layouts.setup.products.create', compact(' categories','manufactures'));
     }
 
     /**
@@ -98,7 +97,7 @@ class ProductController extends Controller
         $categories = Category::all();
         $manufactures = Manufacture::all();
         $editData = Product::editProduct($id); //$this->pr($editData);
-        return view('admin.setup.products.edit', compact('categories','manufactures','editData'));
+        return view('admin.layouts.setup.products.edit', compact('categories','manufactures','editData'));
     }
 
     /**

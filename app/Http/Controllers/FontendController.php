@@ -16,7 +16,7 @@ class FontendController extends Controller
     {
         $categories = Fontend::getAllCategories();
         //$this->pr($categories);
-        return view('fontend', compact('categories'));
+        return view('public.layouts.home', compact('categories'));
     }
 
     /**
