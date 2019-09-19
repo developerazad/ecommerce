@@ -11,6 +11,15 @@
 <!-- iCheck -->
 <link rel="stylesheet" href="{{ asset('assets/admin/plugins/iCheck/square/blue.css') }}">
 
+<style>
+    .login-page{
+        height: auto;
+        background-image: url("{{ asset('assets/admin/login/login-bg.jpg') }}");
+        background-repeat: no-repeat;
+        background-size:cover ;
+    }
+</style>
+
 <body class="hold-transition login-page">
 
 <div class="login-box">
@@ -19,7 +28,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to your account</p>
+        <p class="login-box-msg">Administration Login</p>
 
         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
             @csrf
@@ -46,36 +55,29 @@
 
             </div>
             <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck form-check">
-                        <label>
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                        </label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
+                <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
-                <!-- /.col -->
             </div>
         </form>
 
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-                Facebook</a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                Google+</a>
-        </div>
+        {{--<div class="social-auth-links text-center">--}}
+            {{--<p>- OR -</p>--}}
+            {{--<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using--}}
+                {{--Facebook</a>--}}
+        {{--</div>--}}
         <!-- /.social-auth-links -->
         <div class="row">
-            <div class="col-xs-8">
-                <a href="{{ route('password.request') }}">Forgot your password</a>
+            <div class="col-xs-6">
+                <div class="checkbox icheck form-check">
+                    <label>
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                    </label>
+                </div>
             </div>
             <!-- /.col -->
-            <div class="col-xs-4">
-                <a href="#" class="">Sign Up</a>
+            <div class="col-xs-6" style="margin-top: 10px;">
+                <a href="{{ route('password.request') }}">Forgot your password</a>
             </div>
             <!-- /.col -->
         </div>
