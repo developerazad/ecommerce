@@ -103,7 +103,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category,$id)
     {
-        $category = Category::find($id);
+        $category = Category::find($id); 
         $category->delete();
         return redirect('categories')->with('success','Category has been deleted successfully');
     }
