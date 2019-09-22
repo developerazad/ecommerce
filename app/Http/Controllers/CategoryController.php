@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -20,9 +19,9 @@ class CategoryController extends Controller
             'pageTitle' => 'Category',
             'createUrl' => 'categories/create',
             'modalSize' => 'modal-md',
-            'modalTitle' => 'Create New Category',
+            'modalTitle'=> 'Create New Category',
         ];
-        $categories = Category::all(); //$this->pr($categories);
+        $categories = Category::categories();
         return view('admin.layouts.setup.categories.index',compact('categories','header'));
     }
 
@@ -44,13 +43,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category();
-        $category->category_name = $request->input('category_name');
-        $category->category_desc = $request->input('category_desc');
-        $category->active_fg     = $request->input('active_fg');
-        $category->created_by    = auth()->user()->id;
-        $category->save();
-        return redirect('categories')->with('success','Category has been added successfully');
+        $data = array(
+            'category_name' => $request->input('category_name'),
+            'category_desc' => $request->input('category_desc'),
+            'active_fg'     => $request->input('active_fg'),
+            'created_by'    => auth()->user()->id
+        );
+        $insert = Category::insert($data);
+        if($insert) {
+            return redirect('categories')->with('success', 'Category added successfully');
+        }
     }
 
     /**
@@ -59,7 +61,7 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
         //
     }
@@ -70,10 +72,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        $editData = Category::find($category->category_id);
-        return view('admin.layouts.setup.categories.edit',compact('editData'));
+        $category = Category::category($id);
+        return view('admin.layouts.setup.categories.edit',compact('category'));
     }
 
     /**
@@ -83,16 +85,19 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
 
-        $category = Category::find($category->category_id);
-        $category->category_name = $request->input('category_name');
-        $category->category_desc = $request->input('category_desc');
-        $category->active_fg     = $request->input('active_fg');
-        $category->updated_by    = auth()->user()->id;
-        $category->save();
-        return redirect('categories')->with('success','Category has been updated successfully');
+        $data = array(
+            'category_name' => $request->input('category_name'),
+            'category_desc' => $request->input('category_desc'),
+            'active_fg' => $request->input('active_fg'),
+            'updated_by' => auth()->user()->id
+        );
+        $updateCategory = Category::updateCategory($data, $id);
+        if ($updateCategory) {
+            return redirect('categories')->with('success', 'Category updated successfully');
+        }
     }
 
     /**
@@ -101,12 +106,14 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy($id)
     {
-        $category = Category::find($id); 
-        $category->delete();
-        return redirect('categories')->with('success','Category has been deleted successfully');
+        $deleteCategory = Category::deleteCategory($id);
+        if ($deleteCategory) {
+            return redirect('categories')->with('success', 'Category deleted successfully');
+        }
     }
+
 
 
 }

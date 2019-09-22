@@ -21,10 +21,9 @@ class ProductController extends Controller
             'pageTitle' => 'Product',
             'createUrl' => 'products/create',
             'modalSize' => 'modal-lg',
-            'modalTitle' => 'Add new Product',
+            'modalTitle' => 'Add New Product',
         ];
-        $products = Product::allProductList();
-        //$this->pr($products);
+        $products = Product::products();
         return view('admin.layouts.setup.products.index', compact('products','header'));
     }
 
@@ -36,8 +35,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::categories();
-        $manufactures = Manufacture::all();
-        return view('admin.layouts.setup.products.create', compact(' categories','manufactures'));
+        $manufactures = Manufacture::manufactures();
+        return view('admin.layouts.setup.products.create', compact('categories','manufactures'));
     }
 
     /**
@@ -49,30 +48,37 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         if(!empty($request->file('photo'))) {
+            // file with extension
             $fileWithExt = $request->file('photo')->getClientOriginalName();
+            // just file name
             $filename    = pathinfo($fileWithExt, PATHINFO_FILENAME);
+            // just extension
             $extension   = $request->file('photo')->getClientOriginalExtension();
+            // file to store
             $fileToStore = $filename . '_' . time() . '.' . $extension;
-            $destination = base_path() . '/public/uploads/products';
+            // move to directory
+            $destination = base_path() . '/public/uploads/products/';
             $request->file('photo')->move($destination, $fileToStore);
         }else{
             $fileToStore = '';
         }
 
-        $product = new Product();
-        $product->product_name  = $request->input('product_name');
-        $product->product_photo = $fileToStore;
-        $product->category_id   = $request->input('category_id');
-        $product->manufactures_id = $request->input('manufactures_id');
-        $product->product_price = $request->input('product_price');
-        $product->product_size  = $request->input('product_size');
-        $product->product_color = $request->input('product_color');
-        $product->active_fg     = $request->input('active_fg');
-        $product->product_desc  = $request->input('product_desc');
-        $product->created_by    = auth()->user()->id;
-        $product->save();
-
-        return redirect('products')->with('success','Product has been added successfully');
+        $data = array(
+            'product_name'    => $request->input('product_name'),
+            'product_photo'   => $fileToStore,
+            'category_id'     => $request->input('category_id'),
+            'manufactures_id' => $request->input('manufactures_id'),
+            'product_price'   => $request->input('product_price'),
+            'product_size'    => $request->input('product_size'),
+            'product_color'   => $request->input('product_color'),
+            'active_fg'       => $request->input('active_fg'),
+            'product_desc'    => $request->input('product_desc'),
+            'created_by'      => auth()->user()->id
+        );
+        $insert = Product::insert($data);
+        if($insert){
+            return redirect('products')->with('success','Product added successfully');
+        }
     }
 
     /**
@@ -94,10 +100,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
-        $manufactures = Manufacture::all();
-        $editData = Product::editProduct($id); //$this->pr($editData);
-        return view('admin.layouts.setup.products.edit', compact('categories','manufactures','editData'));
+        $categories = Category::categories();
+        $manufactures = Manufacture::manufactures();
+        $product = Product::product($id);
+        return view('admin.layouts.setup.products.edit', compact('categories','manufactures','product'));
     }
 
     /**
@@ -110,30 +116,36 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         if(!empty($request->file('photo'))) {
+            // file with extension
             $fileWithExt = $request->file('photo')->getClientOriginalName();
+            // just file name
             $filename    = pathinfo($fileWithExt, PATHINFO_FILENAME);
+            // just extension
             $extension   = $request->file('photo')->getClientOriginalExtension();
+            // file to store
             $fileToStore = $filename . '_' . time() . '.' . $extension;
-            $destination = base_path() . '/public/uploads/products';
+            // move to directory
+            $destination = base_path() . '/public/uploads/products/';
             $request->file('photo')->move($destination, $fileToStore);
         }
         $data = array(
-            'product_name'  => $request->input('product_name'),
-            //'product_photo' => $fileToStore,
-            'category_id'   => $request->input('category_id'),
+            'product_name'    => $request->input('product_name'),
+            'category_id'     => $request->input('category_id'),
             'manufactures_id' => $request->input('manufactures_id'),
-            'product_price' => $request->input('product_price'),
-            'product_size'  => $request->input('product_size'),
-            'product_color' => $request->input('product_color'),
-            'active_fg'     => $request->input('active_fg'),
-            'product_desc'  => $request->input('product_desc'),
-            'updated_by'    => auth()->user()->id,
+            'product_price'   => $request->input('product_price'),
+            'product_size'    => $request->input('product_size'),
+            'product_color'   => $request->input('product_color'),
+            'active_fg'       => $request->input('active_fg'),
+            'product_desc'    => $request->input('product_desc'),
+            'created_by'      => auth()->user()->id
         );
-        $this->pr($data);
-//        $updateData = Product::updateProduct($data,$id);
-//        if($updateData){
-//            return redirect('products')->with('success','Product has been updated successfully');
-//        }
+        if(!empty($request->file('photo'))){
+            $data['product_photo'] = $fileToStore;
+        }
+        $updateProduct = Product::updateProduct($data, $id);
+        if($updateProduct){
+            return redirect('products')->with('success','Product updated successfully');
+        }
 
     }
 
@@ -143,8 +155,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $deleteProduct = Product::deleteProduct($id);
+        if ($deleteProduct) {
+            return redirect('products')->with('success', 'Product deleted successfully');
+        }
     }
 }

@@ -1,5 +1,5 @@
 <form action="{{ route('categories.store') }}" method="post">
-    {{ csrf_field() }}
+    @csrf
     <div class="box-body">
         <div class="form-group">
             <label for="name">Name</label>

@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($brands as $key => $row)
+                            @foreach($manufactures as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $row->manufactures_name }}</td>

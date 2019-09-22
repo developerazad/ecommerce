@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Fontend;
 use Illuminate\Http\Request;
 use App\Manufacture;
 
@@ -20,11 +18,10 @@ class ManufactureController extends Controller
             'pageTitle'  => 'Brand',
             'createUrl'  => 'manufactures/create',
             'modalSize'  => 'modal-md',
-            'modalTitle' => 'Create New Brand',
+            'modalTitle' => 'Add New Brand',
         ];
-        $brands = Manufacture::all();
-        //$this->pr($brands);
-        return view('admin.layouts.setup.brands.index', compact('brands','header'));
+        $manufactures = Manufacture::manufactures();
+        return view('admin.layouts.setup.brands.index', compact('manufactures','header'));
     }
 
     /**
@@ -45,13 +42,16 @@ class ManufactureController extends Controller
      */
     public function store(Request $request)
     {
-        $manufacture = new Manufacture();
-        $manufacture->manufactures_name = $request->input('manufactures_name');
-        $manufacture->manufactures_desc = $request->input('manufactures_desc');
-        $manufacture->active_fg     = $request->input('active_fg');
-        $manufacture->created_by    = auth()->user()->id;
-        $manufacture->save();
-        return redirect('manufactures')->with('success','Brand has been added successfully');
+        $data = array(
+            'manufactures_name' => $request->input('manufactures_name'),
+            'manufactures_desc' => $request->input('manufactures_desc'),
+            'active_fg'         => $request->input('active_fg'),
+            'created_by'        => auth()->user()->id
+        );
+        $insert = Manufacture::insert($data);
+        if ($insert) {
+            return redirect('manufactures')->with('success', 'Brand added successfully');
+        }
     }
 
     /**
@@ -73,9 +73,8 @@ class ManufactureController extends Controller
      */
     public function edit($id)
     {
-        //return $id;
-        $editData = Manufacture::find($id);//$this->pr($editData);
-        return view('admin.layouts.setup.brands.edit', compact('editData'));
+        $manufacture = Manufacture::manufacture($id);
+        return view('admin.layouts.setup.brands.edit', compact('manufacture'));
     }
 
     /**
@@ -87,13 +86,16 @@ class ManufactureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $manufacture = Manufacture::find($id);
-        $manufacture->manufactures_name = $request->input('manufactures_name');
-        $manufacture->manufactures_desc = $request->input('manufactures_desc');
-        $manufacture->active_fg     = $request->input('active_fg');
-        $manufacture->updated_by    = auth()->user()->id;
-        $manufacture->save();
-        return redirect('manufactures')->with('success','Brand has been updated successfully');
+        $data = array(
+            'manufactures_name' => $request->input('manufactures_name'),
+            'manufactures_desc' => $request->input('manufactures_desc'),
+            'active_fg'         => $request->input('active_fg'),
+            'updated_by'        => auth()->user()->id
+        );
+        $updateManufacture = Manufacture::updateManufacture($data, $id);
+        if ($updateManufacture) {
+            return redirect('manufactures')->with('success', 'Brand updated successfully');
+        }
     }
 
     /**
@@ -104,9 +106,10 @@ class ManufactureController extends Controller
      */
     public function destroy($id)
     {
-        $manufacture = Manufacture::find($id);
-        $manufacture->delete();
-        return redirect('manufactures')->with('success','Brand has been deleted successfully');
+        $deleteManufacture = Manufacture::deleteManufacture($id);
+        if ($deleteManufacture){
+            return redirect('manufactures')->with('success','Brand deleted successfully');
+        }
     }
 
 }

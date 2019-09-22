@@ -5,13 +5,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name">
+                    <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Photo</label>
-                    <input type="file" class="form-control" name="photo" placeholder="upload photo">
+                    <input type="file" class="form-control" name="photo" placeholder="upload photo" required>
                 </div>
             </div>
         </div> <!-- /.row -->
@@ -19,18 +19,18 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Category</label>
-                    <select name="category_id" class="form-control">
+                    <select name="category_id" class="form-control" required>
                         <option value="">-Select-</option>
-                        {{--@foreach($categories as $row)--}}
-                            {{--<option value="{{ $row->category_id }}">{{ $row->category_name }}</option>--}}
-                        {{--@endforeach--}}
+                        @foreach($categories as $row)
+                            <option value="{{ $row->category_id }}">{{ $row->category_name }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Manufacturer</label>
-                    <select name="manufactures_id" class="form-control">
+                    <select name="manufactures_id" class="form-control" required>
                         <option value="">-Select-</option>
                         @foreach($manufactures as $row)
                             <option value="{{ $row->manufactures_id }}">{{ $row->manufactures_name }}</option>
@@ -43,7 +43,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Price(TK)</label>
-                    <input type="number" min="1" class="form-control" name="product_price" placeholder="Enter Product Price">
+                    <input type="number" min="10" class="form-control" name="product_price" placeholder="Enter Product Price" required>
                 </div>
             </div>
             <div class="col-md-6">
@@ -74,7 +74,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="name">Description</label>
-                    <textarea name="product_desc" id="" class="form-control" placeholder="Enter Product Description"></textarea>
+                    <textarea name="product_desc" row="7" class="form-control" placeholder="Enter Product Description"></textarea>
                 </div>
             </div>
         </div> <!-- /.row -->
