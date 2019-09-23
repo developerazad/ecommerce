@@ -19,7 +19,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// =================== admin ===========================
+/* =================== admin ==========================
+   ===================================================== */
 Route::get('/admin', 'AdminController@index');
 
 // category
@@ -34,7 +35,8 @@ Route::get('delete-manufacture/{id}','ManufactureController@destroy');
 Route::resource('products','ProductController');
 Route::get('delete-product/{id}','ProductController@destroy');
 
-// =================== public ==========================
+/* =================== public ==========================
+   ===================================================== */
 Route::get('/', 'FontendController@index');
 
 

@@ -14,7 +14,7 @@
 <style>
     .login-page{
         height: auto;
-        background-image: url("{{ asset('assets/admin/login/login-bg.jpg') }}");
+        background-color: #a9adb5;
         background-repeat: no-repeat;
         background-size:cover ;
     }
@@ -28,7 +28,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Administration Login</p>
+        <p class="login-box-msg">Administrative Login</p>
 
         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
             @csrf
