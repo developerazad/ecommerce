@@ -12,7 +12,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Photo</label>
-                    <input type="file" class="form-control" name="photo" placeholder="upload photo">
+                    <input type="file" class="form-control" id="photo" name="photo" placeholder="upload photo">
                     <a href="{{ asset('/uploads/products/'.$product->product_photo) }}" target="_blank"><img src="{{ asset('/uploads/products/'.$product->product_photo) }}" style="width: 30px;height: 30px;border:1px solid gray; " alt="product photo"></a>
                 </div>
             </div>
@@ -89,3 +89,20 @@
         <button type="submit" class="btn btn-primary pull-right">Submit</button>
     </div>
 </form>
+
+<!-- image upload validation -->
+<script>
+    $('#photo').bind('change', function () {
+        var fileSize = this.files[0].size;
+        var maxSize  = 500000; //500kb
+        var validExtension = ['jpg','JPG','jpeg','JPEG','png','PNG'];
+        if (fileSize > maxSize){
+            alert('Sorry! maximum upload size 500kb');
+            $('#photo').val('');
+        }
+        if($.inArray($(this).val().split('.').pop().toLowerCase(), validExtension) == -1){
+            alert('Only jpg, jpeg and png formats are allowed!');
+            $('#photo').val('');
+        }
+    })
+</script>
