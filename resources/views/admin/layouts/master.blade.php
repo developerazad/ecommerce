@@ -196,15 +196,20 @@
     };
 
     // delete row
-
     $(document).on('click', '.deleteRow', function () {
         var url = $(this).attr('data-action');
+        var _token = "{{ csrf_token() }}";
         var del = confirm('Are you sure want to delete ?');
 
         if(del){
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: url,
+                data:{
+                    _method: 'DELETE',
+                    _token: _token
+
+                },
                 success:function(data) {
                     location.reload();
                 }

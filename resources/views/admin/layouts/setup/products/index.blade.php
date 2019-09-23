@@ -45,7 +45,7 @@
                                     </td>
                                     <td>
                                         <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('products/'.$row->product_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->product_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('delete-product/'.$row->product_id) }}" >Delete</button>
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('products/'.$row->product_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
