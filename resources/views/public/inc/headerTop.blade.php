@@ -4,8 +4,8 @@
             <div class="col-sm-6">
                 <div class="contactinfo">
                     <ul class="nav nav-pills">
-                        <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> +880 1764761919</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> developerazad.hstu@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -15,8 +15,6 @@
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
             </div>

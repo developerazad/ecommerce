@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Shop Care</title>
     <link href="{{ asset('assets/fontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/fontend/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/fontend/css/prettyPhoto.css') }}" rel="stylesheet">
@@ -56,7 +56,6 @@
 </section>
 
 <footer id="footer"><!--Footer-->
-    @include('public.inc.footerTop')
     @include('public.inc.footerWidget')
     @include('public.inc.footerBottom')
 </footer><!--/Footer-->
