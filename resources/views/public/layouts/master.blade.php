@@ -33,7 +33,9 @@
     @include('public.inc.headerBottom')
 </header><!--/header-->
 
-@include('public.inc.slider')
+@if(Request::is('/'))
+    @include('public.inc.slider')
+@endif
 
 <section>
     <div class="container">

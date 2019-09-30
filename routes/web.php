@@ -22,18 +22,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* =================== admin ==========================
    ===================================================== */
 Route::get('/admin', 'AdminController@index');
-
-// category
 Route::resource('categories', 'CategoryController');
-
-// manufacture
 Route::resource('manufactures','ManufactureController');
-
-// product
 Route::resource('products','ProductController');
+
+
 
 /* =================== public ==========================
    ===================================================== */
-Route::get('/', 'FontendController@index');
+Route::get('/', 'PublicProductController@index');
+Route::get('/product-details/{productId}', 'PublicProductController@show');
 
 

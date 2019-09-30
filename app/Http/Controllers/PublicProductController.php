@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Fontend;
+use App\Manufacture;
+use App\PublicProduct;
 use Illuminate\Http\Request;
 
-class FontendController extends Controller
+class PublicProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class FontendController extends Controller
      */
     public function index()
     {
-        $categories = Fontend::getAllCategories();
-        //$this->pr($categories);
-        return view('public.layouts.home', compact('categories'));
+        $categories = PublicProduct::categories();
+        $brands = Manufacture::manufactures();
+        return view('public.layouts.home', compact('categories','brands'));
     }
 
     /**
@@ -43,21 +44,23 @@ class FontendController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Fontend  $fontend
+     * @param  \App\PublicProduct  $fontend
      * @return \Illuminate\Http\Response
      */
-    public function show(Fontend $fontend)
+    public function show($id)
     {
-        //
+        $categories = PublicProduct::categories();
+        $brands = Manufacture::manufactures();
+        return view('public.layouts.productDetails', compact('categories','brands'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Fontend  $fontend
+     * @param  \App\PublicProduct  $fontend
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fontend $fontend)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +69,10 @@ class FontendController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Fontend  $fontend
+     * @param  \App\PublicProduct  $fontend
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fontend $fontend)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +80,10 @@ class FontendController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Fontend  $fontend
+     * @param  \App\PublicProduct  $fontend
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fontend $fontend)
+    public function destroy($id)
     {
         //
     }

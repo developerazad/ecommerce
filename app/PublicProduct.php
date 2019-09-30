@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Fontend extends Model
+class PublicProduct extends Model
 {
     // get all categories
-    public static function getAllCategories(){
+    public static function categories(){
         return DB::table('categories')
             ->select('*')
             ->where('active_fg','=',1)
