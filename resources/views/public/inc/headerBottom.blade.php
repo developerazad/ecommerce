@@ -18,7 +18,7 @@
                                 <li><a href="shop.html">Products</a></li>
                                 <li><a href="{{ url('/product-details/1') }}">Product Details</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="{{ url('/carts') }}">Cart</a></li>
                                 <li><a href="login.html">Login</a></li>
                             </ul>
                         </li>

@@ -31,6 +31,7 @@ Route::resource('products','ProductController');
 /* =================== public ==========================
    ===================================================== */
 Route::get('/', 'PublicProductController@index');
-Route::get('/product-details/{productId}', 'PublicProductController@show');
+Route::get('product-details/{productId}', 'PublicProductController@show');
+Route::resource('carts', 'CartController');
 
 

@@ -2,6 +2,14 @@
 
 @section('content')
 
+    <section id="cart_items">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Product Details</li>
+            </ol>
+        </div>
+    </section>
     <div class="padding-right">
         <div class="product-details"><!--product-details-->
             <div class="col-sm-5">
