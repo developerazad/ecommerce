@@ -1,10 +1,5 @@
 @extends('public.layouts.master')
-<style>
-    .breadcrumbs .breadcrumb {
-        margin-top: 22px;
-        margin-bottom: 20px!important;
-    }
-</style>
+
 @section('content')
 
     <section id="cart_items">

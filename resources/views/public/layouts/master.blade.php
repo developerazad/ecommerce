@@ -24,10 +24,14 @@
     <link rel="apple-touch-icon-precomposed" href="{{URL::TO('assets/fontend/images/ico/apple-touch-icon-57-precomposed.png') }}">
 </head><!--/head-->
 <style>
-    @if(Request::is('product-details/1'))
+    @if(Request::is('/'))
         .left-sidebar h2{
-            margin-top: 30px;
+            margin-top: 0px!important;
         }
+    @else
+    .left-sidebar h2{
+        margin-top: 30px!important;
+    }
     @endif
      h2.title,
     .productinfo h2,
@@ -38,13 +42,21 @@
     }
     .add-to-cart,
     .breadcrumbs .breadcrumb li a,
-    .cart,
-    .view-product h3 {
+    .cart,.or,
+    #cart_items .cart_info .cart_menu,
+    .view-product h3,
+    .update, .check_out,
+    .login-form form button,
+    .signup-form form button {
         background: #00BCD4;
         color: #f9f9f9;
     }
     .breadcrumbs .breadcrumb li a:after{
         border-color: transparent transparent transparent #00BCD4;
+    }
+    .breadcrumbs .breadcrumb {
+        margin-top: 22px;
+        margin-bottom: 20px!important;
     }
 </style>
 <body>
