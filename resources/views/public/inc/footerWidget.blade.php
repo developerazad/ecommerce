@@ -1,3 +1,17 @@
+<style>
+    .searchform button {
+        background: #00BCD4;
+        border: medium none;
+        border-radius: 0;
+        margin-left: -4px;
+        margin-top: -3px;
+        margin-bottom: 0px;
+        padding: 7px 14px;
+    }
+    a#scrollUp{
+        background: #00BCD4;
+    }
+</style>
 <div class="footer-widget">
     <div class="container">
         <div class="row">

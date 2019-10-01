@@ -1,3 +1,8 @@
+<style>
+    .slider-selection {
+        background: none repeat scroll 0 0 #00BCD4;
+    }
+</style>
 <div class="price-range"><!--price-range-->
     <h2>Price Range</h2>
     <div class="well text-center">

@@ -1,4 +1,9 @@
-<section id="slider"><!--slider-->
+<style>
+    .get{
+        background: #00BCD4;
+    }
+</style>
+<section id="slider" style="margin: 20px 0"><!--slider-->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
