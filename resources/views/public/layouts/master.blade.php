@@ -26,11 +26,10 @@
 
 <body>
 <header id="header"><!--header-->
-    @include('public.inc.headerTop')
 
     @include('public.inc.headerMiddle')
-
     @include('public.inc.headerBottom')
+
 </header><!--/header-->
 
 @if(Request::is('/'))

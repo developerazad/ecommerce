@@ -19,7 +19,7 @@
                                 <li><a href="{{ url('/product-details/1') }}">Product Details</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="{{ url('/carts') }}">Cart</a></li>
-                                <li><a href="login.html">Login</a></li>
+                                <li><a href="{{ url('customers') }}">Login</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

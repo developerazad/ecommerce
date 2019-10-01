@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Cart;
+use Illuminate\Http\Request;
+use App\Customer;
 use App\PublicProduct;
 use App\Manufacture;
-use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class CartController extends Controller
     {
         $categories = PublicProduct::categories();
         $brands = Manufacture::manufactures();
-        return view('public.layouts.customers.carts', compact('categories', 'brands'));
+        return view('public.layouts.customers.loginRegister', compact('categories','brands'));
     }
 
     /**
@@ -45,7 +45,7 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,7 +56,7 @@ class CartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,7 +68,7 @@ class CartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -79,7 +79,7 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
