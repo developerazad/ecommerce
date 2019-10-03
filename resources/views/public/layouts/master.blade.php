@@ -58,6 +58,10 @@
         margin-top: 22px;
         margin-bottom: 20px!important;
     }
+    a#scrollUp {
+     -webkit-animation: bounce 0s ease infinite;
+     animation: bounce 0s ease infinite;
+    }
 </style>
 <body>
 <header id="header"><!--header-->
