@@ -1,5 +1,10 @@
 @extends('public.layouts.master')
-
+<style>
+    .add-to-cart{
+        padding: 4px 6px!important;
+        font-size: 12px!important;
+    }
+</style>
 @section('content')
 
     <section id="cart_items">
@@ -64,9 +69,10 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
+                     </a>               <h2>$569</h2>
                                     <p>Easy Polo Black Edition</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
                             </div>
@@ -79,6 +85,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt="" />
                      </a>               <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -92,6 +99,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend3.jpg') }}" alt="" />
                      </a>               <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -107,6 +115,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt="" />
                      </a>               <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -120,6 +129,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt="" />
                      </a>               <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -133,6 +143,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend3.jpg') }}" alt="" />
                      </a>               <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 

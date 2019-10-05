@@ -5,6 +5,7 @@
     }
     .add-to-cart{
         padding: 4px 6px!important;
+        font-size: 12px!important;
     }
 </style>
 @section('content')
@@ -18,6 +19,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product1.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -31,6 +33,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product2.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -44,6 +47,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product3.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -57,6 +61,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product4.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -71,6 +76,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product5.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -85,6 +91,7 @@
                         <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/product6.jpg') }}" alt="" /></a>
                         <h2>$56</h2>
                         <p>Easy Polo Black Edition</p>
+                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
 
@@ -113,6 +120,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery1.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -126,6 +134,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery2.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -139,6 +148,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery3.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -152,6 +162,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery4.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -168,6 +179,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery4.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -181,6 +193,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery3.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -194,6 +207,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery2.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -207,6 +221,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery1.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -223,6 +238,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery3.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -236,6 +252,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery4.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -249,6 +266,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery1.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -262,6 +280,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery2.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -278,6 +297,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery1.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -291,6 +311,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery2.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -304,6 +325,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery3.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -317,6 +339,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery4.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -333,6 +356,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery2.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -346,6 +370,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery4.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -359,6 +384,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery3.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -372,6 +398,7 @@
                                 <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/gallery1.jpg') }}" alt="" /></a>
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
+                                <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
 
@@ -395,6 +422,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -408,6 +436,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -421,6 +450,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend3.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -436,6 +466,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -449,6 +480,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
@@ -462,6 +494,7 @@
                                     <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend3.jpg') }}" alt=""/> </a>
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
+                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 

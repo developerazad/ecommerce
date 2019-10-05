@@ -66,7 +66,7 @@
 <body>
 <header id="header"><!--header-->
 
-    @include('public.inc.headerMiddle')
+    @include('public.inc.header')
 
 </header><!--/header-->
 

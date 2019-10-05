@@ -6,6 +6,10 @@
         background: none;
         color: #ffffff;
     }
+    .shop-menu ul li a:hover {
+        color:#2b2f2f;
+        background:none;
+    }
 </style>
 <div class="header-middle" style="background-color: #00BCD4;"><!--header-middle-->
     <div class="container">
@@ -22,7 +26,7 @@
                         <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="{{ url('carts') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                        <li><a href="{{ url('customers') }}"><i class="fa fa-lock"></i> Login</a></li>
+                        <li><a href="{{ url('customer-login') }}"><i class="fa fa-lock"></i> Login</a></li>
                     </ul>
                 </div>
             </div>

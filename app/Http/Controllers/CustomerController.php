@@ -16,9 +16,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $categories = PublicProduct::categories();
-        $brands = Manufacture::manufactures();
-        return view('public.layouts.customers.loginRegister', compact('categories','brands'));
+
     }
 
     /**
@@ -85,5 +83,11 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(){
+        $categories = PublicProduct::categories();
+        $brands = Manufacture::manufactures();
+        return view('public.layouts.customers.loginRegister', compact('categories','brands'));
     }
 }

@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  /*font-weight:400px;*/
 }
 
 ul li {
@@ -577,7 +576,7 @@ ul.sub-menu {
 }
 
 .carousel-indicators li.active {
-	  background: #FE980F;
+	  background: #00BCD4;
 }
 
 .item {
@@ -899,7 +898,7 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
+
 }
 
 .single-products:hover .product-overlay {
@@ -1016,7 +1015,7 @@ h2.title {
 }
 
 .category-tab ul  li  a:hover{
-	background:#FE980F;
+	background:#00BCD4;
 	color:#fff;
 }
 
@@ -1025,7 +1024,7 @@ h2.title {
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  background-color: #FE980F;
+  background-color: #00BCD4;
   border:0px;
   color: #FFFFFF;
   cursor: default;
@@ -1054,7 +1053,7 @@ h2.title {
 }
 
 .recommended-item-control i {
-  background: none repeat scroll 0 0 #FE980F;
+  background: none repeat scroll 0 0 #00BCD4;
   color: #FFFFFF;
   font-size: 20px;
   padding: 4px 10px;

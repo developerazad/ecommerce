@@ -33,6 +33,6 @@ Route::resource('products','ProductController');
 Route::get('/', 'PublicProductController@index');
 Route::get('product-details/{productId}', 'PublicProductController@show');
 Route::resource('carts', 'CartController');
-Route::resource('customers', 'CustomerController');
+Route::get('customer-login', 'CustomerController@login');
 
 
