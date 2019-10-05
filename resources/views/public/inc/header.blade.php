@@ -11,7 +11,7 @@
         background:none;
     }
 </style>
-<div class="header-middle" style="background-color: #00BCD4;"><!--header-middle-->
+<div class="header-middle" style="background-color: #0A27A9;"><!--header-middle-->
     <div class="container">
         <div class="row">
             <div class="col-sm-3">

@@ -23,8 +23,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/girl1.jpg') }}" class="girl img-responsive" alt="" />
-                                <img src="{{URL::TO('assets/fontend/images/home/pricing.png') }}"  class="pricing" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/s66.jpg') }}" class="girl img-responsive" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/1.png') }}"  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
@@ -35,8 +35,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/girl2.jpg') }}" class="girl img-responsive" alt="" />
-                                <img src="{{URL::TO('assets/fontend/images/home/pricing.png') }}"  class="pricing" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/s55.jpg') }}" class="girl img-responsive" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/2.png') }}"  class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -48,8 +48,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/girl3.jpg') }}" class="girl img-responsive" alt="" />
-                                <img src="{{URL::TO('assets/fontend/images/home/pricing.png') }}" class="pricing" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/s77.jpg') }}" class="girl img-responsive" alt="" />
+                                <img src="{{URL::TO('assets/fontend/images/home/3.png') }}" class="pricing" alt="" />
                             </div>
                         </div>
 

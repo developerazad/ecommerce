@@ -24,7 +24,7 @@
                     <tbody>
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="{{ asset('assets/fontend/images/cart/one.png') }}" alt=""></a>
+                            <a href=""><img src="{{ asset('assets/fontend/images/cart/1.jpg') }}" alt=""></a>
                         </td>
                         <td class="cart_description">
                             <h4><a href="">Colorblock Scuba</a></h4>
@@ -50,7 +50,7 @@
 
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="{{ asset('assets/fontend/images/cart/two.png') }}" alt=""></a>
+                            <a href=""><img src="{{ asset('assets/fontend/images/cart/2.jpg') }}" alt=""></a>
                         </td>
                         <td class="cart_description">
                             <h4><a href="">Colorblock Scuba</a></h4>
@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="{{ asset('assets/fontend/images/cart/three.p') }}ng" alt=""></a>
+                            <a href=""><img src="{{ asset('assets/fontend/images/cart/3.jpg') }}" alt=""></a>
                         </td>
                         <td class="cart_description">
                             <h4><a href="">Colorblock Scuba</a></h4>
