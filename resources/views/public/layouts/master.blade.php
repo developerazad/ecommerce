@@ -62,6 +62,31 @@
      -webkit-animation: bounce 0s ease infinite;
      animation: bounce 0s ease infinite;
     }
+    #cart_items .cart_info .cart_total_price{
+        color: #000;
+    }
+    .shop-menu ul li a:active{
+        color: #FFAC40;
+    }
+    .add-to-cart,
+    .breadcrumbs .breadcrumb li a,
+    .cart,
+    .get ,
+    .or,
+    #cart_items .cart_info .cart_menu,
+    .view-product h3,
+    .update,
+    .check_out,
+    .login-form form button,
+    .signup-form form button,
+    .carousel-indicators li.active,
+    .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus,
+    .recommended-item-control i,
+    .searchform button, .searchform button:focus,
+    a#scrollUp{
+        background: #0A27A9!important;
+        color: #f9f9f9;
+    }
 </style>
 <body>
 <header id="header"><!--header-->
@@ -81,7 +106,7 @@
                 <div class="left-sidebar">
                     @include('public.inc.category')
                     @include('public.inc.brand')
-                    @include('public.inc.priceRange')
+                    @include('public.inc.freeDelivery')
                 </div>
             </div>
 
