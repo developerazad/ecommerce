@@ -8,6 +8,10 @@
         width: 100px!important;
         height: 115px!important;
     }
+    .view-product img{
+        width: 276px!important;
+        height: 381px!important;
+    }
 </style>
 @section('content')
 
