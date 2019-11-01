@@ -11,9 +11,9 @@ class Product extends Model
     // product list
     public static function products(){
         return DB::table('products as p')
-            ->select('p.*','c.*','m.*')
+            ->select('p.*','c.*','b.*')
             ->leftJoin('categories as c','p.category_id','=','c.category_id')
-            ->leftJoin('manufactures as m','p.manufactures_id','=','m.manufactures_id')
+            ->leftJoin('brands as b','p.brand_id','=','b.brand_id')
             ->get();
 
     }

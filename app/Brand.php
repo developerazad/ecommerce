@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Brand extends Model
 {
+    protected $table = 'brands';
+    protected $guarded = ['brand_id'];
     public static function brands(){
         return DB::table('brands')->get();
     }

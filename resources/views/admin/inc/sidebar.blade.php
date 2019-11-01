@@ -42,7 +42,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('categories') }}"><i class="fa fa-circle-o"></i> Category</a></li>
-                    <li><a href="{{ url('manufactures') }}"><i class="fa fa-circle-o"></i> Brand</a></li>
+                    <li><a href="{{ url('brands') }}"><i class="fa fa-circle-o"></i> Brand</a></li>
                     <li><a href="{{ url('products') }}"><i class="fa fa-circle-o"></i> Product</a></li>
                 </ul>
             </li>

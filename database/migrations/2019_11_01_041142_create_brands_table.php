@@ -19,7 +19,7 @@ class CreateBrandsTable extends Migration
             $table->string('brand_desc');
             $table->integer('active_fg');
             $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

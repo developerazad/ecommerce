@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
-use App\Manufacture;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -35,8 +35,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::categories();
-        $manufactures = Manufacture::manufactures();
-        return view('admin.layouts.setup.products.create', compact('categories','manufactures'));
+        $brands = Brand::brands();
+        return view('admin.layouts.setup.products.create', compact('categories','brands'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ProductController extends Controller
             'product_name'    => $request->input('product_name'),
             'product_photo'   => $fileToStore,
             'category_id'     => $request->input('category_id'),
-            'manufactures_id' => $request->input('manufactures_id'),
+            'brand_id'        => $request->input('brand_id'),
             'product_price'   => $request->input('product_price'),
             'product_size'    => $request->input('product_size'),
             'product_color'   => $request->input('product_color'),
@@ -101,9 +101,9 @@ class ProductController extends Controller
     public function edit($id)
     {
         $categories = Category::categories();
-        $manufactures = Manufacture::manufactures();
+        $brands = Brand::brands();
         $product = Product::product($id);
-        return view('admin.layouts.setup.products.edit', compact('categories','manufactures','product'));
+        return view('admin.layouts.setup.products.edit', compact('categories','brands','product'));
     }
 
     /**
@@ -131,7 +131,7 @@ class ProductController extends Controller
         $data = array(
             'product_name'    => $request->input('product_name'),
             'category_id'     => $request->input('category_id'),
-            'manufactures_id' => $request->input('manufactures_id'),
+            'brand_id'        => $request->input('brand_id'),
             'product_price'   => $request->input('product_price'),
             'product_size'    => $request->input('product_size'),
             'product_color'   => $request->input('product_color'),

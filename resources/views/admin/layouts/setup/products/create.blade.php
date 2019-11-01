@@ -29,11 +29,11 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="description">Manufacturer</label>
+                    <label for="description">Brand</label>
                     <select name="manufactures_id" class="form-control" required>
                         <option value="">-Select-</option>
-                        @foreach($manufactures as $row)
-                            <option value="{{ $row->manufactures_id }}">{{ $row->manufactures_name }}</option>
+                        @foreach($brands as $row)
+                            <option value="{{ $row->brand_id }}">{{ $row->brand_name }}</option>
                         @endforeach
                     </select>
                 </div>

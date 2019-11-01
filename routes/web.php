@@ -19,11 +19,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-/* =================== admin ==========================
+/* =================== admin ===========================
    ===================================================== */
+
+
+/* =================== Setup =========================== */
 Route::get('/admin', 'AdminController@index');
 Route::resource('categories', 'CategoryController');
-Route::resource('manufactures','ManufactureController');
+Route::resource('brands','BrandController');
 Route::resource('products','ProductController');
 
 

@@ -34,7 +34,7 @@
                                         <a href="{{ asset('uploads/products/'.$row->product_photo) }}" target="_blank"><img src="{{ asset('uploads/products/'.$row->product_photo) }}" alt="Product image" width="40px" height="40px"></a>
                                     </td>
                                     <td>{{ $row->category_name }}</td>
-                                    <td>{{ $row->manufactures_name }}</td>
+                                    <td>{{ $row->brand_name }}</td>
                                     <td>{{ $row->product_price }}/- </td>
                                     <td>
                                         @if($row->active_fg==1)
