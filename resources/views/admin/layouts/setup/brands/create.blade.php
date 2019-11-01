@@ -1,13 +1,13 @@
-<form action="{{ route('manufactures.store') }}" method="post">
+<form action="{{ route('brands.store') }}" method="post">
     @csrf
     <div class="box-body">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="manufactures_name" id="manufactures_name" placeholder="Enter Brand Name" required>
+            <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand Name" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-control" name="manufactures_desc" id="manufactures_desc" placeholder="Enter Brand Description">
+            <input type="text" class="form-control" name="brand_desc" id="brand_desc" placeholder="Enter Brand Description">
         </div>
         <div class="form-group">
             <label for="status">Active Status</label>

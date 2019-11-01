@@ -23,11 +23,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($manufactures as $key => $row)
+                            @foreach($brands as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->manufactures_name }}</td>
-                                    <td>{{ $row->manufactures_desc }}</td>
+                                    <td>{{ $row->brand_name }}</td>brand
+                                    <td>{{ $row->brand_desc }}</td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -36,8 +36,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('manufactures/'.$row->manufactures_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->manufactures_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('manufactures/'.$row->manufactures_id) }}" >Delete</button>
+                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('brands/'.$row->brand_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->brand_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('brands/'.$row->brand_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
