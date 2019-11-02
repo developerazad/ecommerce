@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\PublicProduct;
-use App\Manufacture;
 
 class CustomerController extends Controller
 {
@@ -87,7 +87,7 @@ class CustomerController extends Controller
 
     public function login(){
         $categories = PublicProduct::categories();
-        $brands = Manufacture::manufactures();
+        $brands = Brand::brands();
         return view('public.layouts.customers.loginRegister', compact('categories','brands'));
     }
 }

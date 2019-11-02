@@ -62,8 +62,7 @@
                 @if(isset($header['createUrl']))
                 <ol class="breadcrumb">
                     <button type="button"
-                            id="addSomething"
-                            class="btn btn-primary btn-sm"
+                            class="btn btn-primary btn-sm add-new"
                             data-toggle="modal"
                             data-action="{{ url($header['createUrl']) }}"
                             data-modal="{{ $header['modalSize'] }}"
@@ -146,7 +145,7 @@
 </script>
 {{--add modal body by ajax--}}
 <script>
-    $(document).on('click','#addSomething', function () {
+    $(document).on('click','.add-new', function () {
         var actionUrl  = $(this).attr('data-action');
         var modalTitle = $(this).attr('data-title');
         $('.modal-title').text(modalTitle);

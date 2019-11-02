@@ -36,7 +36,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" id="addSomething" data-toggle="modal" data-action="{{ url('brands/'.$row->brand_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->brand_name }}" data-target="#myModal" class="btn btn-info btn-xs">Edit</button> |
+                                        <button type="button" data-toggle="modal" data-action="{{ url('brands/'.$row->brand_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->brand_name }}" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
                                         <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('brands/'.$row->brand_id) }}" >Delete</button>
                                     </td>
                                 </tr>

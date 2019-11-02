@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Manufacture;
+use App\Brand;
 use App\PublicProduct;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class PublicProductController extends Controller
     public function index()
     {
         $categories = PublicProduct::categories();
-        $brands = Manufacture::manufactures();
+        $brands = Brand::brands();
         return view('public.layouts.home', compact('categories','brands'));
     }
 
@@ -50,7 +50,7 @@ class PublicProductController extends Controller
     public function show($id)
     {
         $categories = PublicProduct::categories();
-        $brands = Manufacture::manufactures();
+        $brands = Brand::brands();
         return view('public.layouts.productDetails', compact('categories','brands'));
     }
 

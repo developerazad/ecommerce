@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Cart;
 use App\PublicProduct;
-use App\Manufacture;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -17,7 +17,7 @@ class CartController extends Controller
     public function index()
     {
         $categories = PublicProduct::categories();
-        $brands = Manufacture::manufactures();
+        $brands = Brand::brands();
         return view('public.layouts.customers.carts', compact('categories', 'brands'));
     }
 
