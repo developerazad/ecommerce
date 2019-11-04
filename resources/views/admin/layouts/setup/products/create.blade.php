@@ -19,7 +19,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Category</label>
-                    <select name="category_id" class="form-control" required>
+                    <select name="category_id" class="form-control select2" style="width: 100%" required>
                         <option value="">-Select-</option>
                         @foreach($categories as $row)
                             <option value="{{ $row->category_id }}">{{ $row->category_name }}</option>
@@ -83,8 +83,8 @@
     <!-- /.box-body -->
 
     <div class="box-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 </form>
 
@@ -104,4 +104,9 @@
             $('#photo').val('');
         }
     })
+</script>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2();
 </script>

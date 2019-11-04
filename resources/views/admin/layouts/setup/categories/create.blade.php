@@ -21,7 +21,7 @@
     <!-- /.box-body -->
 
     <div class="box-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 </form>

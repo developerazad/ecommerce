@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <!-- datatable css -->
     <link rel="stylesheet" href="{{ asset('assets/admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
-    <!-- select2 -->
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/bower_components/select2/dist/css/select2.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -125,7 +126,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
 <!-- select2 -->
-
+<script src="{{ asset('assets/admin/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 
 <!-- datatable -->
 <script src="{{ asset('assets/admin/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
@@ -141,7 +142,7 @@
             'info'        : true,
             'autoWidth'   : false
         })
-    })
+    });
 </script>
 {{--add modal body by ajax--}}
 <script>
