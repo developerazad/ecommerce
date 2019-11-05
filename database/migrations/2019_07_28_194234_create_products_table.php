@@ -18,14 +18,14 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->integer('category_id');
             $table->integer('brand_id');
-            $table->string('product_desc');
+            $table->string('product_desc')->nullable();
             $table->float('product_price');
             $table->string('product_photo');
-            $table->string('product_size');
-            $table->string('product_color');
+            $table->string('product_size')->nullable();
+            $table->string('product_color')->nullable();
             $table->integer('active_fg');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

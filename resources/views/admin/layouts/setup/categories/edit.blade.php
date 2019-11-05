@@ -13,13 +13,8 @@
         <div class="form-group">
             <label for="status">Active Status</label>
             <select name="active_fg" id="" class="form-control">
-                @if($category->active_fg==1)
-                    <option value="1" selected>Active</option>
-                    <option value="0" >Inactive</option>
-                @else
-                    <option value="1" >Active</option>
-                    <option value="0" selected>Inactive</option>
-                @endif
+                <option value="1" @if($category->active_fg==1) selected @endif>Active</option>
+                <option value="0" @if($category->active_fg==0) selected @endif>Inactive</option>
             </select>
         </div>
 

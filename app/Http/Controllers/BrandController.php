@@ -93,7 +93,7 @@ class BrandController extends Controller
             'active_fg'  => $request->input('active_fg'),
             'updated_by' => auth()->user()->id
         );
-        $updateBrand = Manufacture::updateBrand($data, $id);
+        $updateBrand = Brand::updateBrand($data, $id);
         if ($updateBrand) {
             return redirect('brands')->with('success', 'Brand updated successfully');
         }

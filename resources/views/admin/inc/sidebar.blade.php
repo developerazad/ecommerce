@@ -35,6 +35,23 @@
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-cog"></i>
+                    <span>Access Control</span>
+                    <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Modules</a></li>
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Module Links</a></li>
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> User Groups</a></li>
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Users</a></li>
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Role Assign</a></li>
+                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Lookup Groups</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="glyphicon glyphicon-wrench"></i>
                     <span>Setup</span>
                     <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>

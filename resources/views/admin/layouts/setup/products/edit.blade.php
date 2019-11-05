@@ -32,10 +32,10 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Brand</label>
-                    <select name="manufactures_id" class="form-control" required>
+                    <select name="brand_id" class="form-control" required>
                         <option value="">-Select-</option>
                         @foreach($brands as $row)
-                            <option value="{{ $row->brand_id }}" @if($product->brand_id==$row->brand_id) selected @endif>{{ $row->manufactures_name }}</option>
+                            <option value="{{ $row->brand_id }}" @if($product->brand_id==$row->brand_id) selected @endif>{{ $row->brand_name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -91,6 +91,22 @@
 </form>
 
 <!-- image upload validation -->
+<script>
+    $('#photo').bind('change', function () {
+        var fileSize = this.files[0].size;
+        var maxSize  = 500000; //500kb
+        var validExtension = ['jpg','JPG','jpeg','JPEG','png','PNG'];
+        if (fileSize > maxSize){
+            alert('Sorry! maximum upload size 500kb');
+            $('#photo').val('');
+        }
+        if($.inArray($(this).val().split('.').pop().toLowerCase(), validExtension) == -1){
+            alert('Only jpg, jpeg and png formats are allowed!');
+            $('#photo').val('');
+        }
+    })
+</script>
+<!--image upload validation-->
 <script>
     $('#photo').bind('change', function () {
         var fileSize = this.files[0].size;

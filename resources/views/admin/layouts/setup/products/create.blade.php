@@ -30,7 +30,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Brand</label>
-                    <select name="manufactures_id" class="form-control" required>
+                    <select name="brand_id" class="form-control" required>
                         <option value="">-Select-</option>
                         @foreach($brands as $row)
                             <option value="{{ $row->brand_id }}">{{ $row->brand_name }}</option>
@@ -104,9 +104,4 @@
             $('#photo').val('');
         }
     })
-</script>
-<script>
-$(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2();
 </script>
