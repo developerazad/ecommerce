@@ -14,7 +14,15 @@ class UserGroupController extends Controller
      */
     public function index()
     {
-        //
+        $header =[
+            'title'      => 'Access Control',
+            'pageTitle'  => 'User Groups',
+            'createUrl'  => 'user-groups/create',
+            'modalSize'  => 'modal-md',
+            'modalTitle' => 'Add New User Group',
+        ];
+        $groups = UserGroup::groups();
+        return view('admin.layouts.accessControl.userGroups.index', compact('groups','header'));
     }
 
     /**
@@ -24,7 +32,7 @@ class UserGroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.layouts.accessControl.userGroups.create');
     }
 
     /**
@@ -35,7 +43,17 @@ class UserGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = array(
+            'user_group_name'=> $request->input('user_group_name'),
+            'user_group_key' => $request->input('user_group_key'),
+            'userdsl_no'     => $request->input('userdsl_no'),
+            'active_fg'      => $request->input('active_fg'),
+            'created_by'     => auth()->user()->id
+        );
+        $insert = UserGroup::insert($data);
+        if ($insert) {
+            return redirect('user-groups')->with('success', 'Group added successfully');
+        }
     }
 
     /**
@@ -44,7 +62,7 @@ class UserGroupController extends Controller
      * @param  \App\UserGroup  $userGroup
      * @return \Illuminate\Http\Response
      */
-    public function show(UserGroup $userGroup)
+    public function show($id)
     {
         //
     }
@@ -55,9 +73,10 @@ class UserGroupController extends Controller
      * @param  \App\UserGroup  $userGroup
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserGroup $userGroup)
+    public function edit($id)
     {
-        //
+        $group = UserGroup::group($id);
+        return view('admin.layouts.accessControl.userGroups.edit', compact('group'));
     }
 
     /**
@@ -67,9 +86,19 @@ class UserGroupController extends Controller
      * @param  \App\UserGroup  $userGroup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserGroup $userGroup)
+    public function update(Request $request, $id)
     {
-        //
+        $data = array(
+            'user_group_name'=> $request->input('user_group_name'),
+            'user_group_key' => $request->input('user_group_key'),
+            'userdsl_no'     => $request->input('userdsl_no'),
+            'active_fg'      => $request->input('active_fg'),
+            'updated_by'     => auth()->user()->id
+        );
+        $updateGroup = UserGroup::updateGroup($data, $id);
+        if ($updateGroup) {
+            return redirect('user-groups')->with('success', 'Group updated successfully');
+        }
     }
 
     /**
@@ -78,8 +107,11 @@ class UserGroupController extends Controller
      * @param  \App\UserGroup  $userGroup
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserGroup $userGroup)
+    public function destroy($id)
     {
-        //
+        $deleteGroup = UserGroup::deleteGroup($id);
+        if ($deleteGroup){
+            return redirect('user-groups')->with('success','Group deleted successfully');
+        }
     }
 }

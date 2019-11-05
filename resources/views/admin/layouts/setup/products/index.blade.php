@@ -50,6 +50,7 @@
                                 </tr>
                             @endforeach
                             </tbody>
+                            <tfoot>
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
@@ -60,6 +61,7 @@
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- /.box-body -->

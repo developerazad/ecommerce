@@ -42,13 +42,15 @@
                                 </tr>
                             @endforeach
                             </tbody>
-                            <tr>
-                                <th>Sl</th>
-                                <th>Brand Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Brand Name</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- /.box-body -->

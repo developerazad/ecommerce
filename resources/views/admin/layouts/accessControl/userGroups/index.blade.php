@@ -8,7 +8,7 @@
 
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Module List</h3>
+                        <h3 class="box-title">User Group List</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -16,18 +16,18 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Module Name</th>
-                                    <th>Icon</th>
+                                    <th>Group Name</th>
+                                    <th>Group Key</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($modules as $key => $row)
+                            @foreach($groups as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->module_name }}</td>
-                                    <td>{{ $row->module_icon }}</td>
+                                    <td>{{ $row->user_group_name }}</td>
+                                    <td>{{ $row->user_group_key }}</td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -36,8 +36,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-action="{{ url('modules/'.$row->module_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->module_name }}" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('modules/'.$row->module_id) }}" >Delete</button>
+                                        <button type="button" data-toggle="modal" data-action="{{ url('user-groups/'.$row->user_group_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->user_group_name }}" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('user-groups/'.$row->user_group_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -45,8 +45,8 @@
                             <tfoot>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Module Name</th>
-                                    <th>Icon</th>
+                                    <th>Group Name</th>
+                                    <th>Group Key</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>

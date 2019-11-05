@@ -44,14 +44,16 @@
                                 </tr>
                             @endforeach
                             </tbody>
-                            <tr>
-                                <th>Sl</th>
-                                <th>Name</th>
-                                <th>Route</th>
-                                <th>Controller@method</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Name</th>
+                                    <th>Route</th>
+                                    <th>Controller@method</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- /.box-body -->
