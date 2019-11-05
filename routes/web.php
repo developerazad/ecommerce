@@ -22,8 +22,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* =================== admin ===========================
    ===================================================== */
 
+/* =================== Access Control=================== */
+
+Route::resource('modules', 'ModuleController');
+Route::resource('module-links', 'ModuleLinkController');
+Route::resource('user-groups', 'UserGroupController');
+
 
 /* =================== Setup =========================== */
+
 Route::get('/admin', 'AdminController@index');
 Route::resource('categories', 'CategoryController');
 Route::resource('brands','BrandController');

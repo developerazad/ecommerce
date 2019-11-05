@@ -38,15 +38,15 @@
                     <span>Access Control</span>
                     <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Modules</a></li>
-                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Module Links</a></li>
-                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> User Groups</a></li>
-                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Users</a></li>
-                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Role Assign</a></li>
-                    <li><a href="{{ url('modules') }}"><i class="fa fa-circle-o"></i> Lookup Groups</a></li>
+                    <li><a href="{{ url('module-links') }}"><i class="fa fa-circle-o"></i> Module Links</a></li>
+                    <li><a href="{{ url('user-groups') }}"><i class="fa fa-circle-o"></i> User Groups</a></li>
+                    <li><a href="{{ url('users') }}"><i class="fa fa-circle-o"></i> Users</a></li>
+                    <li><a href="{{ url('role-assign') }}"><i class="fa fa-circle-o"></i> Role Assign</a></li>
+                    <li><a href="{{ url('lookup-groups') }}"><i class="fa fa-circle-o"></i> Lookup Groups</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -55,7 +55,7 @@
                     <span>Setup</span>
                     <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('categories') }}"><i class="fa fa-circle-o"></i> Category</a></li>
