@@ -13,8 +13,19 @@ class CreateRoleAssignsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ac_role_assigns', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('ac_group_links', function (Blueprint $table) {
+            $table->increments('group_link_id');
+            $table->integer('user_group_id');
+            $table->integer('module_id');
+            $table->integer('modlink_id');
+            $table->integer('user_id');
+            $table->integer('create_fg')->default(0);
+            $table->integer('read_fg')->default(0);
+            $table->integer('update_fg')->default(0);
+            $table->integer('delete_fg')->default(0);
+            $table->integer('active_fg')->default(1);
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

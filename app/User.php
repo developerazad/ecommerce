@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -14,6 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'ac_users';
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -26,4 +29,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /*===============================crude===================*/
+    public static function users(){
+        return DB::table('ac_users as u')
+            ->select('u.*', 'ug.user_group_name')
+            ->leftJoin('ac_user_groups as ug', 'u.user_group_id', '=', 'ug.user_group_id')
+            ->get();
+    }
+    public static function insert($data){
+        return DB::table('ac_users')->insert($data);
+    }
+    public static function user($id){
+        return DB::table('ac_users')->where('user_id', $id)->first();
+    }
+    public static function updateUser($data, $id){
+        return DB::table('ac_users')->where('user_id', $id)->update($data);
+    }
+    public static function deleteUser($id){
+        return DB::table('ac_users')->where('user_id', $id)->delete();
+    }
 }

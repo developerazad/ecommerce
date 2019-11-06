@@ -8,7 +8,7 @@
 
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Module List</h3>
+                        <h3 class="box-title">Module Links list</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -16,18 +16,20 @@
                             <thead class="bg-primary">
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Module Name</th>
-                                    <th>Icon</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>User Group</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($modules as $key => $row)
+                            @foreach($users as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->module_name }}</td>
-                                    <td>{{ $row->module_icon }}</td>
+                                    <td>{{ $row->name }}</td>
+                                    <td>{{ $row->email }}</td>
+                                    <td>{{ $row->user_group_name }}</td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>
@@ -36,20 +38,21 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-action="{{ url('modules/'.$row->module_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->module_name }}" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('modules/'.$row->module_id) }}" >Delete</button>
+                                        <button type="button" data-toggle="modal" data-action="{{ url('users/'.$row->user_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit User [{{ $row->name }}]" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('users/'.$row->user_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                             <tfoot>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Module Name</th>
-                                    <th>Icon</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>User Group</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
                             </tfoot>
                         </table>
                     </div>

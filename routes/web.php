@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('modules', 'ModuleController');
 Route::resource('module-links', 'ModuleLinkController');
+Route::resource('users', 'UserController');
 Route::resource('user-groups', 'UserGroupController');
 
 

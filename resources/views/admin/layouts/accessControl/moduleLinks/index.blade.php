@@ -13,7 +13,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
-                            <thead>
+                            <thead class="bg-primary">
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
