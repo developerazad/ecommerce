@@ -45,7 +45,7 @@
                     <li><a href="{{ url('module-links') }}"><i class="fa fa-circle-o"></i> Module Links</a></li>
                     <li><a href="{{ url('user-groups') }}"><i class="fa fa-circle-o"></i> User Groups</a></li>
                     <li><a href="{{ url('users') }}"><i class="fa fa-circle-o"></i> Users</a></li>
-                    <li><a href="{{ url('role-assign') }}"><i class="fa fa-circle-o"></i> Role Assign</a></li>
+                    <li><a href="{{ url('module-assign') }}"><i class="fa fa-circle-o"></i> Module Assign</a></li>
                     <li><a href="{{ url('lookup-groups') }}"><i class="fa fa-circle-o"></i> Lookup Groups</a></li>
                 </ul>
             </li>

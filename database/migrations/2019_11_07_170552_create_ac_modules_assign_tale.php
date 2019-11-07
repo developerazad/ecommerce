@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoleAssignsTable extends Migration
+class CreateAcModulesAssignTale extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateRoleAssignsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ac_group_links', function (Blueprint $table) {
-            $table->increments('group_link_id');
+        Schema::create('ac_modules_assign', function (Blueprint $table) {
+            $table->increments('module_assign_id');
             $table->integer('user_group_id');
             $table->integer('module_id');
             $table->integer('modlink_id');
@@ -37,6 +37,6 @@ class CreateRoleAssignsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_assigns');
+        Schema::dropIfExists('ac_modules_assign');
     }
 }

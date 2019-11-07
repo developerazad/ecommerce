@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\RoleAssign;
+use App\ModuleAssign;
 use Illuminate\Http\Request;
 
-class RoleAssignController extends Controller
+class ModuleAssignController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class RoleAssignController extends Controller
      */
     public function index()
     {
-        //
+        $header =[
+            'title'      => 'Access Control',
+            'pageTitle'  => 'Module Assign'
+        ];
+        return view('admin.layouts.accessControl.modulesAssign.index', compact('header'));
     }
 
     /**
@@ -41,7 +45,7 @@ class RoleAssignController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\RoleAssign  $roleAssign
+     * @param  \App\ModuleAssign  $roleAssign
      * @return \Illuminate\Http\Response
      */
     public function show(RoleAssign $roleAssign)
@@ -52,7 +56,7 @@ class RoleAssignController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RoleAssign  $roleAssign
+     * @param  \App\ModuleAssign  $roleAssign
      * @return \Illuminate\Http\Response
      */
     public function edit(RoleAssign $roleAssign)
@@ -64,7 +68,7 @@ class RoleAssignController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RoleAssign  $roleAssign
+     * @param  \App\ModuleAssign  $roleAssign
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, RoleAssign $roleAssign)
@@ -75,7 +79,7 @@ class RoleAssignController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RoleAssign  $roleAssign
+     * @param  \App\ModuleAssign  $roleAssign
      * @return \Illuminate\Http\Response
      */
     public function destroy(RoleAssign $roleAssign)
