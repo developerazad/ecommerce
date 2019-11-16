@@ -1,6 +1,5 @@
 <h2>Category</h2>
 <div class="panel-group category-products" id="accordian" ><!--category-products-->
-
     @foreach($categories as $category)
     <div class="panel panel-default">
         <div class="panel-heading">

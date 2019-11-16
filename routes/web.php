@@ -49,4 +49,5 @@ Route::get('customer-login', 'CustomerController@login');
 
 
 Route::get('category-wise-search/{category_id}', 'CategoryController@categoryWiseSearch');
+Route::get('brand-wise-search/{brand_id}', 'BrandController@brandWiseSearch');
 

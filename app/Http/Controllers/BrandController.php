@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -111,5 +113,14 @@ class BrandController extends Controller
         if ($deleteBrand){
             return redirect('brands')->with('success','Brand deleted successfully');
         }
+    }
+
+    // Brand wise search
+    public function brandWiseSearch($id)
+    {
+        $categories = Category::categories();
+        $brands     = Brand::brands();
+        $products   = Product::brandWiseProducts($id);
+        return view('public.layouts.brandWiseSearch', compact('categories','brands','products'));
     }
 }
