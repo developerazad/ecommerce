@@ -26,7 +26,7 @@
                             @foreach($brands as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->brand_name }}</td>brand
+                                    <td>{{ $row->brand_name }}</td>
                                     <td>{{ $row->brand_desc }}</td>
                                     <td>
                                         @if($row->active_fg==1)

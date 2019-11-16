@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Category;
+use App\Product;
 use App\PublicProduct;
 use Illuminate\Http\Request;
 
@@ -15,9 +17,10 @@ class PublicProductController extends Controller
      */
     public function index()
     {
-        $categories = PublicProduct::categories();
-        $brands = Brand::brands();
-        return view('public.layouts.home', compact('categories','brands'));
+        $categories = Category::categories();
+        $brands     = Brand::brands();
+        $products   = Product::products();
+        return view('public.layouts.home', compact('categories','brands','products'));
     }
 
     /**
