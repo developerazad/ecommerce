@@ -27,7 +27,7 @@
         <div class="product-details"><!--product-details-->
             <div class="col-sm-5">
                 <div class="view-product">
-                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/m.jpg') }}" alt=""></a>
+                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('uploads/products/'.$product->product_photo) }}" alt="product-photo"></a>
                     <h3>ZOOM</h3>
                 </div>
                 <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -45,13 +45,13 @@
             <div class="col-sm-7">
                 <div class="product-information"><!--/product-information-->
                     <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/new.jpg') }}" class="newarrival" alt=""></a>
-                    <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                    <p>Web ID: 1089772</p>
-                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/rating.png') }}" alt=""></a>
+                    <h2>{{ $product->product_name }}</h2>
+                    <p>Web ID: {{ $product->product_code }}</p>
+                    <img src="{{ asset('assets/fontend/images/product-details/rating.png') }}" alt="Rating">
                     <span>
-									<span>US $59</span>
+									<span>US ${{ $product->product_price }}</span>
 									<label>Quantity:</label>
-									<input type="text" value="3">
+									<input type="text" value="1">
 									<button type="button" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
@@ -66,107 +66,25 @@
         </div><!--/product-details-->
 
     </div>
-    <div class="recommended_items"><!--recommended_items-->
-        <h2 class="title text-center">recommended items</h2>
-
-        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                        <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-
-                            </div>
+    <div class="recommended_items"><!--related_items-->
+        <h2 class="title text-center">Related Items</h2>
+        @foreach($relatedProducts as $product)
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <a href="{{ url('product-details/'.$product->product_id) }}"><img src="{{asset('uploads/products/'.$product->product_photo) }}" alt="" /></a>
+                            <h2>${{ $product->product_price }}</h2>
+                            <p>{{ $product->product_name }}</p>
+                            <a href="{{ url('product-details/'.$product->product_id) }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
+                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend3.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend1.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="{{ url('product-details/1') }}"><img src="{{asset('assets/fontend/images/home/recommend2.jpg') }}" alt="" />
-                     </a>               <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="{{ url('product-details/1') }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div>
-    </div><!--/recommended_items-->
+        @endforeach
+
+    </div><!--/related_items-->
 
 @endsection

@@ -26,7 +26,7 @@
 <style>
     @if(Request::is('/'))
         .left-sidebar h2{
-            margin-top: 0px!important;
+            margin-top: 0!important;
         }
     @else
     .left-sidebar h2{

@@ -52,9 +52,11 @@ class PublicProductController extends Controller
      */
     public function show($id)
     {
-        $categories = PublicProduct::categories();
-        $brands = Brand::brands();
-        return view('public.layouts.productDetails', compact('categories','brands'));
+        $categories        = PublicProduct::categories();
+        $brands            = Brand::brands();
+        $relatedProducts   = Product::products();
+        $product           = Product::product($id);
+        return view('public.layouts.productDetails', compact('categories','brands','relatedProducts', 'product'));
     }
 
     /**

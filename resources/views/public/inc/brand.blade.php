@@ -3,7 +3,7 @@
     <div class="brands-name">
         <ul class="nav nav-pills nav-stacked">
             @foreach($brands as $brand)
-            <li><a href="#"> <span class="pull-right">(50)</span>{{ $brand->brand_name }}</a></li>
+            <li><a href="{{ url('brand-wise-search/'.$brand->brand_id) }}"> <span class="pull-right">(50)</span>{{ $brand->brand_name }}</a></li>
             @endforeach
         </ul>
     </div>

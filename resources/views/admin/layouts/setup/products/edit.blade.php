@@ -50,16 +50,16 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="description">Size</label>
-                    <input type="text" class="form-control" name="product_size" value="{{ $product->product_size }}" placeholder="Enter Product Size">
+                    <label for="description">Product Code</label>
+                    <input type="text" class="form-control" name="product_code" value="{{ $product->product_code }}" placeholder="Enter Product Code">
                 </div>
             </div>
         </div> <!-- /.row -->
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Available Color</label>
-                    <input type="text" class="form-control" name="product_color" value="{{ $product->product_color }}" placeholder="Enter Product Color">
+                    <label for="name">Product Remarks</label>
+                    <input type="text" class="form-control" name="product_remarks" value="{{ $product->product_remarks }}" placeholder="Enter Product Remarks">
                 </div>
             </div>
             <div class="col-md-6">

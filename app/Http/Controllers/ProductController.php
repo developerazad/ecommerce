@@ -69,8 +69,8 @@ class ProductController extends Controller
             'category_id'     => $request->input('category_id'),
             'brand_id'        => $request->input('brand_id'),
             'product_price'   => $request->input('product_price'),
-            'product_size'    => $request->input('product_size'),
-            'product_color'   => $request->input('product_color'),
+            'product_code'    => $request->input('product_code'),
+            'product_remarks' => $request->input('product_remarks'),
             'active_fg'       => $request->input('active_fg'),
             'product_desc'    => $request->input('product_desc'),
             'created_by'      => auth()->user()->id
@@ -133,8 +133,8 @@ class ProductController extends Controller
             'category_id'     => $request->input('category_id'),
             'brand_id'        => $request->input('brand_id'),
             'product_price'   => $request->input('product_price'),
-            'product_size'    => $request->input('product_size'),
-            'product_color'   => $request->input('product_color'),
+            'product_code'    => $request->input('product_code'),
+            'product_remarks' => $request->input('product_remarks'),
             'active_fg'       => $request->input('active_fg'),
             'product_desc'    => $request->input('product_desc'),
             'created_by'      => auth()->user()->id
