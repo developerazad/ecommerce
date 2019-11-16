@@ -32,4 +32,16 @@ class Product extends Model
     public static function deleteProduct($id){
         return DB::table('products')->where('product_id', $id)->delete();
     }
+
+    // Category wise products
+    public static function categoryWiseProducts($id){
+        return DB::table('products as p')
+            ->select('p.*','c.*','b.*')
+            ->leftJoin('categories as c','p.category_id','=','c.category_id')
+            ->leftJoin('brands as b','p.brand_id','=','b.brand_id')
+            ->where('p.category_id', $id)
+            ->get();
+
+    }
+
 }

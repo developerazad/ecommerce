@@ -48,3 +48,5 @@ Route::resource('carts', 'CartController');
 Route::get('customer-login', 'CustomerController@login');
 
 
+Route::get('category-wise-search/{category_id}', 'CategoryController@categoryWiseSearch');
+

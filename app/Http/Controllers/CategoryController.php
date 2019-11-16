@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Brand;
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -112,6 +114,14 @@ class CategoryController extends Controller
         if ($deleteCategory) {
             return redirect('categories')->with('success', 'Category deleted successfully');
         }
+    }
+
+    public function categoryWiseSearch($id)
+    {
+        $categories = Category::categories();
+        $brands     = Brand::brands();
+        $products   = Product::categoryWiseProducts($id);
+        return view('public.layouts.categoryWiseSearch', compact('categories','brands','products'));
     }
 
 
