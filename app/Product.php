@@ -14,6 +14,7 @@ class Product extends Model
             ->select('p.*','c.*','b.*')
             ->leftJoin('categories as c','p.category_id','=','c.category_id')
             ->leftJoin('brands as b','p.brand_id','=','b.brand_id')
+            ->orderBy('p.product_id', 'desc')
             ->get();
 
     }

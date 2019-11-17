@@ -35,7 +35,7 @@
                                     </td>
                                     <td>{{ $row->category_name }}</td>
                                     <td>{{ $row->brand_name }}</td>
-                                    <td>{{ $row->product_price }}/- </td>
+                                    <td>${{ $row->product_price }} </td>
                                     <td>
                                         @if($row->active_fg==1)
                                             <button type="button" class="btn btn-primary btn-xs">Active</button>

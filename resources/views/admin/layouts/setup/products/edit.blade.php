@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Price(Tk)</label>
+                    <label for="name">Price($)</label>
                     <input type="number" min="1" class="form-control" name="product_price" value="{{ $product->product_price }}" placeholder="Enter Product Price" required>
                 </div>
             </div>

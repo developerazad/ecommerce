@@ -8,9 +8,12 @@
         width: 100px!important;
         height: 115px!important;
     }
-    .view-product img{
-        width: 276px!important;
-        height: 381px!important;
+    /*.view-product img{*/
+        /*width: 100%;*/
+        /*height: 230px!important;*/
+    /*}*/
+    .item-control i{
+        background: #0A27A9!important;
     }
 </style>
 @section('content')
@@ -27,7 +30,7 @@
         <div class="product-details"><!--product-details-->
             <div class="col-sm-5">
                 <div class="view-product">
-                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('uploads/products/'.$product->product_photo) }}" alt="product-photo"></a>
+                    <img src="{{ asset('uploads/products/'.$product->product_photo) }}" alt="product-photo">
                     <h3>ZOOM</h3>
                 </div>
                 <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -46,20 +49,20 @@
                 <div class="product-information"><!--/product-information-->
                     <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/new.jpg') }}" class="newarrival" alt=""></a>
                     <h2>{{ $product->product_name }}</h2>
-                    <p>Web ID: {{ $product->product_code }}</p>
+                    <p>Product Code: {{ $product->product_code }}</p>
                     <img src="{{ asset('assets/fontend/images/product-details/rating.png') }}" alt="Rating">
                     <span>
-									<span>US ${{ $product->product_price }}</span>
+									<span style="font-size: 25px;">${{ $product->product_price }} </span>
 									<label>Quantity:</label>
-									<input type="text" value="1">
-									<button type="button" class="btn btn-fefault cart">
+									<input type="number" value="1" min="1">
+									<button type="button" class="btn btn-default cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
 								</span>
                     <p><b>Availability:</b> In Stock</p>
                     <p><b>Condition:</b> New</p>
-                    <p><b>Brand:</b> E-SHOPPER</p>
+                    <p><b>Brand:</b> {{ $product->brand_name }}</p>
                     <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/share.png') }}" class="share img-responsive" alt=""></a>
                 </div><!--/product-information-->
             </div>
