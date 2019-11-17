@@ -52,7 +52,7 @@ class PublicProductController extends Controller
      */
     public function show($id)
     {
-        $categories        = PublicProduct::categories();
+        $categories        = Category::categories();
         $brands            = Brand::brands();
         $relatedProducts   = Product::products();
         $product           = Product::product($id);

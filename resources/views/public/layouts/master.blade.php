@@ -87,6 +87,26 @@
         background: #0A27A9!important;
         color: #f9f9f9;
     }
+    /* product details page */
+    .add-to-cart{
+        padding: 4px 6px!important;
+        font-size: 12px!important;
+    }
+    .productinfo img {
+        width: 100px!important;
+        height: 115px!important;
+    }
+    /*.view-product img{*/
+    /*width: 100%;*/
+    /*height: 230px!important;*/
+    /*}*/
+    .item-control i{
+        background: #0A27A9!important;
+    }
+    .breadcrumbs .breadcrumb li a:after {
+        border-color: transparent transparent transparent #1d1baf!important;
+    }
+    /* product details page */
 </style>
 <body>
 <header id="header"><!--header-->
