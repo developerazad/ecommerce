@@ -40,6 +40,7 @@
     .product-information span span  {
         color: #444c50;
     }
+
     .add-to-cart,
     .breadcrumbs .breadcrumb li a,
     .cart,.or,
