@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Slider extends Model
 {
     public static function sliders(){
-        return DB::table('sliders')->where('active_fg', 1)->get();
+        return DB::table('sliders')->get();
     }
     public static function insert($data)
     {
@@ -22,5 +22,8 @@ class Slider extends Model
     }
     public static function deleteSlider($id){
         return DB::table('sliders')->where('slider_id', $id)->delete();
+    }
+    public static function activeSliders(){
+        return DB::table('sliders')->where('active_fg', 1)->get();
     }
 }

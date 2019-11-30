@@ -15,41 +15,19 @@
                     </ol>
 
                     <div class="carousel-inner">
-                        <div class="item active">
+                        @foreach($sliders as $i => $slider)
+                        <div class="item @if($i==0) active @endif">
                             <div class="col-sm-6">
                                 <h1><span>E</span>-SHOP</h1>
-                                <h2>Your Next Station</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <h2>{{ $slider->heading_one }}</h2>
+                                <p>{{ $slider->heading_desc }}</p>
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{ URL('assets/fontend/images/home/s66.jpg') }}" class="girl img-responsive" alt="slider image" style="width: 484px;height: 441px;"/>
+                                <img src="{{ URL('/uploads/sliders/'.$slider->slider_photo) }}" class="girl img-responsive" alt="" style="width: 484px;height: 441px;"/>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOP</h1>
-                                <h2>Come &amp; Be Surprised</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{ URL('assets/fontend/images/home/s55.jpg') }}" class="girl img-responsive" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOP</h1>
-                                <h2>One Stop Solution</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{ URL('assets/fontend/images/home/s77.jpg') }}" class="girl img-responsive" alt="" />
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
 
                     <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">

@@ -6,6 +6,7 @@ use App\Brand;
 use App\Category;
 use App\Product;
 use App\PublicProduct;
+use App\Slider;
 use Illuminate\Http\Request;
 
 class PublicProductController extends Controller
@@ -20,7 +21,8 @@ class PublicProductController extends Controller
         $categories = Category::categories();
         $brands     = Brand::brands();
         $products   = Product::products();
-        return view('public.layouts.home', compact('categories','brands','products'));
+        $sliders    = Slider::activeSliders();
+        return view('public.layouts.home', compact('categories','brands','products', 'sliders'));
     }
 
     /**
