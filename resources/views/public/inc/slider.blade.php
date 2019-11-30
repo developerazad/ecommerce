@@ -23,7 +23,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/s66.jpg') }}" class="girl img-responsive" alt="slider image" style="width: 484px;height: 441px;"/>
+                                <img src="{{ URL('assets/fontend/images/home/s66.jpg') }}" class="girl img-responsive" alt="slider image" style="width: 484px;height: 441px;"/>
                             </div>
                         </div>
                         <div class="item">
@@ -34,7 +34,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/s55.jpg') }}" class="girl img-responsive" alt="" />
+                                <img src="{{ URL('assets/fontend/images/home/s55.jpg') }}" class="girl img-responsive" alt="" />
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{URL::TO('assets/fontend/images/home/s77.jpg') }}" class="girl img-responsive" alt="" />
+                                <img src="{{ URL('assets/fontend/images/home/s77.jpg') }}" class="girl img-responsive" alt="" />
                             </div>
                         </div>
 

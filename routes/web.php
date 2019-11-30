@@ -31,6 +31,9 @@ Route::resource('user-groups', 'UserGroupController');
 Route::resource('module-assign', 'ModuleAssignController');
 
 
+/* ====================UI Setup========================= */
+Route::resource('sliders', 'SliderController');
+
 /* =================== Setup =========================== */
 
 Route::get('/admin', 'AdminController@index');
