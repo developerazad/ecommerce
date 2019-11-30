@@ -125,8 +125,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    @include('public.inc.category')
-                    @include('public.inc.brand')
+                    @include('public.inc.categoryBrand')
                     @include('public.inc.freeDelivery')
                 </div>
             </div>

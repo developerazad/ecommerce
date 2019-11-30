@@ -121,7 +121,7 @@ class CategoryController extends Controller
         $categories = Category::categories();
         $brands     = Brand::brands();
         $products   = Product::categoryWiseProducts($id);
-        return view('public.layouts.categoryWiseSearch', compact('categories','brands','products'));
+        return view('public.layouts.search.categoryWiseSearch', compact('categories','brands','products'));
     }
 
 

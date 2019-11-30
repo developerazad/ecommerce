@@ -58,7 +58,8 @@ class PublicProductController extends Controller
         $brands            = Brand::brands();
         $relatedProducts   = Product::products();
         $product           = Product::product($id);
-        return view('public.layouts.productDetails', compact('categories','brands','relatedProducts', 'product'));
+        $products          = Product::products();
+        return view('public.layouts.productDetails', compact('categories','brands','relatedProducts', 'product', 'products'));
     }
 
     /**
@@ -93,5 +94,12 @@ class PublicProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function brandCategoryWiseProducts($category_id, $brand_id){
+        $products = Product::brandCategoryWiseProducts($category_id, $brand_id);
+        $categories = Category::categories();
+        $brands     = Brand::brands();
+        return view('public.layouts.search.brandCategoryWiseSearch', compact('categories','brands','products'));
     }
 }

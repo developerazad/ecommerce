@@ -54,5 +54,16 @@ class Product extends Model
             ->get();
 
     }
+    public static function brandCategoryWiseProducts($category_id, $brand_id){
+        return DB::table('products as p')
+            ->select('p.*','c.*','b.*')
+            ->leftJoin('categories as c','p.category_id','=','c.category_id')
+            ->leftJoin('brands as b','p.brand_id','=','b.brand_id')
+            ->where('p.category_id', $category_id)
+            ->where('p.brand_id', $brand_id)
+            ->orderBy('p.product_name', 'asc')
+            ->get();
+
+    }
 
 }

@@ -121,6 +121,6 @@ class BrandController extends Controller
         $categories = Category::categories();
         $brands     = Brand::brands();
         $products   = Product::brandWiseProducts($id);
-        return view('public.layouts.brandWiseSearch', compact('categories','brands','products'));
+        return view('public.layouts.search.brandWiseSearch', compact('categories','brands','products'));
     }
 }
