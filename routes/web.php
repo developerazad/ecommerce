@@ -53,5 +53,4 @@ Route::get('customer-login', 'CustomerController@login');
 
 Route::get('category-wise-search/{category_id}', 'CategoryController@categoryWiseSearch');
 Route::get('brand-wise-search/{brand_id}', 'BrandController@brandWiseSearch');
-Route::get('brand-wise-products/{category_id}/{brand_id}', 'PublicProductController@brandCategoryWiseProducts');
 

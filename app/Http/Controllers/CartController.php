@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Cart;
+use App\Category;
 use App\PublicProduct;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $categories = PublicProduct::categories();
+        $categories = Category::categories();
         $brands = Brand::brands();
         return view('public.layouts.customers.carts', compact('categories', 'brands'));
     }

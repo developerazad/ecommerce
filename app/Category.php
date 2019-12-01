@@ -9,7 +9,7 @@ class Category extends Model
 {
 
     public static function categories(){
-        return DB::table('categories')->get();
+        return DB::table('categories')->orderBy('category_name', 'asc')->get();
     }
 
     public static function insert($data){
