@@ -25,7 +25,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Main Navigation</li>
-            <li class="active treeview">
+            <li class="treeview active">
                 <a href="{{ url('admin') }}">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
@@ -52,7 +52,7 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="glyphicon glyphicon-asterisk"></i>
+                    <i class="fa fa-laptop"></i>
                     <span>UI Setup</span>
                     <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
