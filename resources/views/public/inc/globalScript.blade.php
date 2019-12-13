@@ -15,7 +15,7 @@
                    productId: productId, qty: qty, _token: token
                },
                success:function (data) {
-                    //location.reload();
+                    location.reload();
                }
             });
         }

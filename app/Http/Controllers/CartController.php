@@ -46,13 +46,17 @@ class CartController extends Controller
         $qty         = $request->input('qty');
         $productInfo = Product::product($productId);
         $data = Cart::add([
-            'id'   => $productId,
-            'name' => $productInfo->product_name,
-            'qty'  => $qty,
-            'price'=> $productInfo->product_price
+            'id'     => $productId,
+            'name'   => $productInfo->product_name,
+            'qty'    => $qty,
+            'price'  => $productInfo->product_price,
+            'options' => array(
+                'image' => $productInfo->product_photo,
+                'code'  => $productInfo->product_code,
+            )
         ]);
         if($data){
-            return Cart::content();
+            return redirect('carts');
         }
     }
 
