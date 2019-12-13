@@ -25,7 +25,7 @@
                             <h2>${{ $product->product_price }}</h2>
                             <p>{{ $product->product_name }}</p>
                             <a href="{{ url('product-details/'.$product->product_id) }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            <a href="{{ url('add-to-cart') }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                     </div>

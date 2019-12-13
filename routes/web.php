@@ -47,10 +47,12 @@ Route::resource('products','ProductController');
    ===================================================== */
 Route::get('/', 'PublicProductController@index');
 Route::get('product-details/{productId}', 'PublicProductController@show');
-Route::resource('carts', 'CartController');
 Route::get('customer-login', 'CustomerController@login');
 
-
+/* ===================== Search =========================== */
 Route::get('category-wise-search/{category_id}', 'CategoryController@categoryWiseSearch');
 Route::get('brand-wise-search/{brand_id}', 'BrandController@brandWiseSearch');
 
+/* ===================== Cart =========================== */
+Route::resource('carts', 'CartController');
+Route::post('add-to-cart', 'CartController@store');

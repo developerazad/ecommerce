@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
-use App\Cart;
+//use Cart;
 use App\Category;
+use App\Product;
 use App\PublicProduct;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -29,7 +31,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        echo 1233;
     }
 
     /**
@@ -40,8 +42,20 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productId   = $request->input('productId');
+        $qty         = $request->input('qty');
+        $productInfo = Product::product($productId);
+        $data = Cart::add([
+            'id'   => $productId,
+            'name' => $productInfo->product_name,
+            'qty'  => $qty,
+            'price'=> $productInfo->product_price
+        ]);
+        if($data){
+            return Cart::content();
+        }
     }
+
 
     /**
      * Display the specified resource.

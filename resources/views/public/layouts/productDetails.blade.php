@@ -33,15 +33,16 @@
             </div>
             <div class="col-sm-7">
                 <div class="product-information"><!--/product-information-->
-                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/new.jpg') }}" class="newarrival" alt=""></a>
+                    <a href="#"><img src="{{ asset('assets/fontend/images/product-details/new.jpg') }}" class="newarrival" alt=""></a>
                     <h2>{{ $product->product_name }}</h2>
                     <p>Product Code: {{ $product->product_code }}</p>
                     <img src="{{ asset('assets/fontend/images/product-details/rating.png') }}" alt="Rating">
                     <span>
 									<span style="font-size: 25px;">${{ $product->product_price }} </span>
 									<label>Quantity:</label>
-									<input type="number" value="1" min="1">
-									<button type="button" class="btn btn-default cart">
+									<input type="number" class="qty" name="qty" value="1" min="1" max="10">
+                                    <input type="hidden" class="product-id" value="{{ $product->product_id }}">
+									<button type="button" class="btn btn-default cart add-to-cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
@@ -49,7 +50,7 @@
                     <p><b>Availability:</b> In Stock</p>
                     <p><b>Condition:</b> New</p>
                     <p><b>Brand:</b> {{ $product->brand_name }}</p>
-                    <a href="{{ url('product-details/1') }}"><img src="{{ asset('assets/fontend/images/product-details/share.png') }}" class="share img-responsive" alt=""></a>
+                    <a href="#"><img src="{{ asset('assets/fontend/images/product-details/share.png') }}" class="share img-responsive" alt=""></a>
                 </div><!--/product-information-->
             </div>
         </div><!--/product-details-->

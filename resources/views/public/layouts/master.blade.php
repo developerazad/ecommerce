@@ -151,5 +151,7 @@
 <script src="{{ asset('assets/fontend/js/price-range.js') }}"></script>
 <script src="{{ asset('assets/fontend/js/jquery.prettyPhoto.js') }}"></script>
 <script src="{{ asset('assets/fontend/js/main.js') }}"></script>
+
+@include('public.inc.globalScript');
 </body>
 </html>
