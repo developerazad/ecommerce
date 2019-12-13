@@ -56,3 +56,4 @@ Route::get('brand-wise-search/{brand_id}', 'BrandController@brandWiseSearch');
 /* ===================== Cart =========================== */
 Route::resource('carts', 'CartController');
 Route::post('add-to-cart', 'CartController@store');
+Route::get('remove-cart/{rowId}', 'CartController@destroy');

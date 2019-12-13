@@ -103,6 +103,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::update($id, 0);
+        return redirect('carts');
     }
 }
