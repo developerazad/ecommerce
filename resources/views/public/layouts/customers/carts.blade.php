@@ -58,6 +58,14 @@
                         </td>
                     </tr>
                     @endforeach
+                    <hr>
+                    <tr class="bg-success">
+                        <td class="text-center"><h4>Cart Sub Total</h4></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><p class="cart_total_price">${{ Cart::total() }}</p></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
