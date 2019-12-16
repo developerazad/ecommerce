@@ -32,12 +32,23 @@
         let qty     = thisRow.find('.qty').val();
 
         if(status==='inc'){
-            qty = qty++;
+            qty = ++qty;
         }else{
-            //if(qty>1){
-                qty = qty--;
-            //}
+            if(qty>1){
+                qty = --qty;
+            }
         }
-        alert(qty);
+        let url   = '{{ url('update-cart') }}'+'/'+rowId;
+        let token = '{{ csrf_token() }}';
+        $.ajax({
+            type:'post',
+            url :url,
+            data:{
+                qty: qty, _token: token
+            },
+            success:function (data) {
+                location.reload();
+            }
+        });
     });
 </script>

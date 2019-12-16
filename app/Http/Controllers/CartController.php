@@ -90,7 +90,9 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rowId = $id;
+        $qty   = $request->input('qty');
+        Cart::update($rowId, $qty);
     }
 
     /**
