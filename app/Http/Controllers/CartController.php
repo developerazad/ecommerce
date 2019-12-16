@@ -50,14 +50,12 @@ class CartController extends Controller
             'name'   => $productInfo->product_name,
             'qty'    => $qty,
             'price'  => $productInfo->product_price,
-            'options' => array(
+            'options'=> array(
                 'image' => $productInfo->product_photo,
                 'code'  => $productInfo->product_code,
             )
         ]);
-        if($data){
-            return redirect('carts');
-        }
+
     }
 
 
@@ -103,7 +101,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::update($id, 0);
+        Cart::remove($id);
         return redirect('carts');
     }
 }

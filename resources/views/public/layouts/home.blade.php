@@ -24,8 +24,10 @@
                             <a href="{{ url('product-details/'.$product->product_id) }}"><img src="{{asset('uploads/products/'.$product->product_photo) }}" alt="" /></a>
                             <h2>${{ $product->product_price }}</h2>
                             <p>{{ $product->product_name }}</p>
+                            <input type="hidden" class="qty" name="qty" value="1" min="1" max="10">
+                            <input type="hidden" class="product-id" value="{{ $product->product_id }}">
                             <a href="{{ url('product-details/'.$product->product_id) }}" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
-                            <a href="{{ url('add-to-cart') }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                         </div>
 
                     </div>

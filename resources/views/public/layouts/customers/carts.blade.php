@@ -40,17 +40,18 @@
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_down" href=""> - </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="{{ $cart->qty }}" autocomplete="off" size="2">
-                                <a class="cart_quantity_up" href=""> + </a>
+                                <a class="cart_quantity_down update-cart" data-status="dec" href="#"> - </a>
+                                <input class="cart_quantity_input qty" type="text" name="quantity" value="{{ $cart->qty }}" autocomplete="off" size="2">
+                                <input class="rowId" type="hidden" name="rowId" value="{{ $cart->rowId }}" >
+                                <a class="cart_quantity_up update-cart" data-status="inc" href="#"> + </a>
                             </div>
                         </td>
                         <td class="cart_price">
-                            <p>{{ $cart->price }}</p>
+                            <p>${{ $cart->price }}</p>
                         </td>
 
                         <td class="cart_total">
-                            <p class="cart_total_price">{{ $cart->total }}</p>
+                            <p class="cart_total_price">${{ $cart->total }}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href="{{ url('remove-cart/'.$cart->rowId) }}"><i class="fa fa-times"></i></a>
@@ -137,3 +138,5 @@
     </section>
 
 @endsection
+
+
