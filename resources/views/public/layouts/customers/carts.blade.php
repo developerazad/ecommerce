@@ -47,100 +47,44 @@
                             </div>
                         </td>
                         <td class="cart_price">
-                            <p>${{ $cart->price }}</p>
+                            <h4>${{ $cart->price }}</h4>
                         </td>
 
                         <td class="cart_total">
-                            <p class="cart_total_price">${{ $cart->total }}</p>
+                            <h4>${{ $cart->total }}</h4>
                         </td>
-                        <td class="cart_delete">
+                        <td class="cart_delete" style="margin-right: 0!important;">
                             <a class="cart_quantity_delete" href="{{ url('remove-cart/'.$cart->rowId) }}"><i class="fa fa-times"></i></a>
                         </td>
                     </tr>
                     @endforeach
-                    <hr>
+
                     <tr class="bg-success">
                         <td class="text-center"><h4>Cart Sub Total</h4></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><p class="cart_total_price">${{ Cart::total() }}</p></td>
+                        <td><h4>${{ Cart::subtotal() }}</h4></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
     </section>
     <section id="do_action">
-            <div class="heading">
+            <!--<div class="heading">
                 <h3>What would you like to do next?</h3>
                 <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="chose_area">
-                        <ul class="user_option">
-                            <li>
-                                <input type="checkbox">
-                                <label>Use Coupon Code</label>
-                            </li>
-                            <li>
-                                <input type="checkbox">
-                                <label>Use Gift Voucher</label>
-                            </li>
-                            <li>
-                                <input type="checkbox">
-                                <label>Estimate Shipping &amp; Taxes</label>
-                            </li>
-                        </ul>
-                        <ul class="user_info">
-                            <li class="single_field">
-                                <label>Country:</label>
-                                <select>
-                                    <option>United States</option>
-                                    <option>Bangladesh</option>
-                                    <option>UK</option>
-                                    <option>India</option>
-                                    <option>Pakistan</option>
-                                    <option>Ucrane</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-
-                            </li>
-                            <li class="single_field">
-                                <label>Region / State:</label>
-                                <select>
-                                    <option>Select</option>
-                                    <option>Dhaka</option>
-                                    <option>London</option>
-                                    <option>Dillih</option>
-                                    <option>Lahore</option>
-                                    <option>Alaska</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-
-                            </li>
-                            <li class="single_field zip-field">
-                                <label>Zip Code:</label>
-                                <input type="text">
-                            </li>
-                        </ul>
-                        <a class="btn btn-default update" href="">Get Quotes</a>
-                        <a class="btn btn-default check_out" href="">Continue</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="total_area">
-                        <ul>
-                            <li>Cart Sub Total <span>$59</span></li>
-                            <li>Eco Tax <span>$2</span></li>
-                            <li>Shipping Cost <span>Free</span></li>
-                            <li>Total <span>$61</span></li>
-                        </ul>
-                        <a class="btn btn-default update" href="">Update</a>
-                        <a class="btn btn-default check_out" href="">Check Out</a>
-                    </div>
+            </div>-->
+            <div class="row" style="margin:0!important;">
+                <div class="total_area">
+                    <ul>
+                        <li>Cart Sub Total <span>${{ Cart::subtotal() }}</span></li>
+                        <li>Tax <span>${{ Cart::tax() }}</span></li>
+                        <li>Shipping Cost <span>Free</span></li>
+                        <li>Total <span>${{ Cart::total() }}</span></li>
+                    </ul>
+                    <a class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</a>
+                    <a class="btn btn-default check_out" href="">Check Out</a>
                 </div>
             </div>
     </section>
