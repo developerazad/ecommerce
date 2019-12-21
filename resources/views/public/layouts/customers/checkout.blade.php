@@ -4,6 +4,24 @@
         display: block;
         margin: 10px -25px 10px 25px!important;
     }
+    .update, .check_out{
+        margin-left: 0!important;
+        margin-top: 0!important;
+    }
+    .check_out{
+        margin-left: 20px!important;
+    }
+    .shopper-info p{
+        font-size: 15px!important;
+    }
+    .shopper-info > form > select{
+        background: #F0F0E9;
+        border: 0 none;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+        font-weight: 300;
+    }
 </style>
 
 @section('content')
@@ -18,19 +36,51 @@
     </section>
     <section id="do_action">
             <div class="heading">
-                <h3>Please provide the below information</h3>
-                <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+                <p>Please provide your information to place order or <a href="">login here </a>if you are already a member</p>
             </div>
             <div class="row" style="margin:0!important;">
-                <div class="total_area">
-                    <ul>
-                        <li>Cart Sub Total <span>${{ Cart::subtotal() }}</span></li>
-                        <li>Tax <span>${{ Cart::tax() }}</span></li>
-                        <li>Shipping Cost <span>Free</span></li>
-                        <li>Total <span>${{ Cart::total() }}</span></li>
-                    </ul>
-                    <a class="btn btn-default update" href="{{ url('carts') }}">Back</a>
-                    <a class="btn btn-default check_out" href="{{ url('/checkout') }}">Confirm</a>
+                <div class="shopper-info">
+                    <form>
+                        <div class="heading">
+                            <h3>User Information</h3>
+                        </div>
+
+                            <input type="text" placeholder="Full Name" name="full_name">
+                            <input type="email" placeholder="E-mail" name="user_email">
+                            <input type="text" placeholder="Username" name="username">
+                            <input type="password" placeholder="Password" name="user_pwd">
+                            <input type="text" placeholder="Full Address" name="full_address">
+                            <select name="district">
+                                <option value="1">Dhaka</option>
+                                <option value="2">Rajshahi</option>
+                                <option value="3">Rangpur</option>
+                            </select>
+                            <input type="text" placeholder="Phone" name="phone">
+                        <div class="heading">
+                            <h3>Shipping Information</h3>
+                        </div>
+                        <p>
+                            <input type="checkbox" name="shipping_type" class="shipping_type" value="insight" checked>
+                            Regular Home Delivery within 1 - 3 days in Dhaka City, Free</p>
+                        <p>
+                            <input type="checkbox" name="shipping_type" class="shipping_type" value="outside">
+                            Regular Home Delivery within 1 - 3 days outside of Dhaka City, 200BDT</p>
+                        <p>
+                            <input type="checkbox" name="shipping_type" class="shipping_type" value="express">
+                            Express Home Delivery on same day in Dhaka City, 200BDT</p>
+
+                        <div class="heading">
+                            <h3>Payment Method</h3>
+                        </div>
+                        <p><input type="checkbox" name="payment_method" value="cod" checked> Cash On Delivery(COD)</p>
+                        <p><input type="checkbox" name="payment_method" value="bkash"> Pay With bKash</p>
+
+                        <br>
+                        <p><input type="checkbox" name="terms" checked> I have read the terms and conditions.</p>
+
+                        <a class="btn btn-default update" href="{{ url('carts') }}">Back</a>
+                        <a class="btn btn-default check_out" href="{{ url('/checkout') }}">Confirm</a>
+                    </form>
                 </div>
             </div>
     </section>
