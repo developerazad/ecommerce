@@ -58,3 +58,4 @@ Route::resource('carts', 'CartController');
 Route::post('add-to-cart', 'CartController@store');
 Route::get('remove-cart/{rowId}', 'CartController@destroy');
 Route::post('update-cart/{rowId}', 'CartController@update');
+Route::get('checkout', 'CartController@checkout');

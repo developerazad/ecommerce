@@ -106,4 +106,11 @@ class CartController extends Controller
         Cart::remove($id);
         return redirect('carts');
     }
+
+
+    public function checkout(){
+        $categories = Category::categories();
+        $brands = Brand::brands();
+        return view('public.layouts.customers.checkout', compact('categories', 'brands'));
+    }
 }
