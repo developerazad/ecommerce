@@ -89,6 +89,18 @@ class CustomerController extends Controller
     public function login(){
         $categories = Category::categories();
         $brands = Brand::brands();
-        return view('public.layouts.customers.loginRegister', compact('categories','brands'));
+        return view('public.layouts.customers.login', compact('categories', 'brands'));
+    }
+
+    public function orderSubmit(Request $request){
+        $customer = array(
+            'customer_name'     => $request->input('customer_name'),
+            'customer_email'    => $request->input('customer_email'),
+            'customer_pwd'      => $request->input('customer_pwd'),
+            'customer_address'  => $request->input('customer_address'),
+            'customer_district' => $request->input('customer_district'),
+            'customer_phone'    => $request->input('customer_phone')
+        );
+
     }
 }

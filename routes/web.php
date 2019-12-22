@@ -59,3 +59,6 @@ Route::post('add-to-cart', 'CartController@store');
 Route::get('remove-cart/{rowId}', 'CartController@destroy');
 Route::post('update-cart/{rowId}', 'CartController@update');
 Route::get('checkout', 'CartController@checkout');
+
+/* ====================== Customer ======================= */
+Route::post('order-submit', 'CustomerController@orderSubmit');
