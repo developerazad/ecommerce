@@ -51,4 +51,13 @@
             }
         });
     });
+
+    // single shipping method check
+    $(document).on('click', '.shipping_method', function () {
+        $('.shipping_method').not(this).prop('checked', false);
+    });
+    $(document).on('click', '.payment_method', function () {
+        $('.payment_method').not(this).prop('checked', false);
+    });
+
 </script>

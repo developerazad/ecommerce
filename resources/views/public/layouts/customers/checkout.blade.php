@@ -73,11 +73,11 @@
                         <div class="heading">
                             <h3>Payment Method</h3>
                         </div>
-                        <p><input type="checkbox" name="payment_method" value="cod" checked> Cash On Delivery(COD)</p>
-                        <p><input type="checkbox" name="payment_method" value="bkash"> Pay With bKash</p>
+                        <p><input type="checkbox" name="payment_method" class="payment_method" value="cod" checked> Cash On Delivery(COD)</p>
+                        <p><input type="checkbox" name="payment_method" class="payment_method" value="bkash"> Pay With bKash</p>
 
                         <br>
-                        <p><input type="checkbox" name="agree_fg" checked> I have read the terms and conditions.</p>
+                        <p><input type="checkbox" name="agree_fg" checked> I have read the <a href="">terms and conditions</a>.</p>
 
                         <a class="btn btn-default update" href="{{ url('carts') }}">Back</a>
                         <button class="btn btn-default check_out">Confirm</button>
@@ -87,5 +87,7 @@
     </section>
 
 @endsection
+
+
 
 
