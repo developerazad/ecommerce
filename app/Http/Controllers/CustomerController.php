@@ -10,6 +10,8 @@ use App\Customer;
 use App\PublicProduct;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 
 class CustomerController extends Controller
@@ -95,6 +97,28 @@ class CustomerController extends Controller
         $brands = Brand::brands();
         return view('public.layouts.customers.login', compact('categories', 'brands'));
     }
+    public function userValidation(Request $request){
+        $email     = $request->input('customer_email');
+        $password  = $request->input('customer_pwd');
+        $checkUser = DB::table('customers')->where('customer_email',$email)->first();
+        if($checkUser){
+            $checkPassword = Hash::check($password, $checkUser->customer_pwd);
+            if($checkPassword){
+                Session::put([
+                    'customer_id'      => $checkUser->customer_id,
+                    'customer_email'   => $checkUser->customer_email,
+                    'customer_name'    => $checkUser->customer_name,
+                    'customer_address' => $checkUser->customer_address,
+                    'customer_phone'   => $checkUser->customer_phone
+                ]);
+                return redirect('checkout');
+            }else{
+                return redirect('customer-login')->with('error', 'Invalid username or password');
+            }
+        }else{
+            return redirect('customer-login')->with('error', 'Invalid username or password');
+        }
+    }
 
     public function orderSubmit(Request $request){
         $customer = array(
@@ -105,7 +129,12 @@ class CustomerController extends Controller
             'customer_district' => $request->input('customer_district'),
             'customer_phone'    => $request->input('customer_phone')
         );
-        $customerId = Customer::insert($customer);
+        // if user not exist add user else not
+        if(!empty($request->input('customer_id'))){
+            $customerId = $request->input('customer_id');
+        }else {
+            $customerId = Customer::insert($customer);
+        }
         $totalAmount = Cart::total();
         $total = str_replace(',','', $totalAmount);
         $orderMst = array(
@@ -132,7 +161,14 @@ class CustomerController extends Controller
         $order = Order::insertChd($orderChd);
         if($order){
             Cart::destroy();
+            Session::put([
+                'customer_id'     => $customerId,
+                'customer_email' => $request->input('customer_email'),
+                'customer_name'  => $request->input('customer_name'),
+                'customer_phone' => $request->input('customer_phone')
+            ]);
             return redirect('/');
+
         }
 
     }

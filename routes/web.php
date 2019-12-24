@@ -61,4 +61,5 @@ Route::post('update-cart/{rowId}', 'CartController@update');
 Route::get('checkout', 'CartController@checkout');
 
 /* ====================== Customer ======================= */
-Route::post('order-submit', 'CustomerController@orderSubmit');
+Route::post('order-submit',  'CustomerController@orderSubmit');
+Route::post('user-validate', 'CustomerController@userValidation');

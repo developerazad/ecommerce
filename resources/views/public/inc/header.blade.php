@@ -22,19 +22,28 @@
             <div class="col-sm-9">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li>
+                        @if(Session::get('customer_name'))
                         <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                        <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                        <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                        @endif
+                        <li><a href="{{ url('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a class="{{ Request::is('carts')?'active':'' }}" href="{{ url('carts') }}"><i class="fa fa-shopping-cart"></i> Cart <sup>{{ Cart::count() }}</sup></a></li>
+                        @if(Session::get('customer_name'))
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();logoutMessage()" role="menuitem" tabindex="-1"><i class="fa fa-unlock"></i> Logout</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @else
                         <li><a href="{{ url('customer-login') }}"><i class="fa fa-lock"></i> Login</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
-            {{--<div class="col-sm-3">--}}
-                {{--<div class="search_box pull-right">--}}
-                    {{--<input type="text" placeholder="Search">--}}
-                {{--</div>--}}
-            {{--</div>--}}
+{{--            <div class="col-sm-3">--}}
+{{--                <div class="search_box pull-right">--}}
+{{--                    <input type="text" placeholder="Search">--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </div>
 </div><!--/header-middle-->

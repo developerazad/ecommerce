@@ -36,7 +36,7 @@
     </section>
     <section id="do_action">
             <div class="heading">
-                <p>Please check your information</p>
+                <p>Please provide your information to place order or <a href="{{ url('customer-login') }}">login here </a>if you are already a member</p>
             </div>
             <div class="row" style="margin:0!important;">
                 <div class="shopper-info">
@@ -46,11 +46,17 @@
                             <h3>User Information</h3>
                         </div>
 
-                            <input type="hidden"  name="customer_id" value="{{ session('customer_id') }}">
-                            <input type="text" placeholder="Full Name" name="customer_name" value="{{ session('customer_name') }}">
-                            <input type="email" placeholder="E-mail" name="customer_email" value="{{ session('customer_email') }}">
-                            <input type="text" placeholder="Full Address" name="customer_address" value="{{ session('customer_address') }}">
-                            <input type="text" placeholder="Phone" name="customer_phone" value="{{ session('customer_phone') }}">
+                            <input type="text" placeholder="Full Name" name="customer_name" value="" required>
+                            <input type="email" placeholder="E-mail" name="customer_email" value="" required>
+                            <input type="password" placeholder="Chose a Password" name="customer_pwd" required>
+                            <input type="text" placeholder="Full Address" name="customer_address" value="" required>
+                            <select name="customer_district" required>
+                                <option value="">-District-</option>
+                                <option value="1">Dhaka</option>
+                                <option value="2">Rajshahi</option>
+                                <option value="3">Rangpur</option>
+                            </select>
+                            <input type="text" placeholder="Phone" name="customer_phone" value="" required>
                         <div class="heading">
                             <h3>Shipping Information</h3>
                         </div>

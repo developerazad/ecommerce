@@ -9,6 +9,7 @@ use App\Product;
 use App\PublicProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -111,6 +112,11 @@ class CartController extends Controller
     public function checkout(){
         $categories = Category::categories();
         $brands = Brand::brands();
-        return view('public.layouts.customers.checkout', compact('categories', 'brands'));
+        $email = Session::get('customer_email');
+        if(!empty($email)){
+            return view('public.layouts.customers.checkout', compact('categories', 'brands'));
+        }else{
+            return view('public.layouts.customers.checkoutWithSignUp', compact('categories', 'brands'));
+        }
     }
 }

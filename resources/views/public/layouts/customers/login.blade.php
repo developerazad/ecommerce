@@ -40,15 +40,19 @@
     <section id="do_action">
             <div class="heading">
                 <p>Please provide your credentials</p>
+                @if(session('error'))
+                <p style="color: red">{{ session('error') }}</p>
+                @endif
             </div>
             <div class="row" style="margin:0!important;">
                 <div class="shopper-info">
-                    <form>
-                            <input type="email" placeholder="E-mail" name="user_email">
-                            <input type="password" placeholder="Password" name="user_pwd">
+                    <form action="{{ url('user-validate') }}" method="post">
+                        @csrf
+                            <input type="email" placeholder="E-mail" name="customer_email">
+                            <input type="password" placeholder="Password" name="customer_pwd">
 
                         <a class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</a>
-                        <a class="btn btn-default check_out" href="#">Login</a>
+                        <button class="btn btn-default check_out" type="submit">Login</button>
                     </form>
                 </div>
             </div>
