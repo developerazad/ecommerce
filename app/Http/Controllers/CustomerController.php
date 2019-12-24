@@ -106,14 +106,16 @@ class CustomerController extends Controller
             'customer_phone'    => $request->input('customer_phone')
         );
         $customerId = Customer::insert($customer);
+        $totalAmount = Cart::total();
+        $total = str_replace(',','', $totalAmount);
         $orderMst = array(
-            'customer_id'     => $customerId,
-            'order_place'     => $request->input('customer_address'),
-            'contact_no'      => $request->input('customer_phone'),
-            'order_date'      => date('Y-m-d'),
-            'order_total'     => 50000,//Cart::total(),
-            'shipping_method' => $request->input('shipping_method'),
-            'payment_method'  => $request->input('payment_method'),
+            'customer_id'       => $customerId,
+            'order_place'       => $request->input('customer_address'),
+            'contact_no'        => $request->input('customer_phone'),
+            'order_date'        => date('Y-m-d'),
+            'order_total'       => $total,
+            'shipping_method'   => $request->input('shipping_method'),
+            'payment_method'    => $request->input('payment_method'),
         );
         $orderMstId = Order::insertMst($orderMst);
         $carts = Cart::content();
@@ -127,13 +129,10 @@ class CustomerController extends Controller
                 'subtotal_price' => $cart->total,
             );
         }
-        //$c = number_format(Cart::total(),2);
-
-        //$this->pr($c);
         $order = Order::insertChd($orderChd);
         if($order){
             Cart::destroy();
-            return 'Order submitted successfully';
+            return redirect('/');
         }
 
     }
