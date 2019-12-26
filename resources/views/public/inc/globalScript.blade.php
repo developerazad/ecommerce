@@ -59,5 +59,9 @@
     $(document).on('click', '.payment_method', function () {
         $('.payment_method').not(this).prop('checked', false);
     });
+    // empty cart alert
+    $(document).on('click', '.cart-empty, .checkout-empty', function () {
+        alert('You have no items in your shopping cart.');
+    });
 
 </script>

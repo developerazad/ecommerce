@@ -27,11 +27,10 @@
                         <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         @endif
 
-                        <li><a href="{{ url('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-
                         @if(Cart::count() > 0)
                         <li><a class="{{ Request::is('carts')?'active':'' }}" href="{{ url('carts') }}"><i class="fa fa-shopping-cart"></i> Cart <sup>{{ Cart::count() }}</sup></a></li>
                         @else
+                        <li><a class="cart-empty" href="#"><i class="fa fa-shopping-cart"></i> Cart <sup>{{ Cart::count() }}</sup></a></li>
                         @endif
 
                         @if(Session::get('customer_name'))
