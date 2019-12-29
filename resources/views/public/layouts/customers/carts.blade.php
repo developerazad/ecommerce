@@ -1,12 +1,13 @@
 @extends('public.layouts.master')
-<style>
-    .cart_product {
-        display: block;
-        margin: 10px -25px 10px 25px!important;
-    }
-</style>
+
 
 @section('content')
+    <style>
+        .cart_product {
+            display: block;
+            margin: 10px -25px 10px 25px!important;
+        }
+    </style>
 
     <section id="cart_items">
             <div class="breadcrumbs">
