@@ -24,8 +24,10 @@ class CustomerController extends Controller
     public function index()
     {
         $categories = Category::categories();
-        $brands = Brand::brands();
-        return view('public.layouts.customers.account', compact('categories', 'brands'));
+        $brands     = Brand::brands();
+        $customerId = session('customer_id');
+        $customer   = Customer::find($customerId);
+        return view('public.layouts.customers.account', compact('categories', 'brands', 'customer'));
     }
 
     /**
@@ -177,9 +179,10 @@ class CustomerController extends Controller
 
     // customer profile update
     public function updateProfile(){
-        $customerId = session('customer_id');
         $categories = Category::categories();
         $brands = Brand::brands();
-        return view('public.layouts.customers.updateProfile', compact('categories', 'brands'));
+        $customerId = session('customer_id');
+        $customer   = Customer::find($customerId);
+        return view('public.layouts.customers.updateProfile', compact('categories', 'brands', 'customer'));
     }
 }

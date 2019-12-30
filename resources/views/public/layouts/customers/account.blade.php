@@ -36,23 +36,23 @@
                         <table class="table no-border table-hover table-responsive">
                             <tr>
                                 <td>Full Name</td>
-                                <td>: Md. Azharul Islam</td>
+                                <td>: {{ $customer->customer_name }}</td>
                             </tr>
                             <tr>
                                 <td>E-mail</td>
-                                <td>: azad@gmail.com</td>
+                                <td>: {{ $customer->customer_email }}</td>
                             </tr>
                             <tr>
                                 <td>District</td>
-                                <td>: Dhaka</td>
+                                <td>: {{ $customer->customer_district }}</td>
                             </tr>
                             <tr>
                                 <td>Address</td>
-                                <td>: Sector#7, Uttara, Dhaka</td>
+                                <td>: {{ $customer->customer_address }}</td>
                             </tr>
                             <tr>
                                 <td>Contact</td>
-                                <td>: +8801521470368</td>
+                                <td>: {{ $customer->customer_phone }}</td>
                             </tr>
                         </table>
                     </div>

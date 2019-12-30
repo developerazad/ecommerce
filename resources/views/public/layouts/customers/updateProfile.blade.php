@@ -33,12 +33,21 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shopper-info">
-                        <form action="{{ url('user-validate') }}" method="post">
+                        <form action="{{ url('update-profile') }}" method="post">
                             @csrf
-                            <input type="email" placeholder="E-mail" name="customer_email">
-                            <input type="password" placeholder="Password" name="customer_pwd">
+                            @method('PUT')
+                            <input type="text" placeholder="Full Name" name="customer_name" value="" required>
+                            <input type="email" placeholder="E-mail" name="customer_email" value="" required>
+                            <input type="password" placeholder="Chose a Password" name="customer_pwd" required>
+                            <input type="text" placeholder="Full Address" name="customer_address" value="" required>
+                            <select name="customer_district" required>
+                                <option value="">-District-</option>
+                                <option value="1">Dhaka</option>
+                                <option value="2">Rajshahi</option>
+                                <option value="3">Rangpur</option>
+                            </select>
 
-                            <a class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</a>
+                            <button class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</button>
                             <button class="btn btn-default check_out" type="submit">Login</button>
                         </form>
                     </div>
