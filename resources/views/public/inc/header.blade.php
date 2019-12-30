@@ -24,7 +24,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li>
                         @if(Session::get('customer_name'))
-                        <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                        <li><a href="{{ url('account') }}"><i class="fa fa-user"></i> Account</a></li>
                         @endif
 
                         @if(Cart::count() > 0)

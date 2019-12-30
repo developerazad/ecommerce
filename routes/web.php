@@ -63,3 +63,4 @@ Route::get('checkout', 'CartController@checkout');
 /* ====================== Customer ======================= */
 Route::post('order-submit',  'CustomerController@orderSubmit');
 Route::post('user-validate', 'CustomerController@userValidation');
+Route::get('account', 'CustomerController@index');

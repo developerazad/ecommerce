@@ -52,6 +52,12 @@
         background: #00BCD4;
         color: #f9f9f9;
     }
+    .category-products .panel-default .panel-heading {
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #ddd!important;
+        color: #FFFFFF;
+        padding: 8px 20px!important;
+    }
     .breadcrumbs .breadcrumb li a:after{
         border-color: transparent transparent transparent #00BCD4;
     }

@@ -23,7 +23,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-
+        $categories = Category::categories();
+        $brands = Brand::brands();
+        return view('public.layouts.customers.account', compact('categories', 'brands'));
     }
 
     /**
