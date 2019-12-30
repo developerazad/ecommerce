@@ -33,28 +33,14 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shopper-info">
-                        <table class="table no-border table-hover table-responsive">
-                            <tr>
-                                <td>Full Name</td>
-                                <td>: Md. Azharul Islam</td>
-                            </tr>
-                            <tr>
-                                <td>E-mail</td>
-                                <td>: azad@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>District</td>
-                                <td>: Dhaka</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>: Sector#7, Uttara, Dhaka</td>
-                            </tr>
-                            <tr>
-                                <td>Contact</td>
-                                <td>: +8801521470368</td>
-                            </tr>
-                        </table>
+                        <form action="{{ url('user-validate') }}" method="post">
+                            @csrf
+                            <input type="email" placeholder="E-mail" name="customer_email">
+                            <input type="password" placeholder="Password" name="customer_pwd">
+
+                            <a class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</a>
+                            <button class="btn btn-default check_out" type="submit">Login</button>
+                        </form>
                     </div>
                 </div>
 

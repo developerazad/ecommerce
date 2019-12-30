@@ -68,7 +68,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -173,5 +173,13 @@ class CustomerController extends Controller
 
         }
 
+    }
+
+    // customer profile update
+    public function updateProfile(){
+        $customerId = session('customer_id');
+        $categories = Category::categories();
+        $brands = Brand::brands();
+        return view('public.layouts.customers.updateProfile', compact('categories', 'brands'));
     }
 }
