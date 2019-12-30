@@ -14,6 +14,11 @@
     .breadcrumbs .breadcrumb li a:after {
         left:75px!important;
     }
+    .success-msg{
+        background-color: lightgray;
+        width: 75%;
+        padding: 3px 195px;
+    }
 </style>
 
 @section('content')
@@ -23,6 +28,9 @@
             <ol class="breadcrumb">
                 <li><a href="#">Customer</a></li>
                 <li class="active">Account</li>
+                @if(session('success'))
+                <li class="pull-right success-msg text-success">{{ session('success') }}</li>
+                @endif
             </ol>
         </div>
     </section>
@@ -62,5 +70,10 @@
     </section>
 
 @endsection
+<script>
+    setTimeout(function () {
+        $('.success-msg').hide();
+    },5000);
+</script>
 
 

@@ -10,7 +10,14 @@
     .shopper-info p{
         font-size: 15px!important;
     }
-
+    .shopper-info > form > select{
+        background: #F0F0E9;
+        border: 0 none;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+        font-weight: 300;
+    }
     .breadcrumbs .breadcrumb li a:after {
         left:75px!important;
     }
@@ -33,22 +40,21 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shopper-info">
-                        <form action="{{ url('update-profile') }}" method="post">
+                        <form action="{{ url('update-customer-profile') }}" method="post">
                             @csrf
                             @method('PUT')
-                            <input type="text" placeholder="Full Name" name="customer_name" value="" required>
-                            <input type="email" placeholder="E-mail" name="customer_email" value="" required>
-                            <input type="password" placeholder="Chose a Password" name="customer_pwd" required>
-                            <input type="text" placeholder="Full Address" name="customer_address" value="" required>
+                            <input type="text" placeholder="Full Name" name="customer_name" value="{{ $customer->customer_name }}" required>
+                            <input type="email" placeholder="E-mail" name="customer_email" value="{{ $customer->customer_email }}" required>
+                            <input type="text" placeholder="Address" name="customer_address" value="{{ $customer->customer_address }}" required>
                             <select name="customer_district" required>
-                                <option value="">-District-</option>
                                 <option value="1">Dhaka</option>
                                 <option value="2">Rajshahi</option>
                                 <option value="3">Rangpur</option>
                             </select>
+                            <input type="text" placeholder="Contact" name="customer_phone" value="{{ $customer->customer_phone }}" required>
 
-                            <button class="btn btn-default update" href="{{ url('/') }}">Continue Shopping</button>
-                            <button class="btn btn-default check_out" type="submit">Login</button>
+                            <br><br>
+                            <button class="btn btn-default update" type="submit">Update Profile</button>
                         </form>
                     </div>
                 </div>

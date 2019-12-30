@@ -178,11 +178,24 @@ class CustomerController extends Controller
     }
 
     // customer profile update
-    public function updateProfile(){
+    public function updateProfile(Request $request){
         $categories = Category::categories();
         $brands = Brand::brands();
         $customerId = session('customer_id');
         $customer   = Customer::find($customerId);
+        if($_POST){
+            $data = array(
+                'customer_name'     => $request->input('customer_name'),
+                'customer_email'    => $request->input('customer_email'),
+                'customer_address'  => $request->input('customer_address'),
+                'customer_district' => $request->input('customer_district'),
+                'customer_phone'    => $request->input('customer_phone')
+            );
+            $customer = Customer::find($customerId)->update($data);
+            if($customer) {
+                return redirect('account')->with('success', 'Profile updated successfully.');
+            }
+        }
         return view('public.layouts.customers.updateProfile', compact('categories', 'brands', 'customer'));
     }
 }

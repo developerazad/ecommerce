@@ -65,3 +65,4 @@ Route::post('order-submit',  'CustomerController@orderSubmit');
 Route::post('user-validate', 'CustomerController@userValidation');
 Route::get('account', 'CustomerController@index');
 Route::get('update-profile', 'CustomerController@updateProfile');
+Route::put('update-customer-profile', 'CustomerController@updateProfile');
