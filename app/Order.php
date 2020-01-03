@@ -14,4 +14,7 @@ class Order extends Model
     public static function insertChd($data){
         return DB::table('orderchd')->insert($data);
     }
+    public static function customerOrders($customerId){
+        return DB::table('ordermst')->where('customer_id', $customerId)->get();
+    }
 }

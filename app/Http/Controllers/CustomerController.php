@@ -198,4 +198,13 @@ class CustomerController extends Controller
         }
         return view('public.layouts.customers.updateProfile', compact('categories', 'brands', 'customer'));
     }
+
+    // order status tracking
+    public function orderTrack(){
+        $categories = Category::categories();
+        $brands = Brand::brands();
+        $customerId = session('customer_id');
+        $orders     = Order::customerOrders($customerId);
+        return view('public.layouts.customers.orders', compact('categories', 'brands', 'customer', 'orders'));
+    }
 }
