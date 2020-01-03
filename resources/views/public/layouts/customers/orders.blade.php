@@ -53,6 +53,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <!-- pending orders-->
+                                @if(isset($orders))
                                 @foreach($orders as $key => $order)
                                     <tr>
                                         <td> {{ ++$key }} </td>
@@ -61,14 +63,14 @@
                                         <td> {{ date('d-M-Y', strtotime($order->order_date)) }} </td>
                                         <td>
                                             @if($order->order_status==='P')
-                                                <button class="btn btn-xs btn-info">Pending</button>
+                                                <button class="btn btn-xs btn-info pull-right">Pending</button>
                                             @elseif($order->order_status==='R')
-                                                <button class="btn btn-xs btn-warning">Received</button>
+                                                <button class="btn btn-xs btn-warning pull-right">Received</button>
                                             @elseif($order->order_status==='PR')
-                                                <button class="btn btn-xs btn-success">Processing</button>
+                                                <button class="btn btn-xs btn-success pull-right">Processing</button>
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="text-align: center;">
                                             <a href="#" class="btn btn-info btn-xs" id="modalOpen" data-action="{{ url('order-details') }}" data-modal="modal-lg" data-title="View Order Details" data-toggle="modal" data-target="#openModal">
                                                 <i class="fa fa-eye"></i>
                                             </a>
@@ -76,6 +78,32 @@
 
                                     </tr>
                                 @endforeach
+                                @endif
+                                <!--/. pending orders -->
+
+                                <!-- received orders-->
+                                @if(isset($receivedOrders))
+                                @foreach($receivedOrders as $key => $order)
+                                    <tr>
+                                        <td> {{ ++$key }} </td>
+                                        <td> Order# {{ $order->ordermst_id }} </td>
+                                        <td> ${{ number_format($order->order_total,2) }} </td>
+                                        <td> {{ date('d-M-Y', strtotime($order->order_date)) }} </td>
+                                        <td>
+                                            @if($order->order_status==='D')
+                                                <button class="btn btn-xs btn-success pull-right">Delivered</button>
+                                            @endif
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <a href="#" class="btn btn-success btn-xs" id="modalOpen" data-action="{{ url('order-details') }}" data-modal="modal-lg" data-title="View Order Details" data-toggle="modal" data-target="#openModal">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                @endforeach
+                                @endif
+                                <!--/. received orders -->
                                 </tbody>
                             </table>
                         </div>

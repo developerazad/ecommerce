@@ -67,3 +67,4 @@ Route::get('account', 'CustomerController@index');
 Route::get('update-profile', 'CustomerController@updateProfile');
 Route::put('update-customer-profile', 'CustomerController@updateProfile');
 Route::get('order-tracking', 'CustomerController@orderTrack');
+Route::get('received-orders', 'CustomerController@orderReceived');

@@ -15,6 +15,15 @@ class Order extends Model
         return DB::table('orderchd')->insert($data);
     }
     public static function customerOrders($customerId){
-        return DB::table('ordermst')->where('customer_id', $customerId)->get();
+        return DB::table('ordermst')
+            ->where('customer_id', $customerId)
+            ->where('order_status', '!=', 'D')
+            ->get();
+    }
+    public static function ordersReceived($customerId){
+        return DB::table('ordermst')
+            ->where('customer_id', $customerId)
+            ->where('order_status', '=', 'D')
+            ->get();
     }
 }

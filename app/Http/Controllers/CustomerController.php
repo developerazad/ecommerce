@@ -207,4 +207,11 @@ class CustomerController extends Controller
         $orders     = Order::customerOrders($customerId);
         return view('public.layouts.customers.orders', compact('categories', 'brands', 'customer', 'orders'));
     }
+    public function orderReceived(){
+        $categories = Category::categories();
+        $brands = Brand::brands();
+        $customerId = session('customer_id');
+        $receivedOrders     = Order::ordersReceived($customerId);
+        return view('public.layouts.customers.orders', compact('categories', 'brands', 'customer', 'receivedOrders'));
+    }
 }
