@@ -52,6 +52,24 @@
         });
     });
 
+    // order details by modal
+    $(document).on('click','a.modal-link', function () {
+        var actionUrl  = $(this).attr('data-action');
+        var modalTitle = $(this).attr('data-title');
+        $('.modal-title').text(modalTitle);
+
+
+        $.ajax({
+            type:'GET',
+            url:actionUrl,
+            success:function (data) {
+                $('.modal-body').html(data);
+            }
+
+        });
+
+    });
+
     // single shipping method check
     $(document).on('click', '.shipping_method', function () {
         $('.shipping_method').not(this).prop('checked', false);

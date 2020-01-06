@@ -26,4 +26,10 @@ class Order extends Model
             ->where('order_status', '=', 'D')
             ->get();
     }
+    public static function ordersDetails($orderId){
+        return DB::table('orderchd')
+            ->leftJoin('products', 'orderchd.product_id', '=', 'products.product_id')
+            ->where('ordermst_id', $orderId)
+            ->get();
+    }
 }

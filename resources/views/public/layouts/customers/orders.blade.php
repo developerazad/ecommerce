@@ -43,7 +43,7 @@
                         <div class="table-responsive cart_info">
                             <table class="table table-responsive table-bordered table-hover">
                                 <thead class="bg-success">
-                                <tr>
+                                <tr class="cart_menu">
                                     <td>Sl.</td>
                                     <td>Order No</td>
                                     <td>Order Total</td>
@@ -71,7 +71,12 @@
                                             @endif
                                         </td>
                                         <td style="text-align: center;">
-                                            <a href="#" class="btn btn-info btn-xs" id="modalOpen" data-action="{{ url('order-details') }}" data-modal="modal-lg" data-title="View Order Details" data-toggle="modal" data-target="#openModal">
+                                            <a href="#" class="btn btn-info btn-xs modal-link"
+                                               data-action="{{ url('order-details/'.$order->ordermst_id) }}"
+                                               data-modal="modal-xl"
+                                               data-title="View Order Details"
+                                               data-toggle="modal"
+                                               data-target="#modalOpen">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </td>
@@ -95,7 +100,12 @@
                                             @endif
                                         </td>
                                         <td style="text-align: center;">
-                                            <a href="#" class="btn btn-success btn-xs" id="modalOpen" data-action="{{ url('order-details') }}" data-modal="modal-lg" data-title="View Order Details" data-toggle="modal" data-target="#openModal">
+                                            <a href="#" class="btn btn-success btn-xs modal-link"
+                                               data-action="{{ url('order-details/'.$order->ordermst_id) }}"
+                                               data-modal="modal-xl"
+                                               data-title="View Order Details"
+                                               data-toggle="modal"
+                                               data-target="#modalOpen">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </td>
@@ -113,6 +123,24 @@
             </div>
     </section>
 
+    <div class="modal fade" id="modalOpen">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+
+                <div class="modal-body"></div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 @endsection
 
 

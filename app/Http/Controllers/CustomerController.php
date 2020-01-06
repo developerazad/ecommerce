@@ -171,7 +171,7 @@ class CustomerController extends Controller
                 'customer_name'  => $request->input('customer_name'),
                 'customer_phone' => $request->input('customer_phone')
             ]);
-            return redirect('/');
+            return redirect('order-tracking');
 
         }
 
@@ -213,5 +213,9 @@ class CustomerController extends Controller
         $customerId = session('customer_id');
         $receivedOrders     = Order::ordersReceived($customerId);
         return view('public.layouts.customers.orders', compact('categories', 'brands', 'customer', 'receivedOrders'));
+    }
+    public function orderDetails($orderId){
+        $orderDetails = Order::ordersDetails($orderId);
+        return view('public.layouts.customers.orderDetails', compact('orderDetails'));
     }
 }
