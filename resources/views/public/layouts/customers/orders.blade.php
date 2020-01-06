@@ -21,6 +21,7 @@
     .breadcrumbs .breadcrumb li a:after {
         left:75px!important;
     }
+
 </style>
 
 @section('content')
@@ -42,8 +43,8 @@
                     <div class="shopper-info">
                         <div class="table-responsive cart_info">
                             <table class="table table-responsive table-bordered table-hover">
-                                <thead class="bg-success">
-                                <tr class="cart_menu">
+                                <thead>
+                                <tr style="background-color: #F0F0E9;">
                                     <td>Sl.</td>
                                     <td>Order No</td>
                                     <td>Order Total</td>
@@ -58,7 +59,7 @@
                                 @foreach($orders as $key => $order)
                                     <tr>
                                         <td> {{ ++$key }} </td>
-                                        <td> Order# {{ $order->ordermst_id }} </td>
+                                        <td> Order# {{ $order->udorder_no }} </td>
                                         <td> ${{ number_format($order->order_total,2) }} </td>
                                         <td> {{ date('d-M-Y', strtotime($order->order_date)) }} </td>
                                         <td>
@@ -73,7 +74,7 @@
                                         <td style="text-align: center;">
                                             <a href="#" class="btn btn-info btn-xs modal-link"
                                                data-action="{{ url('order-details/'.$order->ordermst_id) }}"
-                                               data-modal="modal-xl"
+                                               data-modal="modal-full"
                                                data-title="View Order Details"
                                                data-toggle="modal"
                                                data-target="#modalOpen">
@@ -91,7 +92,7 @@
                                 @foreach($receivedOrders as $key => $order)
                                     <tr>
                                         <td> {{ ++$key }} </td>
-                                        <td> Order# {{ $order->ordermst_id }} </td>
+                                        <td> Order# {{ $order->udorder_no }} </td>
                                         <td> ${{ number_format($order->order_total,2) }} </td>
                                         <td> {{ date('d-M-Y', strtotime($order->order_date)) }} </td>
                                         <td>
@@ -125,7 +126,7 @@
 
     <div class="modal fade" id="modalOpen">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="min-width: 700px;">
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -134,6 +135,9 @@
                 </div>
 
                 <div class="modal-body"></div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                </div>
 
             </div>
             <!-- /.modal-content -->

@@ -3,11 +3,11 @@
            <div class="shopper-info">
                 <div class="table-responsive">
                     <table class="table table-responsive table-bordered table-hover">
-                        <thead class="bg-success">
-                        <tr class="cart_menu">
+                        <thead>
+                        <tr style="background-color: #F0F0E9;">
                             <td>Sl.</td>
                             <td>Photo</td>
-                            <td>Name</td>
+                            <td>Product Name</td>
                             <td>Order Qty</td>
                             <td>Unit Price</td>
                             <td>Sub Total</td>

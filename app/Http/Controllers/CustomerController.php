@@ -141,8 +141,11 @@ class CustomerController extends Controller
         }
         $totalAmount = Cart::total();
         $total = str_replace(',','', $totalAmount);
+        // user define order no
+        $udorderNo = rand(10000, 99999);
         $orderMst = array(
             'customer_id'       => $customerId,
+            'udorder_no'        => $udorderNo,
             'order_place'       => $request->input('customer_address'),
             'contact_no'        => $request->input('customer_phone'),
             'order_date'        => date('Y-m-d'),
