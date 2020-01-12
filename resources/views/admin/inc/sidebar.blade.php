@@ -31,7 +31,7 @@
                 </a>
             </li>
 
-
+            <!-- access control -->
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-cog"></i>
@@ -50,6 +50,7 @@
                 </ul>
             </li>
 
+            <!-- ui setup -->
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i>
@@ -62,6 +63,8 @@
                     <li><a href="{{ url('sliders') }}"><i class="fa fa-circle-o"></i> Slider</a></li>
                 </ul>
             </li>
+
+            <!-- Setup --->
             <li class="treeview">
                 <a href="#">
                     <i class="glyphicon glyphicon-wrench"></i>
@@ -74,6 +77,23 @@
                     <li><a href="{{ url('categories') }}"><i class="fa fa-circle-o"></i> Category</a></li>
                     <li><a href="{{ url('brands') }}"><i class="fa fa-circle-o"></i> Brand</a></li>
                     <li><a href="{{ url('products') }}"><i class="fa fa-circle-o"></i> Product</a></li>
+                </ul>
+            </li>
+
+            <!-- Order Manage --->
+            <li class="treeview">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i>
+                    <span>Order Manage</span>
+                    <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('pending-orders') }}"><i class="fa fa-circle-o"></i> Order Pending</a></li>
+                    <li><a href="{{ url('received-orders') }}"><i class="fa fa-circle-o"></i> Order Received</a></li>
+                    <li><a href="{{ url('order-processing') }}"><i class="fa fa-circle-o"></i> Order Processing</a></li>
+                    <li><a href="{{ url('delivered-orders') }}"><i class="fa fa-circle-o"></i> Order Delivered</a></li>
                 </ul>
             </li>
 

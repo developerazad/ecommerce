@@ -19,11 +19,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-/* =================== admin ===========================
-   ===================================================== */
+/* ======================================== admin ============================================= */
 
 /* =================== Access Control=================== */
-
 Route::resource('modules', 'ModuleController');
 Route::resource('module-links', 'ModuleLinkController');
 Route::resource('users', 'UserController');
@@ -35,16 +33,17 @@ Route::resource('module-assign', 'ModuleAssignController');
 Route::resource('sliders', 'SliderController');
 
 /* =================== Setup =========================== */
-
 Route::get('/admin', 'AdminController@index');
 Route::resource('categories', 'CategoryController');
 Route::resource('brands','BrandController');
 Route::resource('products','ProductController');
 
+/*======================Order Manage=====================*/
+Route::resource('pending-orders', 'OrderManageController');
 
 
-/* =================== public ==========================
-   ===================================================== */
+
+/* ===================================== public ============================================= */
 Route::get('/', 'PublicProductController@index');
 Route::get('product-details/{productId}', 'PublicProductController@show');
 Route::get('customer-login', 'CustomerController@login');

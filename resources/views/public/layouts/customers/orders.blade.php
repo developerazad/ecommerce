@@ -44,14 +44,14 @@
                         <div class="table-responsive cart_info">
                             <table class="table table-responsive table-bordered table-hover">
                                 <thead>
-                                <tr style="background-color: #F0F0E9;">
-                                    <td>Sl.</td>
-                                    <td>Order No</td>
-                                    <td>Order Total</td>
-                                    <td>Order Date</td>
-                                    <td>Status</td>
-                                    <td>Details</td>
-                                </tr>
+                                    <tr style="background-color: #F0F0E9;">
+                                        <td>Sl.</td>
+                                        <td>Order No</td>
+                                        <td>Order Total</td>
+                                        <td>Order Date</td>
+                                        <td>Status</td>
+                                        <td>Details</td>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                 <!-- pending orders-->
