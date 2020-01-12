@@ -77,7 +77,7 @@
             @include('admin.inc.messages')
             @include('admin.layouts.global.modal')
             @yield('content')
-            
+
         </div>
     <!-- /.content-wrapper -->
 
@@ -159,9 +159,7 @@
             success:function (data) {
                 $('.modal-body').html(data);
             }
-
         });
-
     })
 
     // add user defined modal

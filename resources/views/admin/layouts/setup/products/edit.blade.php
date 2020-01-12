@@ -104,21 +104,5 @@
             alert('Only jpg, jpeg and png formats are allowed!');
             $('#photo').val('');
         }
-    })
-</script>
-<!--image upload validation-->
-<script>
-    $('#photo').bind('change', function () {
-        var fileSize = this.files[0].size;
-        var maxSize  = 500000; //500kb
-        var validExtension = ['jpg','JPG','jpeg','JPEG','png','PNG'];
-        if (fileSize > maxSize){
-            alert('Sorry! maximum upload size 500kb');
-            $('#photo').val('');
-        }
-        if($.inArray($(this).val().split('.').pop().toLowerCase(), validExtension) == -1){
-            alert('Only jpg, jpeg and png formats are allowed!');
-            $('#photo').val('');
-        }
-    })
+    });
 </script>
