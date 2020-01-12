@@ -64,7 +64,7 @@
                                         <td> {{ date('d-M-Y', strtotime($order->order_date)) }} </td>
                                         <td>
                                             @if($order->order_status==='P')
-                                                <button class="btn btn-xs btn-info pull-right">Pending</button>
+                                                <button class="btn btn-xs btn-danger pull-right">Pending</button>
                                             @elseif($order->order_status==='R')
                                                 <button class="btn btn-xs btn-warning pull-right">Received</button>
                                             @elseif($order->order_status==='PR')

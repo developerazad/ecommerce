@@ -40,7 +40,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-action="{{ url('sliders/'.$row->slider_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit Slider" data-target="#myModal" class="btn btn-info btn-xs add-new">Edit</button> |
+                                        <button type="button" data-toggle="modal" data-action="{{ url('sliders/'.$row->slider_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit Slider" data-target="#myModal" class="btn btn-info btn-xs modal-link">Edit</button> |
                                         <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('sliders/'.$row->slider_id) }}" >Delete</button>
                                     </td>
                                 </tr>
@@ -67,7 +67,6 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
-    </div>
 
 
 @endsection

@@ -146,7 +146,7 @@
 </script>
 {{--add modal body by ajax--}}
 <script>
-    $(document).on('click','.add-new', function () {
+    $(document).on('click','.modal-link, .add-new', function () {
         var actionUrl  = $(this).attr('data-action');
         var modalTitle = $(this).attr('data-title');
         $('.modal-title').text(modalTitle);

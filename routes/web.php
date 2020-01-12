@@ -40,6 +40,7 @@ Route::resource('products','ProductController');
 
 /*======================Order Manage=====================*/
 Route::resource('pending-orders', 'OrderManageController');
+Route::get('order-details-view/{orderId}', 'OrderManageController@show');
 
 
 
