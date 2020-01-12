@@ -91,7 +91,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('pending-orders') }}"><i class="fa fa-circle-o"></i> Order Pending</a></li>
-                    <li><a href="{{ url('received-orders') }}"><i class="fa fa-circle-o"></i> Order Received</a></li>
+                    <li><a href="{{ url('order-received') }}"><i class="fa fa-circle-o"></i> Order Received</a></li>
                     <li><a href="{{ url('order-processing') }}"><i class="fa fa-circle-o"></i> Order Processing</a></li>
                     <li><a href="{{ url('delivered-orders') }}"><i class="fa fa-circle-o"></i> Order Delivered</a></li>
                 </ul>

@@ -19,8 +19,41 @@ class OrderManageController extends Controller
             'pageTitle'  => 'Pending Orders',
             'modalSize'  => 'modal-md',
          ];
-        $pendingOrders = OrderManage::pendingOrders();
-        return view('admin.layouts.orderManage.pending.index', compact('pendingOrders','header'));
+        $orders = OrderManage::pendingOrders();
+        return view('admin.layouts.orderManage.pending', compact('orders','header'));
+    }
+    public function receivedOrders()
+    {
+        $header =[
+            'title'      => 'Order Manage',
+            'pageTitle'  => 'Received Orders',
+            'modalSize'  => 'modal-md',
+         ];
+        $orders = OrderManage::receivedOrders();
+        return view('admin.layouts.orderManage.received', compact('orders','header'));
+    }
+
+    public function orderProcessing()
+    {
+        $header =[
+            'title'      => 'Order Manage',
+            'pageTitle'  => 'Order Processing',
+            'modalSize'  => 'modal-md',
+         ];
+        $orders = OrderManage::orderProcessing();
+        return view('admin.layouts.orderManage.processing', compact('orders','header'));
+    }
+
+
+    public function deliveredOrders()
+    {
+        $header =[
+            'title'      => 'Order Manage',
+            'pageTitle'  => 'Delivered Order',
+            'modalSize'  => 'modal-md',
+         ];
+        $orders = OrderManage::deliveredOrders();
+        return view('admin.layouts.orderManage.delivered', compact('orders','header'));
     }
 
     /**

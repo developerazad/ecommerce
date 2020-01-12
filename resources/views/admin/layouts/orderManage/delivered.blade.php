@@ -24,17 +24,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($pendingOrders as $key => $row)
+                            @foreach($orders as $key => $row)
                                 <tr>
                                     <td> {{ ++$key }} </td>
                                     <td> Order# {{ $row->udorder_no }} </td>
                                     <td> ${{ number_format($row->order_total,2) }} </td>
                                     <td> {{ date('d-M-Y', strtotime($row->order_date)) }} </td>
                                     <td>
-                                        <button class="btn btn-xs btn-danger">Pending</button>
+                                        <button class="btn btn-xs btn-success">Delivered</button>
                                     </td>
                                     <td style="text-align: center;">
-                                        <button type="button" data-toggle="modal" data-action="{{ url('order-details-view/'.$row->ordermst_id) }}" data-modal="modal-lg" data-title="View Order Details" data-target="#myModal" class="btn btn-info btn-xs modal-link">view</button>
+                                        <button type="button" data-toggle="modal" data-action="{{ url('order-details-view/'.$row->ordermst_id) }}" data-modal="{{ $header['modalSize'] }}" data-title="View Order Details" data-target="#myModal" class="btn btn-info btn-xs modal-link">view</button>
                                     </td>
 
                                 </tr>

@@ -39,7 +39,10 @@ Route::resource('brands','BrandController');
 Route::resource('products','ProductController');
 
 /*======================Order Manage=====================*/
-Route::resource('pending-orders', 'OrderManageController');
+Route::get('pending-orders', 'OrderManageController@index');
+Route::get('order-received', 'OrderManageController@receivedOrders');
+Route::get('order-processing', 'OrderManageController@orderProcessing');
+Route::get('delivered-orders', 'OrderManageController@deliveredOrders');
 Route::get('order-details-view/{orderId}', 'OrderManageController@show');
 
 
