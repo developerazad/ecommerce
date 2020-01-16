@@ -221,4 +221,7 @@ class CustomerController extends Controller
         $orderDetails = Order::ordersDetails($orderId);
         return view('public.layouts.customers.orderDetails', compact('orderDetails'));
     }
+    public function subscription(){
+        return view('public.layouts.customers.subscription');
+    }
 }
