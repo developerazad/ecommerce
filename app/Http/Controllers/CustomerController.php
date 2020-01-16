@@ -222,6 +222,7 @@ class CustomerController extends Controller
         return view('public.layouts.customers.orderDetails', compact('orderDetails'));
     }
     public function subscription(){
-        return view('public.layouts.customers.subscription');
+        $categories = Category::categories();
+        return view('public.layouts.customers.subscription', compact('categories'));
     }
 }

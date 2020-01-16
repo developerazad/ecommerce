@@ -41,6 +41,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shopper-info">
+                        @if( isset($orders) && !empty($orders) || (isset($receivedOrders) && count($receivedOrders) > 0) )
                         <div class="table-responsive cart_info">
                             <table class="table table-responsive table-bordered table-hover">
                                 <thead>
@@ -118,6 +119,9 @@
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                            <p class="text-center">No orders were found!</p>
+                        @endif
                     </div>
                 </div>
 

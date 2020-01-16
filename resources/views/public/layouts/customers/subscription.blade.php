@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="shopper-info">
-
+                        <p>You did not subscribe to any offer yet! To subscribe <a href="#">Click Here</a></p>
                     </div>
                 </div>
 
