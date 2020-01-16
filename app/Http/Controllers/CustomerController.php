@@ -115,7 +115,11 @@ class CustomerController extends Controller
                     'customer_address' => $checkUser->customer_address,
                     'customer_phone'   => $checkUser->customer_phone
                 ]);
-                return redirect('checkout');
+                if(Cart::count() > 0) {
+                    return redirect('checkout');
+                }else{
+                    return redirect('account')->with('success', 'Successfully logged in');
+                }
             }else{
                 return redirect('customer-login')->with('error', 'Invalid username or password');
             }
