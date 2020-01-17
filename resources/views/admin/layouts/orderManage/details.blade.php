@@ -16,7 +16,7 @@
                     <button class="btn btn-xs btn-success">Delivered</button>
                 @endif
             </p>
-            <p>Order Total: ${{ $orders[0]->order_total }}</p>
+            <p>Order Total: ${{ number_format($orders[0]->order_total,2) }}</p>
         </div>
         <div class="col-md-6 col-lg-6">
             <h4 class="text-left" style="font-weight: bold;">Shipping Address:</h4>
@@ -61,7 +61,7 @@
                 @endforeach
             <tr>
                 <td colspan="6"><strong>Total Amount To Pay</strong></td>
-                <td><strong>${{ $orders[0]->order_total }}</strong></td>
+                <td><strong>${{ number_format($orders[0]->order_total, 2) }}</strong></td>
             </tr>
             </tbody>
         </table>
