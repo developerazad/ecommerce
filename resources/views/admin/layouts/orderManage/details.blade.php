@@ -12,8 +12,8 @@
                     <button class="btn btn-xs btn-primary">Received</button>
                 @elseif($orders[0]->order_status==='PR')
                     <button class="btn btn-xs btn-info">Processing</button>
-                @elseif($orders[0]->order_status==='PR')
-                    <button class="btn btn-xs btn-success">Processing</button>
+                @elseif($orders[0]->order_status==='D')
+                    <button class="btn btn-xs btn-success">Delivered</button>
                 @endif
             </p>
             <p>Order Total: ${{ $orders[0]->order_total }}</p>
