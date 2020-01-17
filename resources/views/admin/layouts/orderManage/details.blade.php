@@ -1,25 +1,43 @@
 <div class="box-body">
     <div class="row">
         <div class="col-md-6 col-lg-6">
-            <h4 class="text-left" style="font-weight: bold;">Order Info</h4>
-            <p>Order No # 007</p>
-            <p>Order Date:  Sep 04, 2019 </p>
-            <p>Order Status: <button class="btn btn-primary btn-xs">Pending</button></p>
-            <p>Order Total: $436.50</p>
+            <h4 class="text-left" style="font-weight: bold;">Order Info:</h4>
+            <hr>
+            <p>Order No # {{ $orders[0]->udorder_no }}</p>
+            <p>Order Date:  {{ date('d-M-Y', strtotime($orders[0]->order_date)) }} </p>
+            <p>Order Status:
+                @if($orders[0]->order_status==='P')
+                    <button class="btn btn-xs btn-danger">Pending</button>
+                @elseif($orders[0]->order_status==='R')
+                    <button class="btn btn-xs btn-primary">Received</button>
+                @elseif($orders[0]->order_status==='PR')
+                    <button class="btn btn-xs btn-info">Processing</button>
+                @elseif($orders[0]->order_status==='PR')
+                    <button class="btn btn-xs btn-success">Processing</button>
+                @endif
+            </p>
+            <p>Order Total: ${{ $orders[0]->order_total }}</p>
         </div>
         <div class="col-md-6 col-lg-6">
-            <h4 class="text-left" style="font-weight: bold;">Shipping Info</h4>
-            <p>Name:  Md. Azharul Islam </p>
-            <p>Address:  Sector # 7, Uttara, Dhaka </p>
-            <p>Contact:  +8801764761919 </p>
-            <p>Payment Type: <button class="btn btn-primary btn-xs">COD</button></p>
+            <h4 class="text-left" style="font-weight: bold;">Shipping Address:</h4>
+            <hr>
+            <p>Name:  {{ $orders[0]->customer_name }} </p>
+            <p>Address:  {{ $orders[0]->order_place }} </p>
+            <p>Contact:  {{ $orders[0]->contact_no }} </p>
+            <p>Payment Type:
+                @if($orders[0]->payment_method==='cod')
+                    <button class="btn btn-xs btn-primary">COD</button>
+                @elseif($orders[0]->payment_method==='bkash')
+                    <button class="btn btn-xs btn-primary">bKash</button>
+                @endif
+            </p>
         </div>
     </div>
     <h4 style="font-weight: bold;">Product(s) Details:</h4>
     <div class="table-responsive">
-        <table class="table table-bordered  col-md-12 col-lg-12 col-sm-12 col-xm-12" width="100%" cellspacing="0">
+        <table class="table table-bordered table-hover col-md-12 col-lg-12 col-sm-12 col-xm-12" width="100%" cellspacing="0">
             <thead>
-            <tr>
+            <tr style="background-color: #e6e5dd;">
                 <th>Sl.</th>
                 <th>Name</th>
                 <th>Image</th>
@@ -30,18 +48,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Zinc plus</td>
-                <td><a href="http://163.47.146.233:8072/salesforce/public/uploads/products/450_1570958339.jpg" target="_blank"><img src="http://163.47.146.233:8072/salesforce/public/uploads/products/450_1570958339.jpg" class="img-responsive" alt="Product Image" style="width: 45px;height: 30px;"></a></td>
-                <td>zn-c</td>
-                <td>2</td>
-                <td>$436.50</td>
-                <td>$872.50</td>
-            </tr>
+                @foreach($orders as $key => $row)
+                <tr>
+                    <td>{{ ++$key }}</td>
+                    <td>{{ $row->product_name }}</td>
+                    <td><img src="{{ url('/uploads/products/'.$row->product_photo) }}" class="img-responsive" alt="Product Image" style="width: 45px;height: 30px;"></td>
+                    <td>{{ $row->product_code }}</td>
+                    <td>{{ $row->product_qty }}</td>
+                    <td>{{ $row->unit_price }}</td>
+                    <td>{{ $row->subtotal_price }}</td>
+                </tr>
+                @endforeach
             <tr>
                 <td colspan="6"><strong>Total Amount To Pay</strong></td>
-                <td><strong>$872.50</strong></td>
+                <td><strong>${{ $orders[0]->order_total }}</strong></td>
             </tr>
             </tbody>
         </table>

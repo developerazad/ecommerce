@@ -85,8 +85,8 @@ class OrderManageController extends Controller
      */
     public function show($id)
     {
-        $order = OrderManage::order($id);
-        return view('admin.layouts.orderManage.details');
+        $orders = OrderManage::order($id);
+        return view('admin.layouts.orderManage.details', compact('orders'));
     }
 
     /**

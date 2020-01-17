@@ -33,6 +33,11 @@ class OrderManage extends Model
             ->get();
     }
     public static function order($id){
-        return DB::table('orderchd')->where('ordermst_id','=', $id)->get();
+        return DB::table('orderchd')
+            ->leftJoin('ordermst', 'orderchd.ordermst_id', '=', 'ordermst.ordermst_id')
+            ->leftJoin('products', 'orderchd.product_id', '=', 'products.product_id')
+            ->leftJoin('customers', 'ordermst.customer_id', '=', 'customers.customer_id')
+            ->where('orderchd.ordermst_id','=', $id)
+            ->get();
     }
 }
