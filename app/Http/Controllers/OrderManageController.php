@@ -17,7 +17,7 @@ class OrderManageController extends Controller
         $header =[
             'title'      => 'Order Manage',
             'pageTitle'  => 'Pending Orders',
-            'modalSize'  => 'modal-md',
+            'modalSize'  => 'modal-lg',
          ];
         $orders = OrderManage::pendingOrders();
         return view('admin.layouts.orderManage.pending', compact('orders','header'));
@@ -27,7 +27,7 @@ class OrderManageController extends Controller
         $header =[
             'title'      => 'Order Manage',
             'pageTitle'  => 'Received Orders',
-            'modalSize'  => 'modal-md',
+            'modalSize'  => 'modal-lg',
          ];
         $orders = OrderManage::receivedOrders();
         return view('admin.layouts.orderManage.received', compact('orders','header'));
@@ -38,7 +38,7 @@ class OrderManageController extends Controller
         $header =[
             'title'      => 'Order Manage',
             'pageTitle'  => 'Order Processing',
-            'modalSize'  => 'modal-md',
+            'modalSize'  => 'modal-lg',
          ];
         $orders = OrderManage::orderProcessing();
         return view('admin.layouts.orderManage.processing', compact('orders','header'));
@@ -50,7 +50,7 @@ class OrderManageController extends Controller
         $header =[
             'title'      => 'Order Manage',
             'pageTitle'  => 'Delivered Order',
-            'modalSize'  => 'modal-md',
+            'modalSize'  => 'modal-lg',
          ];
         $orders = OrderManage::deliveredOrders();
         return view('admin.layouts.orderManage.delivered', compact('orders','header'));

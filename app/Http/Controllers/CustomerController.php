@@ -116,7 +116,7 @@ class CustomerController extends Controller
                     'customer_phone'   => $checkUser->customer_phone
                 ]);
                 if(Cart::count() > 0) {
-                    return redirect('checkout');
+                    return redirect('carts');
                 }else{
                     return redirect('account')->with('success', 'Successfully logged in');
                 }
