@@ -16,6 +16,7 @@
                             <thead class="bg-primary">
                                 <tr>
                                     <td>Sl.</td>
+                                    <td>Customer Name</td>
                                     <td>Order No</td>
                                     <td>Order Total</td>
                                     <td>Order Date</td>
@@ -27,6 +28,7 @@
                             @foreach($orders as $key => $row)
                                 <tr>
                                     <td> {{ ++$key }} </td>
+                                    <td> {{ $row->customer_name }} </td>
                                     <td> Order# {{ $row->udorder_no }} </td>
                                     <td> ${{ number_format($row->order_total,2) }} </td>
                                     <td> {{ date('d-M-Y', strtotime($row->order_date)) }} </td>
@@ -43,6 +45,7 @@
                             <tfoot>
                                 <tr>
                                     <td>Sl.</td>
+                                    <td>Customer Name</td>
                                     <td>Order No</td>
                                     <td>Order Total</td>
                                     <td>Order Date</td>
