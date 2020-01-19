@@ -44,6 +44,7 @@ Route::get('order-received', 'OrderManageController@receivedOrders');
 Route::get('order-processing', 'OrderManageController@orderProcessing');
 Route::get('delivered-orders', 'OrderManageController@deliveredOrders');
 Route::get('order-details-view/{orderId}', 'OrderManageController@show');
+Route::post('order-approve/{orderId}', 'OrderManageController@orderApprove');
 
 
 

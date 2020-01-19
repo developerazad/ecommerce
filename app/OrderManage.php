@@ -40,4 +40,11 @@ class OrderManage extends Model
             ->where('orderchd.ordermst_id','=', $id)
             ->get();
     }
+    public static function orderStatus($id){
+        return DB::table('ordermst')->where('ordermst_id', '=', $id)->first();
+    }
+
+    public static function updateStatus($data, $id){
+        return DB::table('ordermst')->where('ordermst_id', '=', $id)->update($data);
+    }
 }

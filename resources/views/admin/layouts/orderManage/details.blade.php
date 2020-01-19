@@ -1,4 +1,6 @@
 <div class="box-body">
+    <form action="{{ url('order-approve/'.$orderId) }}" method="post">
+        @csrf
     <div class="row">
         <div class="col-md-6 col-lg-6">
             <h4 class="text-left" style="font-weight: bold;">Order Info:</h4>
@@ -67,8 +69,11 @@
         </table>
     </div>
 
+    @if($orders[0]->order_status !== 'D')
     <div class="box-footer" style="border-top: 0!important;">
         <button type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
+    @endif
+    </form>
 </div>

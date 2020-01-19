@@ -86,9 +86,29 @@ class OrderManageController extends Controller
     public function show($id)
     {
         $orders = OrderManage::order($id);
-        return view('admin.layouts.orderManage.details', compact('orders'));
+        $orderId = $id;
+        return view('admin.layouts.orderManage.details', compact('orders', 'orderId'));
     }
 
+    public function orderApprove($id){
+        $orderStatus = OrderManage::orderStatus($id);
+        $currentStatus = $orderStatus->order_status;
+        if($currentStatus=='P'){
+            $status = 'R';
+            $type = 'Received';
+        }else if($currentStatus=='R'){
+            $status = 'PR';
+            $type = 'Processed';
+        }else if($currentStatus=='PR'){
+            $status = 'D';
+            $type = 'Delivered';
+        }
+        $data = array('order_status' => $status);
+        $updateStatus = OrderManage::updateStatus($data, $id);
+        if($updateStatus){
+            return redirect()->back()->with('success', 'Order '.$type. ' successfully');
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
