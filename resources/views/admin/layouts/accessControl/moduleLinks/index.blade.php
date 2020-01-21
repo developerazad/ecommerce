@@ -18,6 +18,7 @@
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>Route</th>
+                                    <th>Module</th>
                                     <th>Controller@method</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -29,6 +30,7 @@
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $row->modlink_name }}</td>
                                     <td>{{ $row->route_url }}</td>
+                                    <td>{{ $row->module_name }}</td>
                                     <td>{{ $row->controller_method }}</td>
                                     <td>
                                         @if($row->active_fg==1)

@@ -21,6 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /* ======================================== admin ============================================= */
 
+/* =================== login ===========================*/
+Route::get('/admin', 'AdminController@index');
+
 /* =================== Access Control=================== */
 Route::resource('modules', 'ModuleController');
 Route::resource('module-links', 'ModuleLinkController');
@@ -33,7 +36,6 @@ Route::resource('module-assign', 'ModuleAssignController');
 Route::resource('sliders', 'SliderController');
 
 /* =================== Setup =========================== */
-Route::get('/admin', 'AdminController@index');
 Route::resource('categories', 'CategoryController');
 Route::resource('brands','BrandController');
 Route::resource('products','ProductController');
