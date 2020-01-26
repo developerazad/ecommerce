@@ -8,9 +8,21 @@
 
                 <div class="box box-info">
                     <div class="box-header">
-                        <h3 class="box-title">
-                            User Groups
-                        </h3>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-inline">
+                                    <label for="user-group">User Groups:</label>
+                                    <select name="user-group" class="form-control" style="width: 50%!important;">
+                                        <option value="">-Select-</option>
+                                        @foreach($userGroups as $userGroup)
+                                        <option value="{{ $userGroup->user_group_id }}">{{ $userGroup->user_group_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <!-- tools box -->
                         <div class="pull-right box-tools">
                             <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
@@ -20,38 +32,33 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-hover">
+                            @foreach($modules as $module)
                             <thead>
-                            <tr>
-                                <td>Link Name</td>
-                                <td>Create</td>
-                                <td>Read</td>
-                                <td>Update</td>
-                                <td>Delete</td>
-                                <td>Status</td>
-                            </tr>
-                            <tr class="bg-info">
-                                <td colspan="6">Access Control</td>
-                            </tr>
+                                <tr class="bg-info">
+                                    <td>{{ $module->module_name }}</td>
+                                    <td>Create</td>
+                                    <td>Read</td>
+                                    <td>Update</td>
+                                    <td>Delete</td>
+                                    <td>Status</td>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Module</td>
-                                <td><input type="checkbox" class="create-permission"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-                                <td>Module Link</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                            </tr>
+                                @foreach($moduleLinks as $link)
+                                @if($module->module_id===$link->module_id)
+                                <tr>
+                                    <td>{{ $link->modlink_name }}</td>
+                                    <td><input type="checkbox" class="create-permission"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                @endif
+                                @endforeach
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                     <!-- /.box-body -->
@@ -63,7 +70,5 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
-    </div>
-
 
 @endsection

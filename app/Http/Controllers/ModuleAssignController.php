@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Module;
 use App\ModuleAssign;
+use App\ModuleLink;
+use App\UserGroup;
 use Illuminate\Http\Request;
 
 class ModuleAssignController extends Controller
@@ -20,11 +23,14 @@ class ModuleAssignController extends Controller
 
     public function index()
     {
-        $header =[
+        $header = [
             'title'      => 'Access Control',
             'pageTitle'  => 'Module Assign'
         ];
-        return view('admin.layouts.accessControl.modulesAssign.index', compact('header'));
+        $modules = Module::modules();
+        $moduleLinks = ModuleLink::moduleLinks();
+        $userGroups = UserGroup::groups();
+        return view('admin.layouts.accessControl.modulesAssign.index', compact('header', 'modules', 'moduleLinks', 'userGroups'));
     }
 
     /**
