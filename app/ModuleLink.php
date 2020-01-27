@@ -16,12 +16,12 @@ class ModuleLink extends Model
         return DB::table('ac_module_links')->insert($data);
     }
     public static function moduleLink($id){
-        return DB::table('ac_module_links')->where('modlink_id', $id)->first();
+        return DB::table('ac_module_links')->where('module_link_id', $id)->first();
     }
     public static function updateModuleLink($data, $id){
-        return DB::table('ac_module_links')->where('modlink_id', $id)->update($data);
+        return DB::table('ac_module_links')->where('module_link_id', $id)->update($data);
     }
     public static function deleteModuleLink($id){
-        return DB::table('ac_module_links')->where('modlink_id', $id)->delete();
+        return DB::table('ac_module_links')->where('module_link_id', $id)->delete();
     }
 }

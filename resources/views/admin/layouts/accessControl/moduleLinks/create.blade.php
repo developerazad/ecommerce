@@ -5,7 +5,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="modlink_name" placeholder="Enter Module Link Name" required>
+                    <input type="text" class="form-control" name="module_link_name" placeholder="Enter Module Link Name" required>
                 </div>
             </div>
             <div class="col-md-6">
@@ -49,7 +49,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Link Type</label>
-                    <select name="modlink_type" class="form-control select2" style="width: 100%" required>
+                    <select name="module_link_type" class="form-control select2" style="width: 100%" required>
                         <option value="">-Select-</option>
                         <option value="M">Main Menu</option>
                         <option value="O">Others</option>

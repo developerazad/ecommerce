@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAcModulesAssignTale extends Migration
+class CreatePermissionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateAcModulesAssignTale extends Migration
      */
     public function up()
     {
-        Schema::create('ac_modules_assign', function (Blueprint $table) {
-            $table->increments('module_assign_id');
+        Schema::create('permission', function (Blueprint $table) {
+            $table->increments('permission_id');
             $table->integer('user_group_id');
-            $table->integer('module_id');
-            $table->integer('modlink_id');
-            $table->integer('user_id');
+            $table->integer('module_link_id');
             $table->integer('create_fg')->default(0);
             $table->integer('read_fg')->default(0);
             $table->integer('update_fg')->default(0);
@@ -37,6 +35,6 @@ class CreateAcModulesAssignTale extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ac_modules_assign');
+        Schema::dropIfExists('permission');
     }
 }

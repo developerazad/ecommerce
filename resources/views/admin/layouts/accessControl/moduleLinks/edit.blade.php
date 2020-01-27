@@ -1,4 +1,4 @@
-<form action="{{ url('module-links/'.$moduleLink->modlink_id) }}" method="post">
+<form action="{{ url('module-links/'.$moduleLink->module_link_id) }}" method="post">
     @csrf
     @method('PUT')
     <div class="box-body">
@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="modlink_name" value="{{ $moduleLink->modlink_name }}" placeholder="Enter Module Link Name" required>
+                    <input type="text" class="form-control" name="module_link_name" value="{{ $moduleLink->module_link_name }}" placeholder="Enter Module Link Name" required>
                 </div>
             </div>
             <div class="col-md-6">
@@ -50,10 +50,10 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="description">Link Type</label>
-                    <select name="modlink_type" class="form-control select2" style="width: 100%" required>
+                    <select name="module_link_type" class="form-control select2" style="width: 100%" required>
                         <option value="">-Select-</option>
-                        <option value="M" @if($moduleLink->modlink_type==='M') selected @endif>Main Menu</option>
-                        <option value="O" @if($moduleLink->modlink_type==='O') selected @endif>Others</option>
+                        <option value="M" @if($moduleLink->module_link_type==='M') selected @endif>Main Menu</option>
+                        <option value="O" @if($moduleLink->module_link_type==='O') selected @endif>Others</option>
                     </select>
                 </div>
             </div>

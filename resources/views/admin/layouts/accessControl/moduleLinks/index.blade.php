@@ -28,7 +28,7 @@
                             @foreach($moduleLinks as $key => $row)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $row->modlink_name }}</td>
+                                    <td>{{ $row->module_link_name }}</td>
                                     <td>{{ $row->route_url }}</td>
                                     <td>{{ $row->module_name }}</td>
                                     <td>{{ $row->controller_method }}</td>
@@ -40,8 +40,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-action="{{ url('module-links/'.$row->modlink_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->modlink_name }}" data-target="#myModal" class="btn btn-info btn-xs modal-link">Edit</button> |
-                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('module-links/'.$row->modlink_id) }}" >Delete</button>
+                                        <button type="button" data-toggle="modal" data-action="{{ url('module-links/'.$row->module_link_id.'/edit') }}" data-modal="{{ $header['modalSize'] }}" data-title="Edit {{ $row->module_link_name }}" data-target="#myModal" class="btn btn-info btn-xs modal-link">Edit</button> |
+                                        <button type="button" class="btn btn-danger btn-xs deleteRow" data-action="{{ url('module-links/'.$row->module_link_id) }}" >Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -67,7 +67,7 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
-    </div>
+
 
 
 @endsection

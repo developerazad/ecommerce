@@ -8,12 +8,10 @@
 
                 <div class="box box-info">
                     <div class="box-header">
-
-
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group form-inline">
-                                    <label for="user-group">User Groups:</label>
+                                    <label for="user-group">User Groups:&nbsp;</label>
                                     <select name="user-group" class="form-control" style="width: 50%!important;">
                                         <option value="">-Select-</option>
                                         @foreach($userGroups as $userGroup)
@@ -48,7 +46,7 @@
                                 @foreach($moduleLinks as $link)
                                 @if($module->module_id===$link->module_id)
                                 <tr>
-                                    <td>{{ $link->modlink_name }}</td>
+                                    <td>{{ $link->module_link_name }}</td>
                                     <td><input type="checkbox" class="create-permission"></td>
                                     <td><input type="checkbox"></td>
                                     <td><input type="checkbox"></td>

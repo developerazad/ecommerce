@@ -29,7 +29,7 @@ Route::resource('modules', 'ModuleController');
 Route::resource('module-links', 'ModuleLinkController');
 Route::resource('users', 'UserController');
 Route::resource('user-groups', 'UserGroupController');
-Route::resource('module-assign', 'ModuleAssignController');
+Route::resource('permissions', 'PermissionController');
 
 
 /* ====================UI Setup========================= */

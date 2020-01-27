@@ -48,7 +48,7 @@
                 <ul class="treeview-menu">
                     @foreach($moduleLinks as $link)
                     @if($module->module_id===$link->module_id)
-                    <li><a href="{{ $link->route_url }}"><i class="fa fa-circle-o"></i> {{ $link->modlink_name }}</a></li>
+                    <li><a href="{{ $link->route_url }}"><i class="fa fa-circle-o"></i> {{ $link->module_link_name }}</a></li>
                     @endif
                     @endforeach
                 </ul>

@@ -14,13 +14,13 @@ class CreateModuleLinksTable extends Migration
     public function up()
     {
         Schema::create('ac_module_links', function (Blueprint $table) {
-            $table->increments('modlink_id');
-            $table->string('modlink_name');
+            $table->increments('module_link_id');
+            $table->string('module_link_name');
             $table->integer('module_id');
             $table->string('route_url');
             $table->string('controller_method');
             $table->string('method_type')->nullable();
-            $table->string('modlink_type')->nullable();
+            $table->string('module_link_type')->nullable();
             $table->integer('userdsl_no')->nullable();
             $table->integer('active_fg');
             $table->integer('created_by')->nullable();

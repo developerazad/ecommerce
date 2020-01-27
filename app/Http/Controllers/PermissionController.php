@@ -8,7 +8,7 @@ use App\ModuleLink;
 use App\UserGroup;
 use Illuminate\Http\Request;
 
-class ModuleAssignController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.

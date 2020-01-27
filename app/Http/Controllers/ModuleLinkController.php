@@ -28,7 +28,7 @@ class ModuleLinkController extends Controller
             'modalSize'  => 'modal-lg',
             'modalTitle' => 'Add New Module Link',
         ];
-        $moduleLinks = ModuleLink::moduleLinks();
+        $moduleLinks = ModuleLink::moduleLinks(); //$this->pr($moduleLinks);
         return view('admin.layouts.accessControl.moduleLinks.index', compact('moduleLinks','header'));
     }
 
@@ -52,12 +52,12 @@ class ModuleLinkController extends Controller
     public function store(Request $request)
     {
         $data = array(
-            'modlink_name'     => $request->input('modlink_name'),
+            'module_link_name' => $request->input('module_link_name'),
             'module_id'        => $request->input('module_id'),
             'route_url'        => $request->input('route_url'),
             'controller_method'=> $request->input('controller_method'),
             'method_type'      => $request->input('method_type'),
-            'modlink_type'     => $request->input('modlink_type'),
+            'module_link_type' => $request->input('module_link_type'),
             'userdsl_no'       => $request->input('userdsl_no'),
             'active_fg'        => $request->input('active_fg'),
             'created_by'       => auth()->user()->id
@@ -102,12 +102,12 @@ class ModuleLinkController extends Controller
     public function update(Request $request, $id)
     {
         $data = array(
-            'modlink_name'     => $request->input('modlink_name'),
+            'module_link_name' => $request->input('module_link_name'),
             'module_id'        => $request->input('module_id'),
             'route_url'        => $request->input('route_url'),
             'controller_method'=> $request->input('controller_method'),
             'method_type'      => $request->input('method_type'),
-            'modlink_type'     => $request->input('modlink_type'),
+            'module_link_type' => $request->input('module_link_type'),
             'userdsl_no'       => $request->input('userdsl_no'),
             'active_fg'        => $request->input('active_fg'),
             'updated_by'       => auth()->user()->id
