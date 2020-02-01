@@ -143,9 +143,7 @@
             'autoWidth'   : false
         })
     });
-</script>
 {{--add modal body by ajax--}}
-<script>
     $(document).on('click','.modal-link, .add-new', function () {
         var actionUrl  = $(this).attr('data-action');
         var modalTitle = $(this).attr('data-title');
@@ -160,7 +158,7 @@
                 $('.modal-body').html(data);
             }
         });
-    })
+    });
 
     // add user defined modal
     function removeModalSize(modalSize) {
@@ -204,16 +202,30 @@
                 }
             });
         }
-    })
-</script>
-
-<!--/.script-->
+    });
 
 <!--fed out message-->
-<script>
     setTimeout(function () {
         $('.alert').hide();
     },5000);
+
+// user group wise index
+    $(document).on('change', '.user-groups', function () {
+        let userGroupId = $(this).val();
+        let url = '{{ url('user-group-wise-permission') }}';
+        let token = '{{ csrf_token() }}';
+        $.ajax({
+            method: 'POST',
+            url: url,
+            data: {
+                userGroupId: userGroupId,
+                _token: token,
+            },
+            success:function(data){
+                $('.user-group-wise-permission').html(data);
+            }
+        });
+    });
 
 </script>
 </body>

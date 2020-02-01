@@ -12,8 +12,7 @@
                             <div class="col-md-6">
                                 <div class="form-group form-inline">
                                     <label for="user-group">User Groups:&nbsp;</label>
-                                    <select name="user-group" class="form-control" style="width: 50%!important;">
-                                        <option value="">-Select-</option>
+                                    <select name="user-groups" class="form-control user-groups" style="width: 50%!important;">
                                         @foreach($userGroups as $userGroup)
                                         <option value="{{ $userGroup->user_group_id }}">{{ $userGroup->user_group_name }}</option>
                                         @endforeach
@@ -29,7 +28,7 @@
                         <!-- /. tools -->
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
+                    <div class="box-body user-group-wise-permission">
                         <table class="table table-bordered table-hover">
                             @foreach($modules as $module)
                             <thead>
@@ -70,3 +69,5 @@
     <!-- /.content -->
 
 @endsection
+
+

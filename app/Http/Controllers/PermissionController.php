@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Module;
 use App\ModuleAssign;
 use App\ModuleLink;
+use App\Permission;
 use App\UserGroup;
 use Illuminate\Http\Request;
 
@@ -97,5 +98,14 @@ class PermissionController extends Controller
     public function destroy(RoleAssign $roleAssign)
     {
         //
+    }
+
+    public function userGroupWisePage(Request $request){
+        $userGroupId = $request->input('userGroupId');
+        $modules     = Module::modules();
+        $moduleLinks = Permission::moduleLinks();
+        //$this->pr($moduleLinks);
+        return view('admin.layouts.accessControl.modulesAssign.permission', compact('userGroupId', 'modules', 'moduleLinks'));
+
     }
 }

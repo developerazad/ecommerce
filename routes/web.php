@@ -30,6 +30,7 @@ Route::resource('module-links', 'ModuleLinkController');
 Route::resource('users', 'UserController');
 Route::resource('user-groups', 'UserGroupController');
 Route::resource('permissions', 'PermissionController');
+Route::post('user-group-wise-permission', 'PermissionController@userGroupWisePage');
 
 
 /* ====================UI Setup========================= */
