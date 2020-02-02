@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Module;
-use App\ModuleAssign;
 use App\ModuleLink;
 use App\Permission;
 use App\UserGroup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PermissionController extends Controller
 {
@@ -108,4 +108,52 @@ class PermissionController extends Controller
         return view('admin.layouts.accessControl.modulesAssign.permission', compact('userGroupId', 'modules', 'moduleLinks'));
 
     }
+    public function userGroupWisePermission(Request $request){
+        $userGroupId    = $request->input('userGroupId');
+        $moduleLinkId   = $request->input('moduleLinkId');
+        $dataPermission = $request->input('dataPermission');
+        $permissionFlag = $request->input('permissionFlag');
+        //echo $userGroupId.'-'.$moduleLinkId.'-'.$dataPermission.'-'.$permissionFlag;
+
+        $ifExist = Permission::checkModuleLink($userGroupId, $moduleLinkId);
+
+        // update permission
+        if($ifExist){
+            $data = array(
+              'module_link_id' => $moduleLinkId,
+              'user_group_id'  => $userGroupId,
+               $this->permissionType($dataPermission) => $permissionFlag
+            );
+            //$this->pr($data);
+            DB::table('ac_permissions')->where('user_group_id', $userGroupId)->where('module_link_id', $moduleLinkId)->update($data);
+        // assign new permission
+        }else{
+            $data = array(
+                'user_group_id'  => $userGroupId,
+                'module_link_id' => $moduleLinkId,
+                'create_fg'      => $this->permissionType($dataPermission) == 'create_fg'? $permissionFlag:0,
+                'read_fg'        => $this->permissionType($dataPermission) == 'read_fg'  ? $permissionFlag:0,
+                'update_fg'      => $this->permissionType($dataPermission) == 'update_fg'? $permissionFlag:0,
+                'delete_fg'      => $this->permissionType($dataPermission) == 'delete_fg'? $permissionFlag:0,
+                'active_fg'      => $this->permissionType($dataPermission) == 'active_fg'? $permissionFlag:0,
+            );
+            //$this->pr($data);
+            DB::table('ac_permissions')->insert($data);
+        }
+    }
+
+    public function permissionType($dataPermission){
+        if($dataPermission=='C'){
+            return 'create_fg';
+        }elseif($dataPermission=='R'){
+            return 'read_fg';
+        }elseif($dataPermission=='U'){
+            return 'update_fg';
+        }elseif($dataPermission=='D'){
+            return 'delete_fg';
+        }elseif($dataPermission=='AS'){
+            return 'active_fg';
+        }
+    }
+
 }

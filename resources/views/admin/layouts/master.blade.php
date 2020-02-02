@@ -212,7 +212,7 @@
 // user group wise page
     $(document).on('change', '.user-groups', function () {
         let userGroupId = $(this).val();
-        let url = '{{ url('user-group-wise-permission') }}';
+        let url = '{{ url('user-group-wise-page') }}';
         let token = '{{ csrf_token() }}';
         $.ajax({
             method: 'POST',
@@ -228,10 +228,30 @@
     });
     // user group wise permission assign
     $(document).on('click', '.create-permission', function(){
-        let thisRow      = $(this).closest('tr');
-        let userGroupId  = thisRow.attr('data-group');
-        let moduleLinkId = thisRow.attr('data-link');
-        console.log(userGroupId+ ' ' +moduleLinkId);
+        let thisRow        = $(this).closest('tr');
+        let isChecked      = $(this).is(':checked');
+        let permissionFlag = isChecked===true?1:0;
+        let userGroupId    = thisRow.attr('data-group');
+        let moduleLinkId   = thisRow.attr('data-link');
+        let dataPermission = $(this).attr('data-permission');
+        let token = '{{ csrf_token() }}';
+        let url = '{{ url('user-group-wise-permission') }}';
+        //console.log(userGroupId+moduleLinkId+dataPermission);
+
+        $.ajax({
+           type: 'POST',
+           url: url,
+           data:{
+               userGroupId:    userGroupId,
+               moduleLinkId:   moduleLinkId,
+               dataPermission: dataPermission,
+               permissionFlag: permissionFlag,
+               _token: token,
+           },
+           success: function (data) {
+
+           }
+        });
     });
 
 </script>
