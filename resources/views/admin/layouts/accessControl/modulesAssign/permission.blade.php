@@ -13,13 +13,13 @@
         <tbody>
         @foreach($moduleLinks as $link)
             @if($module->module_id===$link->module_id)
-                <tr >
+                <tr data-link="{{ $link->module_link_id }}" data-group="{{ $userGroupId }}">
                     <td>{{ $link->module_link_name }}</td>
-                    <td><input type="checkbox" class="create-permission" @if($link->create_fg==1 && $link->user_group_id==$userGroupId) checked @endif></td>
-                    <td><input type="checkbox" class="create-permission" @if($link->read_fg  ==1 && $link->user_group_id==$userGroupId) checked @endif></td>
-                    <td><input type="checkbox" class="create-permission" @if($link->update_fg==1 && $link->user_group_id==$userGroupId) checked @endif></td>
-                    <td><input type="checkbox" class="create-permission" @if($link->delete_fg==1git status && $link->user_group_id==$userGroupId) checked @endif></td>
-                    <td><input type="checkbox" class="create-permission" @if($link->active_fg==1 && $link->user_group_id==$userGroupId) checked @endif></td>
+                    <td><input type="checkbox" class="create-permission" @if($link->create_fg == 1 && $link->user_group_id==$userGroupId) checked @endif></td>
+                    <td><input type="checkbox" class="create-permission" @if($link->read_fg   == 1 && $link->user_group_id==$userGroupId) checked @endif></td>
+                    <td><input type="checkbox" class="create-permission" @if($link->update_fg == 1 && $link->user_group_id==$userGroupId) checked @endif></td>
+                    <td><input type="checkbox" class="create-permission" @if($link->delete_fg == 1 && $link->user_group_id==$userGroupId) checked @endif></td>
+                    <td><input type="checkbox" class="create-permission" @if($link->active_fg == 1 && $link->user_group_id==$userGroupId) checked @endif></td>
                  </tr>
             @endif
         @endforeach

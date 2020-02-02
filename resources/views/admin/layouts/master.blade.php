@@ -209,7 +209,7 @@
         $('.alert').hide();
     },5000);
 
-// user group wise index
+// user group wise page
     $(document).on('change', '.user-groups', function () {
         let userGroupId = $(this).val();
         let url = '{{ url('user-group-wise-permission') }}';
@@ -225,6 +225,13 @@
                 $('.user-group-wise-permission').html(data);
             }
         });
+    });
+    // user group wise permission assign
+    $(document).on('click', '.create-permission', function(){
+        let thisRow      = $(this).closest('tr');
+        let userGroupId  = thisRow.attr('data-group');
+        let moduleLinkId = thisRow.attr('data-link');
+        console.log(userGroupId+ ' ' +moduleLinkId);
     });
 
 </script>
