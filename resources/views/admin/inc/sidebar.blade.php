@@ -33,10 +33,34 @@
 
             <!-- dynamic sidebar -->
             @php
-                $modules = \Illuminate\Support\Facades\DB::table('ac_modules')->where('active_fg','=',1)->orderBy('userdsl_no','asc')->get();
-                $moduleLinks = \Illuminate\Support\Facades\DB::table('ac_module_links')->where('active_fg','=',1)->orderBy('userdsl_no','asc')->get();
+                $modules = \Illuminate\Support\Facades\DB::table('ac_modules')
+                                ->where('active_fg','=',1)
+                                ->orderBy('userdsl_no','asc')
+                                ->get();
             @endphp
+
             @foreach($modules as $module)
+                    @if(Auth::user()->user_group_id==1)
+                        @php
+                            $moduleLinks = \Illuminate\Support\Facades\DB::table('ac_module_links')
+                                        ->where('active_fg','=',1)
+                                        ->where('module_id', $module->module_id)
+                                        ->orderBy('userdsl_no','asc')
+                                        ->get();
+                        @endphp
+                    @else
+                        @php
+                            $userGroupId = Auth::user()->user_group_id;
+                            $moduleLinks = \Illuminate\Support\Facades\DB::table('ac_module_links as ml')
+                                        ->leftJoin('ac_permissions as p','ml.module_link_id', '=', 'p.module_link_id')
+                                        ->leftJoin('ac_modules as m','ml.module_id', '=', 'm.module_id')
+                                        ->where('p.user_group_id', $userGroupId)
+                                        ->where('p.active_fg','=',1)
+                                        ->where('ml.module_id', $module->module_id)
+                                        ->orderBy('ml.userdsl_no','asc')
+                                        ->get();
+                        @endphp
+                    @endif
             <li class="treeview">
                 <a href="#">
                     <i class="{{ $module->module_icon }}"></i>
@@ -45,11 +69,9 @@
                           <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="treeview-menu module-link">
                     @foreach($moduleLinks as $link)
-                    @if($module->module_id===$link->module_id)
-                    <li><a href="{{ $link->route_url }}"><i class="fa fa-circle-o"></i> {{ $link->module_link_name }}</a></li>
-                    @endif
+                        <li><a href="{{ $link->route_url }}"><i class="fa fa-circle-o"></i> {{ $link->module_link_name }}</a></li>
                     @endforeach
                 </ul>
             </li>
@@ -60,3 +82,4 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+

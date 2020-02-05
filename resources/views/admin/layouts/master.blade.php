@@ -253,7 +253,12 @@
            }
         });
     });
-
+    $(document).ready(function () {
+        $('ul.module-link').each(function () {
+            let link = $.trim($(this).text());
+            if(link==='') $(this).closest('li').remove();
+        });
+    });
 </script>
 </body>
 </html>

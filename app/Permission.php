@@ -12,6 +12,7 @@ class Permission extends Model
                 ->select('ml.module_link_name', 'ml.module_link_id', 'm.module_id', 'p.user_group_id', 'p.create_fg', 'p.read_fg', 'p.update_fg', 'p.delete_fg', 'p.active_fg')
                 ->leftJoin('ac_modules as m', 'ml.module_id', '=', 'm.module_id')
                 ->leftJoin('ac_permissions as p', 'ml.module_link_id', '=', 'p.module_link_id')
+                ->groupBy('ml.module_link_name', 'ml.module_link_id', 'm.module_id', 'p.user_group_id', 'p.create_fg', 'p.read_fg', 'p.update_fg', 'p.delete_fg', 'p.active_fg')
                 ->orderBy('ml.module_link_id', 'ASC')
                 ->get();
     }
